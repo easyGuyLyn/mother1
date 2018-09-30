@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.dawoo.chessbox.view.view.CustomDrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/simple_navigation_drawer"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        tools:ignore="MissingDefaultResource">
+
+        <TextView
+            android:id="@+id/toolbarleft"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="match_parent"
+            android:background="#ff000000"
+            android:visibility="visible">
+
+        </TextView>
+
+        <com.dawoo.chessbox.view.view.VerticalSwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <!--主布局-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@mipmap/index_bg"
+                    android:orientation="vertical">
+
+                    <include
+                        android:id="@+id/content_layout"
+                        layout="@layout/layout_main_activity_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </RelativeLayout>
+
+        </com.dawoo.chessbox.view.view.VerticalSwipeRefreshLayout>
+
+        <TextView
+            android:id="@+id/toolbarright"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="match_parent"
+            android:background="#ff000000"
+            android:visibility="gone">
+
+        </TextView>
+    </LinearLayout>
+
+    <!--横屏提示  必须全遮盖-->
+    <ImageView
+        android:id="@+id/iv_bg_portrait"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/prompt_bg"
+        android:visibility="gone" />
+
+    <!--侧滑菜单-->
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="160dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@null"
+        android:scrollbars="none" />
+
+</com.dawoo.chessbox.view.view.CustomDrawerLayout>

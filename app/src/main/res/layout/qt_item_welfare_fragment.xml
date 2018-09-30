@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:background="@color/qt_global_second_dialog_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_game_name"
+            style="@style/TextView_Record_Hint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_weight="2"
+            android:background="@color/qt_audit_item_bg"
+            android:gravity="center"
+            android:text="我的钱包彩票"
+            android:textColor="@color/white"
+            android:textSize="11sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dp"
+            android:layout_toRightOf="@+id/tv_game_name"
+            android:layout_weight="1"
+            android:background="@color/qt_audit_item_bg"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_quota"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="27dp"
+                android:gravity="center_vertical"
+                android:text="0.00"
+                android:textColor="@color/qt_welfare_item_color"
+                android:textSize="@dimen/text_14_sp" />
+
+            <ImageView
+                android:id="@+id/iv_quota_fresh"
+                style="@style/TextView_Record_Info"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@mipmap/refresh"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_quota_back"
+                style="@style/TextView_Record_Info"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:text="@string/quota_back"
+                android:textColor="@color/qt_welfare_item_color"
+                android:textSize="10sp"
+                android:visibility="visible" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/qt_global_second_dialog_bg" />
+
+</RelativeLayout>

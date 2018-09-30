@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        android:background="@mipmap/top_bg2"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5">
+
+                <FrameLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/profile_image_right"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="@mipmap/visitor"
+                        android:padding="5dp"
+                        app:civ_border_color="#FF000000"
+                        app:civ_border_width="0dp"
+                        app:civ_fill_color="#00000000" />
+                </FrameLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_user_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:text="---"
+                android:textColor="@color/qt_home_custom_text"
+                android:textSize="@dimen/text_10_sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="欢迎光临!"
+                android:layout_marginBottom="-6dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_10_sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|right"
+                    android:text="随身福利： "
+                    android:textColor="@color/qt_home_custom_tip_text"
+                    android:textSize="@dimen/text_12_sp" />
+
+                <TextView
+                    android:id="@+id/tv_welfareValue"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:text="---"
+                    android:textColor="@color/qt_home_custom_text"
+                    android:textSize="@dimen/text_12_sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/menu_bg"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_25"
+        android:paddingRight="@dimen/dp_25"
+        android:paddingBottom="@dimen/dp_25"
+        android:padding="@dimen/dp_10">
+
+        <TextView
+            android:id="@+id/tv_WelfareRecord"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_weight="1"
+            android:background="@mipmap/btn_general"
+            android:gravity="center"
+            android:text="福利记录"
+            android:shadowColor="#B200"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:textSize="@dimen/text_20_sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_GameRecord"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@mipmap/btn_general"
+            android:gravity="center"
+            android:text="牌局记录"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_20_sp"
+            android:shadowColor="#B200"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_SecurityCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:background="@mipmap/btn_general"
+            android:gravity="center"
+            android:text="安全中心"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_20_sp"
+            android:shadowColor="#B200"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_service"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@mipmap/btn_general"
+            android:gravity="center"
+            android:text="联系客服"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_20_sp"
+            android:shadowColor="#B200"
+            android:shadowDy="2"
+            android:shadowRadius="3"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/iv_right_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@mipmap/back" />
+    </LinearLayout>
+
+
+</LinearLayout>

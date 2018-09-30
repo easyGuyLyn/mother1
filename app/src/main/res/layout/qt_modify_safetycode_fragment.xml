@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/qt_shape_login_square"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toLeftOf="@+id/iv_invent_code"
+                    android:minWidth="70dp"
+                    android:gravity="right"
+                    android:text="@string/pwd"
+                    android:textSize="@dimen/text_13_sp"
+                    android:textColor="@color/white" />
+
+                <EditText
+                    android:id="@+id/pwd_et"
+                    style="@style/qt_safyty_item_input"
+                    android:layout_weight="1"
+                    android:inputType="numberPassword"
+                    android:hint="@string/set_safe_name" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_real_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toLeftOf="@+id/iv_invent_code"
+                    android:minWidth="70dp"
+                    android:gravity="right"
+                    android:textSize="@dimen/text_13_sp"
+                    android:text="@string/real_name"
+                    android:textColor="@color/white" />
+
+                <EditText
+                    android:id="@+id/real_name_et"
+                    style="@style/qt_safyty_item_input"
+                    android:layout_weight="1"
+                    android:hint="请填写真实姓名" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_etpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toLeftOf="@+id/iv_invent_code"
+                    android:minWidth="70dp"
+                    android:gravity="right"
+                    android:text="@string/qt_now_password"
+                    android:textColor="@color/white" />
+
+                <EditText
+                    android:id="@+id/old_pwd_et"
+                    style="@style/qt_safyty_item_input"
+                    android:layout_weight="1"
+                    android:inputType="numberPassword"
+                    android:hint="@string/qt_now_password_input" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toLeftOf="@+id/iv_invent_code"
+                    android:minWidth="70dp"
+                    android:gravity="right"
+                    android:text="@string/qt_new_password"
+                    android:textColor="@color/white" />
+
+                <EditText
+                    android:id="@+id/new_pwd_et"
+                    style="@style/qt_safyty_item_input"
+                    android:layout_weight="1"
+                    android:inputType="numberPassword"
+                    android:hint="@string/qt_new_password_input" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_et_newpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toLeftOf="@+id/iv_invent_code"
+                    android:minWidth="70dp"
+                    android:gravity="right"
+                    android:text="@string/qt_make_sure_password"
+                    android:textColor="@color/white" />
+
+                <EditText
+                    android:id="@+id/confirm_pwd_et"
+                    style="@style/qt_safyty_item_input"
+                    android:layout_weight="1"
+                    android:inputType="numberPassword"
+                    android:hint="@string/qt_new_password_input_agin" />
+
+            </LinearLayout>
+
+            <!--验证码-->
+            <LinearLayout
+                android:id="@+id/rlCaptcha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toLeftOf="@+id/iv_invent_code"
+                    android:minWidth="70dp"
+                    android:gravity="right"
+                    android:text="验证码"
+                    android:textColor="@color/white" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:id="@+id/ivCaptcha"
+                        android:layout_width="80dp"
+                        android:layout_height="34dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" />
+
+                    <EditText
+                        android:id="@+id/etCaptcha"
+                        style="@style/qt_register_item_input"
+                        android:layout_weight="0.2"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:layout_toLeftOf="@+id/ivCaptcha"
+                        android:hint="@string/captcha_hint" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btn_modify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_20"
+                android:background="@mipmap/btn_large_general"
+                android:gravity="center"
+                android:shadowColor="#B200"
+                android:shadowDy="2"
+                android:shadowRadius="3"
+                android:textStyle="bold"
+                android:text="修    改"
+                android:textSize="@dimen/sp_16"
+                android:textColor="@color/white"
+                android:visibility="visible" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

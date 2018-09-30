@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tv_tips"
+            android:layout_alignLeft="@id/tv_tips"
+            android:layout_alignRight="@+id/tv_tips"
+            android:layout_marginTop="-4dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/fragment_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/qt_global_second_dialog_bg"
+                android:orientation="vertical"></LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tv_tips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/img_close"
+            android:background="@mipmap/title_bg_long"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:id="@+id/rl_table"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/classify_main"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/img_remove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/btn_activity_bg"/>
+
+                <ImageView
+                    android:id="@+id/img_favourable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:src="@mipmap/title15nw" />
+
+                <ImageView
+                    android:id="@+id/img_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toRightOf="@+id/img_favourable"
+                    android:layout_weight="1"
+                    android:src="@mipmap/title16nw" />
+
+            </RelativeLayout>
+
+
+            <Switch
+                android:id="@+id/img_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOff="消息中心"
+                android:textOn="优惠中心"
+                android:visibility="gone" />
+
+
+            <!--<ImageView-->
+            <!--android:id="@+id/img_title"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@mipmap/qt_favourable_text"-->
+            <!--/>-->
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="-30dp"
+            android:src="@mipmap/close" />
+
+    </RelativeLayout>
+
+</LinearLayout>

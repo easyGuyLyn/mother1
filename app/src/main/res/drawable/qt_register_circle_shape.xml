@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <stroke
+        android:width="1dp"
+        android:color="@color/qt_25white"></stroke>
+    <solid android:color="@color/qt_global_second_dialog_bg"></solid>
+</shape>

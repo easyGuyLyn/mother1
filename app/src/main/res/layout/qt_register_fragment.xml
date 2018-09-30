@@ -1,0 +1,1149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/qt_register_circle_shape"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible"
+            >
+
+            <!--邀请码-->
+            <LinearLayout
+                android:id="@+id/ll_invent_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="94dp"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="right"
+                        android:text="@string/qt_regist_input_invotecode"
+                        android:textSize="@dimen/text_12_sp"
+                        android:textColor="@color/white" />
+
+                    <ImageView
+                        android:id="@+id/iv_invent_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:src="@mipmap/required"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/etYaoQinMa"
+                    style="@style/qt_register_item_input"
+                    android:layout_weight="1"
+                    android:hint="可选填" />
+
+            </LinearLayout>
+
+            <!--用户名-->
+            <LinearLayout
+                android:id="@+id/ll_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:minWidth="94dp"
+                    android:gravity="right"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_toLeftOf="@+id/iv_username"
+                        android:gravity="right"
+                        android:text="@string/qt_regist_input_name"
+                        android:textSize="@dimen/text_12_sp"
+                        android:textColor="@color/white" />
+
+                    <ImageView
+                        android:id="@+id/iv_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:src="@mipmap/required"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/etUsername"
+                    style="@style/qt_register_item_input"
+                    android:layout_weight="1"
+                    android:hint="请输入账号" />
+
+            </LinearLayout>
+
+
+            <!--设置密码-->
+            <LinearLayout
+                android:id="@+id/ll_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:minWidth="94dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right"
+                    >
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/qt_set_password"
+                        android:textSize="@dimen/text_12_sp"
+                        android:textColor="@color/white" />
+
+
+                    <ImageView
+                        android:id="@+id/iv_password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:src="@mipmap/required"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                   >
+
+                    <EditText
+                        android:id="@+id/etFirstPassword"
+                        style="@style/qt_register_item_input"
+                        android:layout_weight="0.3"
+                        android:hint="6-20个字母或数字"
+                        android:inputType="textPassword" />
+
+                    <ImageView
+                        android:id="@+id/iv_see_code"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="6dp"
+                        android:src="@mipmap/eyeclose" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <!--再次输入密码-->
+            <LinearLayout
+                android:id="@+id/ll_commit_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="right"
+                    android:layout_gravity="center_vertical"
+                    android:minWidth="94dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/qt_regist_set_password_agin"
+                        android:textSize="@dimen/text_12_sp"
+                        android:textColor="@color/white" />
+
+                    <ImageView
+                        android:id="@+id/iv_commit_password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:src="@mipmap/required"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/etCommitPassword"
+                        style="@style/qt_register_item_input"
+                        android:hint="重复输入密码"
+                        android:inputType="textPassword" />
+
+                    <ImageView
+                        android:id="@+id/iv_see_commit_code"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="6dp"
+                        android:src="@mipmap/eyeclose" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <!--真实姓名-->
+            <LinearLayout
+                android:id="@+id/ll_real_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right"
+                    android:minWidth="94dp">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/qt_regist_real_name"
+                        android:textSize="@dimen/text_12_sp"
+                        android:textColor="@color/white" />
+
+
+                    <ImageView
+                        android:id="@+id/iv_real_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:src="@mipmap/required"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/etRealName"
+                    style="@style/qt_register_item_input"
+                    android:layout_weight="1"
+                    android:hint="请填写真实姓名" />
+
+            </LinearLayout>
+
+            <!--手机号-->
+            <LinearLayout
+                android:id="@+id/ll_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:minWidth="94dp"
+                    android:gravity="right"
+                    android:layout_gravity="center_vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/qt_regist_phone_code"
+                        android:textSize="@dimen/text_12_sp"
+                        android:textColor="@color/white" />
+
+
+                    <ImageView
+                        android:id="@+id/iv_phone_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:src="@mipmap/required"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/etPhoneNumber"
+                    style="@style/qt_register_item_input"
+                    android:layout_weight="1"
+                    android:hint="请输入11位手机号码"
+                    android:inputType="number" />
+
+            </LinearLayout>
+
+
+            <!--验证码-->
+            <LinearLayout
+                android:id="@+id/ll_sms_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="94dp"
+                    android:gravity="right"
+                    android:layout_gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="短信验证码"
+                        android:textSize="@dimen/sp_12"
+                        android:textColor="@color/white" />
+
+                    <ImageView
+                        android:id="@+id/iv_sms_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:src="@mipmap/required"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tv_send_sms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/frame_fillet_line_gray_text_end"
+                        android:gravity="center_vertical"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp"
+                        android:minWidth="72dp"
+                        android:text="@string/send_sms_code"
+                        android:textColor="@color/text_color_gray_999999"
+                        android:textSize="@dimen/text_11_sp" />
+
+                    <EditText
+                        android:id="@+id/et_sms"
+                        style="@style/qt_register_item_input"
+                        android:layout_marginRight="4dp"
+                        android:layout_toLeftOf="@+id/tv_send_sms"
+                        />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <!--ＱＱ号码-->
+            <LinearLayout
+                android:id="@+id/ll_qq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:minWidth="94dp"
+                    android:gravity="right"
+                    android:layout_gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/qt_regist_QQ"
+                        android:textSize="@dimen/text_12_sp"
+                        android:textColor="@color/white" />
+
+                    <ImageView
+                        android:id="@+id/iv_qq"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:src="@mipmap/required"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/etQQ"
+                    style="@style/qt_register_item_input"
+                    android:layout_weight="1"
+                    android:hint="请输入QQ号码" />
+
+            </LinearLayout>
+
+            <!--邮箱-->
+            <LinearLayout
+                android:id="@+id/ll_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:minWidth="94dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/qt_regist_email"
+                        android:textSize="@dimen/text_12_sp"
+                        android:textColor="@color/white" />
+
+
+                    <ImageView
+                        android:id="@+id/iv_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:src="@mipmap/required"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    style="@style/qt_register_item_input"
+                    android:layout_weight="1"
+                    android:hint="请输入邮箱地址" />
+
+            </LinearLayout>
+
+            <!--安全密码-->
+            <LinearLayout
+                android:id="@+id/ll_ss_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:minWidth="94dp"
+                    android:gravity="right">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="设置安全密码"
+                        android:textSize="@dimen/text_12_sp"
+                        android:textColor="@color/white" />
+
+                    <ImageView
+                        android:id="@+id/iv_ss_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:src="@mipmap/required"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/etSSCode"
+                    style="@style/qt_register_item_input"
+                    android:layout_weight="1"
+                    android:hint="由6位数字组成"
+                    android:inputType="textPassword"
+                    android:maxLength="6" />
+
+            </LinearLayout>
+
+            <!--再次输入安全密码-->
+
+            <LinearLayout
+                android:id="@+id/ll_commit_ss_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right"
+                    android:minWidth="94dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:textSize="@dimen/text_12_sp"
+                        android:text="确认安全密码"
+                        android:textColor="@color/white" />
+
+                    <ImageView
+                        android:id="@+id/iv_commit_ss"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:src="@mipmap/required"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/etSSCommit"
+                    style="@style/qt_register_item_input"
+                    android:layout_weight="1"
+                    android:hint="重复输入安全密码"
+                    android:inputType="textPassword"
+                    android:maxLength="6" />
+
+            </LinearLayout>
+
+            <!--时区-->
+            <LinearLayout
+                android:id="@+id/ll_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right"
+                    android:minWidth="94dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="设置时区"
+                        android:textSize="@dimen/text_12_sp"
+                        android:textColor="@color/white" />
+
+
+                    <ImageView
+                        android:id="@+id/iv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:src="@mipmap/required"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <org.angmarch.views.NiceSpinner
+                    android:id="@+id/nice_spinner_time"
+                    style="@style/qt_register_item_input"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    app:textTint="@color/white"
+                    android:textColor="@color/white"
+                    app:arrowDrawable="@mipmap/drop_down"
+                    app:backgroundSelector="@color/qt_et_input"/>
+            </LinearLayout>
+
+            <!--生日-->
+            <LinearLayout
+                android:id="@+id/ll_birthday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="94dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_12_sp"
+                        android:text="@string/qt_regist_birthday"
+                        android:textColor="@color/white" />
+
+                    <ImageView
+                        android:id="@+id/iv_birthday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:src="@mipmap/required"
+                        android:visibility="gone" />
+
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/ll_select_birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/tv_birth_data"
+                        style="@style/qt_register_item_input"
+                        android:text="请选择生日"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_12_sp" />
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="14dp"
+                        android:src="@mipmap/time" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--性别-->
+            <LinearLayout
+                android:id="@+id/ll_sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="94dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/qt_regist_gender"
+                        android:textSize="@dimen/text_12_sp"
+                        android:textColor="@color/white" />
+
+                    <ImageView
+                        android:id="@+id/iv_sex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:src="@mipmap/required"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <org.angmarch.views.NiceSpinner
+                    android:id="@+id/nice_spinner_sex"
+                    style="@style/qt_register_item_input"
+                    android:layout_weight="1"
+                    app:arrowTint="@color/white"
+                    app:textTint="@color/white"
+                    android:text="请选择性别"
+                    app:arrowDrawable="@mipmap/drop_down"
+                    app:backgroundSelector="@color/qt_et_input"
+                    />
+            </LinearLayout>
+
+
+            <!--货币-->
+            <LinearLayout
+                android:id="@+id/ll_money"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="94dp"
+                    android:layout_gravity="center_vertical"
+                   android:gravity="right">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_12_sp"
+                        android:text="@string/qt_regist_money"
+                        android:textColor="@color/white" />
+
+                    <ImageView
+                        android:id="@+id/iv_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:src="@mipmap/required"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <org.angmarch.views.NiceSpinner
+                    android:id="@+id/nice_spinner_money"
+                    style="@style/qt_register_item_input"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:textColor="@color/white"
+                    app:textTint="@color/white"
+                    app:arrowDrawable="@mipmap/drop_down"
+                    app:backgroundSelector="@color/qt_et_input" />
+            </LinearLayout>
+
+            <!--主语言-->
+            <LinearLayout
+                android:id="@+id/ll_launage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="94dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/qt_regist_main_language"
+                        android:textSize="@dimen/text_12_sp"
+                        android:textColor="@color/white" />
+
+                    <ImageView
+                        android:id="@+id/iv_lauange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:src="@mipmap/required"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <org.angmarch.views.NiceSpinner
+                    android:id="@+id/nice_spinner_lanuage"
+                    style="@style/qt_register_item_input"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:textColor="@color/white"
+                    app:textTint="@color/white"
+                    app:arrowDrawable="@mipmap/drop_down"
+                    app:backgroundSelector="@color/qt_et_input" />
+            </LinearLayout>
+
+
+            <!--安全问题-->
+            <LinearLayout
+                android:id="@+id/ll_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="94dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="设置安全问题"
+                        android:textSize="@dimen/text_12_sp"
+                        android:textColor="@color/white" />
+
+                    <ImageView
+                        android:id="@+id/iv_question"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:src="@mipmap/required"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <org.angmarch.views.NiceSpinner
+                    android:id="@+id/nice_spinner_question"
+                    style="@style/qt_register_item_input"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    app:textTint="@color/white"
+                    android:textColor="@color/white"
+                    app:arrowDrawable="@mipmap/drop_down"
+                    app:backgroundSelector="@color/qt_et_input"/>
+            </LinearLayout>
+
+            <!--回答安全问题-->
+            <LinearLayout
+                android:id="@+id/ll_input_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right"
+                    android:minWidth="94dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_12_sp"
+                        android:text="设置答案"
+                        android:textColor="@color/white" />
+
+                    <ImageView
+                        android:id="@+id/iv_input_question"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:src="@mipmap/required"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/etAnswer"
+                    style="@style/qt_register_item_input"
+                    android:layout_weight="1"
+                    android:hint="请输入答案" />
+
+            </LinearLayout>
+
+            <!--微信-->
+
+            <LinearLayout
+                android:id="@+id/ll_wechat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right"
+                    android:minWidth="94dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_12_sp"
+                        android:text="微信号码"
+                        android:textColor="@color/white" />
+
+                    <ImageView
+                        android:id="@+id/iv_weChat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:src="@mipmap/required"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:gravity="right">-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:textSize="12sp"-->
+                        <!--android:text="@string/qt_regist_wechat"-->
+                        <!--android:minWidth="94dp"-->
+                        <!--android:textColor="@color/white" />-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/iv_weChat"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_vertical"-->
+                        <!--android:layout_marginLeft="@dimen/dp_4"-->
+                        <!--android:src="@mipmap/required"-->
+                        <!--android:visibility="gone" />-->
+
+
+                <!--</LinearLayout>-->
+
+                <EditText
+                    android:id="@+id/etWeChatNumber"
+                    style="@style/qt_register_item_input"
+                    android:layout_weight="1"
+                    android:hint="请填写微信号" />
+
+            </LinearLayout>
+
+            <!--验证码-->
+            <LinearLayout
+                android:id="@+id/ll_captcha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:minWidth="94dp"
+                    android:gravity="right">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/qt_regist_input_verification_code"
+                        android:textSize="@dimen/text_12_sp"
+                        android:textColor="@color/white" />
+
+                    <ImageView
+                        android:id="@+id/iv_input_captcha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="2dp"
+                        android:src="@mipmap/required"
+                        android:visibility="visible" />
+
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginRight="@dimen/dp_10">
+
+                    <ImageView
+                        android:id="@+id/ivCaptcha"
+                        android:layout_width="80dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="#cde9c0" />
+
+                    <EditText
+                        android:id="@+id/etCaptcha"
+                        style="@style/qt_register_item_input"
+                        android:layout_marginRight="4dp"
+                        android:layout_toLeftOf="@+id/ivCaptcha"
+                        android:hint="请输入验证码" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <!--协议-->
+
+            <LinearLayout
+                android:id="@+id/ll_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="94dp"
+                   >
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_register_allow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/iv_allow_choose"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="4dp"
+                        android:src="@mipmap/select" />
+
+                    <TextView
+                        android:id="@+id/tv_commit_messaa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/iv_allow_choose"
+                        android:text="@string/register_allow"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_11_sp"
+                        android:visibility="visible" />
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_Register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginBottom="20dp"
+                android:background="@mipmap/btn_large_general"
+                android:gravity="center"
+                android:text="注册"
+                android:shadowColor="#B200"
+                android:shadowDy="2"
+                android:shadowRadius="3"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

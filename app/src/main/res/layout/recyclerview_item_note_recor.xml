@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/qt_audit_item_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:background="@color/qt_global_second_dialog_bg" />
+
+        <TextView
+            android:id="@+id/tv_game_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="足球"
+            android:textColor="@color/D2D7FF"
+            android:textSize="11sp" />
+
+        <TextView
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:background="@color/qt_global_second_dialog_bg" />
+
+        <TextView
+            android:id="@+id/tv_bet_time"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="2016-10-2900:00:00"
+            android:textColor="@color/D2D7FF"
+            android:textSize="11sp" />
+
+        <TextView
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:background="@color/qt_global_second_dialog_bg" />
+
+        <TextView
+            android:id="@+id/tv_bet_Amount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="100.00"
+            android:textColor="@color/D2D7FF"
+            android:textSize="11sp" />
+
+        <TextView
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:background="@color/qt_global_second_dialog_bg" />
+
+        <TextView
+            android:id="@+id/tv_Payout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="-75.00"
+            android:textColor="@color/D2D7FF"
+            android:textSize="11sp" />
+
+        <TextView
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:background="@color/qt_global_second_dialog_bg" />
+
+        <TextView
+            android:id="@+id/tv_Settlement"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="已結算"
+            android:textColor="@color/D2D7FF"
+            android:textSize="11sp" />
+
+        <TextView
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:background="@color/qt_global_second_dialog_bg" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/qt_global_second_dialog_bg" />
+</LinearLayout>

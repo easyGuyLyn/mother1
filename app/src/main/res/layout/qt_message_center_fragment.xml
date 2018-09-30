@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/qt_dialog_bg"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/qt_dialog_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/game_notice"
+                android:layout_width="76dp"
+                android:layout_height="30dp"
+                android:background="@drawable/qt_profit_blueframe_bg_selector"
+                android:gravity="center"
+                android:text="@string/game_noitce"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_14_sp" />
+
+            <View
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_10" />
+
+            <Button
+                android:id="@+id/sys_notice"
+                android:layout_width="76dp"
+                android:layout_height="30dp"
+                android:background="@drawable/qt_profit_blueframe_bg_selector"
+                android:text="@string/sys_notice"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_14_sp" />
+
+            <View
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_10" />
+
+
+            <RelativeLayout
+                android:layout_width="76dp"
+                android:layout_height="30dp">
+
+                <TextView
+                    android:id="@+id/zhan_notice"
+                    android:layout_width="76dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/qt_profit_blueframe_bg_selector"
+                    android:gravity="center"
+                    android:text="@string/zhan_message"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_14_sp" />
+
+                <TextView
+                    android:id="@+id/v_tip_my_notice"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/shape_red_tip"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_8_sp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+    <com.dawoo.chessbox.view.view.CustomViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/qt_message_bg">
+
+    </com.dawoo.chessbox.view.view.CustomViewPager>
+</LinearLayout>
