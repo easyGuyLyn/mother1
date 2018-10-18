@@ -41,17 +41,8 @@ android {
     def suf = ""
     buildTypes {
         debug {
-            //   buildConfigField("String", "HOST_URL", "\"\"")
-            //   buildConfigField("String", "HOST_URL", "\"http://test01.ampinplayopt0matrix.com\"")
-            //           buildConfigField("String", "HOST_URL", "\"http://test01.ccenter.test.so\"")
-//            buildConfigField("String", "HOST_URL", "\"https://test2.hongtubet.com\"")
-//            buildConfigField("String", "HOST_URL", "\"https://test71.hongtubet.com\"")
             buildConfigField("String", "HOST_URL", "\"https://71.hongtubet.com\"")
-
             buildConfigField("String", "terminal", "\"app_android\"")
-            // white,black,blue
-//            buildConfigField("String", "theme", "\"white\"")
-            //  xxhdpi,xxxhdpi
             buildConfigField("String", "resolution", "\"xxhdpi\"")
 
 //            //为已经存在的applicationId添加后缀
@@ -226,100 +217,98 @@ android {
 //                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
 //        }
 
-        app_ty3a {
-            applicationId "com.dawoo.chessbox.sid7001"
-            resValue "string", "app_name", "宏图棋牌"
-            resValue "string", "app_code", "ty3a"
-            resValue "string", "app_sid", "e1576bc75aabd600d0b6b078af7a96a3"
+        app_test1 {
+            applicationId "com.regus.test1"
+            resValue "string", "app_name", "test1"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
         }
 
-        app_lcat {
-            applicationId "com.dawoo.chessbox.sid7002"
-            resValue "string", "app_name", "666棋牌"
-            resValue "string", "app_code", "lcat"
-            resValue "string", "app_sid", "54f9540412e52a4b43aefb0b461bf043"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
-        }
-
-        app_ou2t {
-            applicationId "com.dawoo.chessbox.sid7003"
-            resValue "string", "app_name", "和记棋牌"
-            resValue "string", "app_code", "ou2t"
-            resValue "string", "app_sid", "06ce11c72fc53a777bd7be3a31294e32"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
-        }
-
-        app_ksul {
-            applicationId "com.dawoo.chessbox.sid7005"
-            resValue "string", "app_name", "开元棋牌"
-            resValue "string", "app_code", "ksul"
-            resValue "string", "app_sid", "c2f35a1410bad50250afbc3f4d8aec6d"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
-        }
-
-        app_cilz {
-            applicationId "com.dawoo.chessbox.sid7006"
-            resValue "string", "app_name", "亿发娱乐"
-            resValue "string", "app_code", "cilz"
-            resValue "string", "app_sid", "b2f6a357ea67e3e4474a613701790a31"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
-        }
-
-        app_kezf {
-            applicationId "com.dawoo.chessbox.sid7007"
-            resValue "string", "app_name", "九发棋牌"
-            resValue "string", "app_code", "kezf"
-            resValue "string", "app_sid", "5293144a5858bc5464331f9c6ab28165"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
-        }
-        app_grk9 {
-            applicationId "com.dawoo.chessbox.sid7008"
-            resValue "string", "app_name", "安博棋牌"
-            resValue "string", "app_code", "grk9"
-            resValue "string", "app_sid", "9d68aa0d69c2cf734527ec499be98f1b"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
-        }
-        app_4l76 {
-            applicationId "com.dawoo.chessbox.sid7010"
-            resValue "string", "app_name", "盛大棋牌"
-            resValue "string", "app_code", "4l76"
-            resValue "string", "app_sid", "02dfe565259009a0279c438e887ff1c6"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
-        }
-
-        app_4l76 {
-            applicationId "com.dawoo.chessbox.sid7010"
-            resValue "string", "app_name", "盛大棋牌"
-            resValue "string", "app_code", "4l76"
-            resValue "string", "app_sid", "02dfe565259009a0279c438e887ff1c6"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
-        }
-        app_uxct {
-            applicationId "com.dawoo.chessbox.sid7011"
-            resValue "string", "app_name", "三宝棋牌"
-            resValue "string", "app_code", "uxct"
-            resValue "string", "app_sid", "f35c889f5e4ac258a1a05b637d0960d4"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
-        }
-        app_3twr {
-            applicationId "com.dawoo.chessbox.sid7012"
-            resValue "string", "app_name", "万豪国际"
-            resValue "string", "app_code", "3twr"
-            resValue "string", "app_sid", "87a46d844700e85faebc824244f68d4d"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
-        }
+//        app_lcat {
+//            applicationId "com.dawoo.chessbox.sid7002"
+//            resValue "string", "app_name", "666棋牌"
+//            resValue "string", "app_code", "lcat"
+//            resValue "string", "app_sid", "54f9540412e52a4b43aefb0b461bf043"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
+//        }
+//
+//        app_ou2t {
+//            applicationId "com.dawoo.chessbox.sid7003"
+//            resValue "string", "app_name", "和记棋牌"
+//            resValue "string", "app_code", "ou2t"
+//            resValue "string", "app_sid", "06ce11c72fc53a777bd7be3a31294e32"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
+//        }
+//
+//        app_ksul {
+//            applicationId "com.dawoo.chessbox.sid7005"
+//            resValue "string", "app_name", "开元棋牌"
+//            resValue "string", "app_code", "ksul"
+//            resValue "string", "app_sid", "c2f35a1410bad50250afbc3f4d8aec6d"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
+//        }
+//
+//        app_cilz {
+//            applicationId "com.dawoo.chessbox.sid7006"
+//            resValue "string", "app_name", "亿发娱乐"
+//            resValue "string", "app_code", "cilz"
+//            resValue "string", "app_sid", "b2f6a357ea67e3e4474a613701790a31"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
+//        }
+//
+//        app_kezf {
+//            applicationId "com.dawoo.chessbox.sid7007"
+//            resValue "string", "app_name", "九发棋牌"
+//            resValue "string", "app_code", "kezf"
+//            resValue "string", "app_sid", "5293144a5858bc5464331f9c6ab28165"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
+//        }
+//        app_grk9 {
+//            applicationId "com.dawoo.chessbox.sid7008"
+//            resValue "string", "app_name", "安博棋牌"
+//            resValue "string", "app_code", "grk9"
+//            resValue "string", "app_sid", "9d68aa0d69c2cf734527ec499be98f1b"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
+//        }
+//        app_4l76 {
+//            applicationId "com.dawoo.chessbox.sid7010"
+//            resValue "string", "app_name", "盛大棋牌"
+//            resValue "string", "app_code", "4l76"
+//            resValue "string", "app_sid", "02dfe565259009a0279c438e887ff1c6"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
+//        }
+//
+//        app_4l76 {
+//            applicationId "com.dawoo.chessbox.sid7010"
+//            resValue "string", "app_name", "盛大棋牌"
+//            resValue "string", "app_code", "4l76"
+//            resValue "string", "app_sid", "02dfe565259009a0279c438e887ff1c6"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
+//        }
+//        app_uxct {
+//            applicationId "com.dawoo.chessbox.sid7011"
+//            resValue "string", "app_name", "三宝棋牌"
+//            resValue "string", "app_code", "uxct"
+//            resValue "string", "app_sid", "f35c889f5e4ac258a1a05b637d0960d4"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
+//        }
+//        app_3twr {
+//            applicationId "com.dawoo.chessbox.sid7012"
+//            resValue "string", "app_name", "万豪国际"
+//            resValue "string", "app_code", "3twr"
+//            resValue "string", "app_sid", "87a46d844700e85faebc824244f68d4d"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
+//        }
     }
 }
 

@@ -33,6 +33,6 @@ ext {
     targetSdkVersion = '28'
     supportVersion = '27.1.0'
 
-    versionCode = 3
+    versionCode = 1
     versionName = '1.0.0'
 }

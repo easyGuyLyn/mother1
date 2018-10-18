@@ -118,11 +118,11 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void createWebView() {
-        mWebview = new WebView(this);
+        mWebview = new WebView(IpcWebViewActivity.this);
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
         mWebview.setLayoutParams(layoutParams);
         mWebviewFL.addView(mWebview);
-        createDragViewButton();
+      //  createDragViewButton();
     }
 
     private void createDragViewButton() {
