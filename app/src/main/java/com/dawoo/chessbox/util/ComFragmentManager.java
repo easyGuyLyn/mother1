@@ -63,13 +63,13 @@ public class ComFragmentManager {
 //        transaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out, android.R.anim.fade_in, android.R.anim.fade_out);
         if (fromFragment != null && !fromFragment.isHidden() && fromFragment != toFragment) {
             if (!toFragment.isAdded()) {
-                transaction.hide(fromFragment).add(R.id.fragment_content, toFragment);
+           //     transaction.hide(fromFragment).add(R.id.fragment_content, toFragment);
             } else {
                 transaction.hide(fromFragment).show(toFragment);
             }
         } else {
             if (!toFragment.isAdded()) {
-                transaction.add(R.id.fragment_content, toFragment);
+           //     transaction.add(R.id.fragment_content, toFragment);
             } else {
                 transaction.show(toFragment);
             }

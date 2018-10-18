@@ -35,70 +35,17 @@
             android:value="2.2" />
 
         <activity
-            android:name=".view.activity.MainActivity"
+            android:name=".view.activity.SpalashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:fitsSystemWindows="true"
-            android:screenOrientation="sensorLandscape"
             android:windowFullscreen="true"
+            android:theme="@style/SplashTheme"
             android:windowSoftInputMode="stateHidden|adjustPan">
-            <meta-data
-                android:name="android.notch_support"
-                android:value="true" />
-        </activity>
-
-        <activity
-            android:name=".view.activity.SplashActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="sensorLandscape"
-            android:windowFullscreen="true"
-            android:windowSoftInputMode="stateHidden|adjustPan"></activity>
-        <activity
-            android:name=".view.activity.PreventAddictionActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="sensorLandscape"
-            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".view.activity.AdvertisingPageActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="sensorLandscape"
-            android:windowSoftInputMode="stateHidden|adjustPan" />
-
-        <activity
-            android:name=".view.activity.webview.WebViewActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="user"
-            android:windowFullscreen="true"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
-
-        <service android:name=".service.BestLineService" />
-
-        <activity
-            android:name=".view.activity.MaintenanceActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:launchMode="singleTask"
-            android:screenOrientation="sensorLandscape"></activity>
-
-        <activity
-            android:name=".view.activity.DepositActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
-        <activity
-            android:name=".view.activity.DisportLevelActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"></activity>
-
-        <activity android:name=".view.activity.ImgDetailActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:exported="false"></activity>
-
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -115,9 +62,7 @@
             android:name="com.dawoo.ipc.control.IpcWebViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:process="${r_process}"
-            android:theme="@style/IPCFullScreenThem"
-            android:windowFullscreen="true"
-            android:screenOrientation="user"
+            android:theme="@style/IPCAppTheme"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"></activity>
         <service
             android:name="com.dawoo.ipc.server.IPCServerService"

@@ -128,7 +128,7 @@ public class ComplexFragmentManager {
                 }
             }
             if (!toFragment.isAdded()) {
-                transaction.add(R.id.fragment_content, toFragment, clazz.getSimpleName());
+               // transaction.add(R.id.fragment_content, toFragment, clazz.getSimpleName());
             } else {
                 transaction.show(toFragment);
             }

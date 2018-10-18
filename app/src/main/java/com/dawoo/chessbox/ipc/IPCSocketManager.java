@@ -1,6 +1,7 @@
 package com.dawoo.chessbox.ipc;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.os.SystemClock;
 import android.util.Log;
 
@@ -48,10 +49,21 @@ public class IPCSocketManager {
      * 开启 远程
      */
     public void startServerService() {
-        if (!PackageInfoUtil.isServiceRunning(BoxApplication.getContext(), "com.dawoo.ipc.server.IPCServerService")) {
-            Intent intent = new Intent(BoxApplication.getContext(), IPCServerService.class);
-            BoxApplication.getContext().startService(intent);
-        }
+        //  if (!PackageInfoUtil.isServiceRunning(BoxApplication.getContext(), "com.dawoo.ipc.server.IPCServerService")) {
+        Intent intent = new Intent(BoxApplication.getContext(), IPCServerService.class);
+        BoxApplication.getContext().startService(intent);
+        //   }
+    }
+
+
+    /**
+     * stop 远程
+     */
+    public void stopServerService() {
+        //  if (!PackageInfoUtil.isServiceRunning(BoxApplication.getContext(), "com.dawoo.ipc.server.IPCServerService")) {
+        Intent intent = new Intent(BoxApplication.getContext(), IPCServerService.class);
+        BoxApplication.getContext().stopService(intent);
+        //   }
     }
 
     /**
@@ -88,7 +100,7 @@ public class IPCSocketManager {
                     Log.e(TAG, "连接TCP服务失败, 重试...");
                     if (!PackageInfoUtil.isServiceRunning(BoxApplication.getContext(), "com.dawoo.ipc.server.IPCServerService")) {
                         Log.e(TAG, "远程服务:  " + IPCServerService.class.getSimpleName() + "  未运行或即将运行");
-                       // startServerService();
+                        // startServerService();
                     }
                 }
             }
@@ -169,6 +181,14 @@ public class IPCSocketManager {
         if (mConnectThread != null && mConnectThread.isAlive()) {
             mConnectThread.interrupt();
         }
+        stopServerService();
+        BoxApplication.handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                System.exit(0);
+            }
+        }, 500);
+
     }
 
     private class ConnectedThread extends Thread {

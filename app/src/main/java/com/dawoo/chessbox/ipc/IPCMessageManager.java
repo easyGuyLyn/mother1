@@ -46,6 +46,10 @@ public class IPCMessageManager {
                     Log.e(TAG, "game api" + gameApiEvent.getGameApi() + "");
                     RxBus.get().post(EVENT_REFRSH_API, gameApiEvent.getGameApi() + "");
                     break;
+                case Events.EVENT_CLOSE_APP:
+                    Log.e(TAG, "destory ipc socket");
+                    IPCSocketManager.getInstance().destroy();
+                    break;
             }
         }
 

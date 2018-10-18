@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.dawoo.ipc.event.Events;
+import com.dawoo.ipc.event.bean.CloseAppEvent;
 import com.dawoo.ipc.event.bean.GameApiEvent;
 import com.dawoo.ipc.utl.FastJsonUtils;
 import com.dawoo.ipc.utl.GetBytesWithHeadInfo;
@@ -79,6 +80,25 @@ public class IPCServerService extends Service {
         GameApiEvent gameApiEvent = new GameApiEvent();
         gameApiEvent.setGameApi(s);
         gameApiEvent.setType(Events.EVENT_REFRSH_API);
+        String json = FastJsonUtils.toJSONString(gameApiEvent);
+        Log.e(TAG, json + "");
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                sendBytes(GetBytesWithHeadInfo.getByteArry(json));
+            }
+        }).start();
+    }
+
+
+
+    /**
+     * 刷新游戏api
+     */
+    @Subscribe(tags = {@Tag(Events.EVENT_CLOSE_APP)})
+    public void closeApp(String s) {
+        CloseAppEvent gameApiEvent = new CloseAppEvent();
+        gameApiEvent.setType(Events.EVENT_CLOSE_APP);
         String json = FastJsonUtils.toJSONString(gameApiEvent);
         Log.e(TAG, json + "");
         new Thread(new Runnable() {

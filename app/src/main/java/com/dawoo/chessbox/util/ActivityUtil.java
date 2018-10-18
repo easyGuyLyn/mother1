@@ -4,32 +4,22 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.dawoo.chessbox.ipc.IPCSocketManager;
-import com.dawoo.chessbox.view.feagment_game.WebViewDialogFragment;
-import com.dawoo.coretool.util.SPTool;
-import com.dawoo.coretool.util.ToastUtil;
-import com.dawoo.coretool.util.activity.ActivityStackManager;
 import com.dawoo.chessbox.BoxApplication;
 import com.dawoo.chessbox.ConstantValue;
 import com.dawoo.chessbox.R;
-import com.dawoo.chessbox.bean.DataCenter;
-import com.dawoo.chessbox.view.Utils.MediaplayerUtil;
-import com.dawoo.chessbox.view.activity.MainActivity;
-import com.dawoo.chessbox.view.activity.MaintenanceActivity;
-import com.dawoo.chessbox.view.activity.webview.WebViewActivity;
+import com.dawoo.chessbox.ipc.IPCSocketManager;
+import com.dawoo.chessbox.util.Utils.MediaplayerUtil;
+import com.dawoo.coretool.util.ToastUtil;
 import com.dawoo.coretool.util.packageref.PackageInfoUtil;
 import com.dawoo.ipc.control.IpcWebViewActivity;
-import com.hwangjr.rxbus.RxBus;
 
 import java.util.List;
 
-import static com.dawoo.chessbox.view.feagment_game.WebViewDialogFragment.TYPE_SERVCIE;
+import static com.dawoo.chessbox.ConstantValue.WEBVIEW_TYPE_THIRD_ORDINARY;
 
 /**
  * 一些页面的跳转
@@ -44,56 +34,10 @@ public class ActivityUtil {
     }
 
 
-    public static void gotoLogin() {
-        RxBus.get().post(ConstantValue.SHOW_LOGINDIALOGFRAGMENR, "LoinDialogFragment");
-        ActivityStackManager.getInstance().finishToActivity(MainActivity.class, true);
-    }
-
-    /**
-     * 跳转支付，客服
-     * @param url               全路径
-     * @param msg               错误信息
-     * @param type              类型
-     * @param ScreenOrientation 携带屏幕方向  1 必须竖屏  2 必须横屏  3 动态切换  4跟随上次页面
-     */
-    public static void startWebView(String url, String msg, String type, int ScreenOrientation) {
-        if (TextUtils.isEmpty(url) && TextUtils.isEmpty(msg)) {
-            ToastUtil.showToastShort(mContext, mContext.getString(R.string.game_maintenance));
-            return;
-        }
-
-        if (TextUtils.isEmpty(url)) {
-            ToastUtil.showToastShort(mContext, mContext.getString(R.string.game_maintenance));
-            return;
-        }
-
-        if (!url.contains("http")) {
-            url = DataCenter.getInstance().getIp() + "/" + url;
-        }
-
-        Intent intent = new Intent(mContext, WebViewActivity.class);
-        intent.putExtra(ConstantValue.WEBVIEW_URL,  NetUtil.replaceIp2Domain(url));
-        intent.putExtra(ConstantValue.WEBVIEW_TYPE, type);
-        intent.putExtra(WebViewActivity.SCREEN_ORITATION, ScreenOrientation);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        mContext.startActivity(intent);
-
-//        if (!PackageInfoUtil.isServiceRunning(mContext, "com.dawoo.ipc.server.IPCServerService")) {
-//            IPCSocketManager.getInstance().startServerService();
-//        }
-//        Intent intent = new Intent(mContext, IpcWebViewActivity.class);
-//        Bundle bundle = new Bundle();
-//        bundle.putString(ConstantValue.WEBVIEW_URL, NetUtil.replaceIp2Domain(url));
-//        bundle.putString(ConstantValue.WEBVIEW_TYPE, type);
-//        bundle.putInt(WebViewActivity.SCREEN_ORITATION, ScreenOrientation);
-//        intent.putExtras(bundle);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        mContext.startActivity(intent);
-        MediaplayerUtil.newInstance().releaseWebView();
-    }
 
     /**
      * 跳转游戏
+     *
      * @param url               全路径
      * @param msg               错误信息
      * @param type              类型
@@ -101,19 +45,19 @@ public class ActivityUtil {
      * @param apiId             游戏apiId
      */
     public static void startGameWebView(String url, String msg, String type, int ScreenOrientation, int apiId) {
-        if (TextUtils.isEmpty(url)) {
-            SingleToast.showMsg("正在维护中。。。。");
-            return;
-        }
-
-        if (TextUtils.isEmpty(url)) {
-            SingleToast.showMsg(msg);
-            return;
-        }
-
-        if (!url.contains("http")) {
-            url = DataCenter.getInstance().getIp() + "/" + url;
-        }
+//        if (TextUtils.isEmpty(url)) {
+//            SingleToast.showMsg("正在维护中。。。。");
+//            return;
+//        }
+//
+//        if (TextUtils.isEmpty(url)) {
+//            SingleToast.showMsg(msg);
+//            return;
+//        }
+//
+//        if (!url.contains("http")) {
+//            url = DataCenter.getInstance().getIp() + "/" + url;
+//        }
 
 //        Intent intent = new Intent(mContext, WebViewActivity.class);
 //        intent.putExtra(ConstantValue.WEBVIEW_URL,  NetUtil.replaceIp2Domain(url));
@@ -127,53 +71,22 @@ public class ActivityUtil {
         }
         Intent intent = new Intent(mContext, IpcWebViewActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putString(ConstantValue.WEBVIEW_URL, NetUtil.replaceIp2Domain(url));
+        bundle.putString(ConstantValue.WEBVIEW_URL, url);
         bundle.putString(ConstantValue.WEBVIEW_TYPE, type);
-        bundle.putInt(WebViewActivity.SCREEN_ORITATION, ScreenOrientation);
-        bundle.putInt(ConstantValue.GAME_APIID, apiId);
+        bundle.putInt(IpcWebViewActivity.SCREEN_ORITATION, ScreenOrientation);
+       // bundle.putInt(ConstantValue.GAME_APIID, apiId);
         intent.putExtras(bundle);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         mContext.startActivity(intent);
-        MediaplayerUtil.newInstance().releaseWebView();
-    }
-
-    /**
-     * 打开客服弹窗 或调用浏览器
-     */
-    public static void startServiceDialog(FragmentManager fragmentManager) {
-        String url = (String) SPTool.get(BoxApplication.getContext(), ConstantValue.KEY_CUSTOMER_SERVICE, "");
-        boolean isInlay = (Boolean) SPTool.get(BoxApplication.getContext(), ConstantValue.KEY_CUSTOMER_SERVICE_ISINLAY, false);
-
-        if (TextUtils.isEmpty(url)) {
-            SingleToast.showMsg("暂无客服地址");
-            return;
-        }
-        if (isInlay) {
-            WebViewDialogFragment.newInstance(url, TYPE_SERVCIE).show(fragmentManager, null);
-        } else {
-            //去浏览器
-            Intent intent = new Intent();
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.setAction(Intent.ACTION_VIEW);
-            Uri content_url = Uri.parse(url);
-            intent.setData(content_url);
-            mContext.startActivity(intent);
-        }
+     //  MediaplayerUtil.newInstance().releaseWebView();
     }
 
 
-    /**
-     * 登出
-     */
-    public static void logout() {
-        DataCenter.getInstance().setLogin(false);
-        DataCenter.getInstance().setCookie("");
-        DataCenter.getInstance().setUserName("");
-        DataCenter.getInstance().setPassword("");
-        SPTool.remove(BoxApplication.getContext(), ConstantValue.KEY_PASSWORD_AUTO_LOGIN);
-        RxBus.get().post(ConstantValue.EVENT_TYPE_LOGOUT, "logout");
-        ActivityStackManager.getInstance().finishToActivity(MainActivity.class, true);
+    public static void startH5(String url) {
+        ActivityUtil.startGameWebView(url, "", WEBVIEW_TYPE_THIRD_ORDINARY, 3, 0);
     }
+
+
 
     public static void startOtherapp(String packageName) {
         if (isInstalled(packageName)) {
@@ -204,15 +117,7 @@ public class ActivityUtil {
         return false;
     }
 
-    /**
-     * 开启维护界面
-     */
-    public static void startMaintenanceActivity(int code) {
-        Intent intent = new Intent(mContext, MaintenanceActivity.class);
-        intent.putExtra(MaintenanceActivity.maintenance_code, code);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        mContext.startActivity(intent);
-    }
+
 
 
 }

@@ -3,16 +3,12 @@ package com.dawoo.chessbox.net;
 import android.content.Context;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.GlideBuilder;
 import com.bumptech.glide.Registry;
 import com.bumptech.glide.annotation.GlideModule;
 import com.bumptech.glide.integration.okhttp3.OkHttpUrlLoader;
-import com.bumptech.glide.load.engine.cache.InternalCacheDiskCacheFactory;
 import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.module.AppGlideModule;
-import com.dawoo.chessbox.BoxApplication;
 import com.dawoo.chessbox.BuildConfig;
-import com.dawoo.chessbox.bean.DataCenter;
 import com.dawoo.chessbox.util.NetUtil;
 import com.dawoo.chessbox.util.SSLUtil;
 

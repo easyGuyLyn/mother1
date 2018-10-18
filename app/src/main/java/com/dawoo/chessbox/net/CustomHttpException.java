@@ -45,9 +45,7 @@ public class CustomHttpException extends RuntimeException {
             case 502:
                 return context.getString(R.string.http_code_502);
             case 600:
-                ActivityUtil.gotoLogin();
                 RxBus.get().post(ConstantValue.EVENT_TYPE_LOGOUT, "logout");
-                DataCenter.getInstance().setLogin(false);
                 return context.getString(R.string.http_code_600);
             case 601:
                 return context.getString(R.string.http_code_601);
@@ -58,14 +56,11 @@ public class CustomHttpException extends RuntimeException {
             case 604:
                 return context.getString(R.string.http_code_604);
             case 605:
-                ActivityUtil.startMaintenanceActivity(code);
                 return context.getString(R.string.http_code_605);
             case 606:
             case 1001:
-                ActivityUtil.logout();
                 return context.getString(R.string.http_code_606);
             case 607:
-                ActivityUtil.startMaintenanceActivity(code);
                 return context.getString(R.string.http_code_607);
             case 608:
                 return context.getString(R.string.http_code_608);

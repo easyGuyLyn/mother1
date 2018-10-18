@@ -1,10 +1,6 @@
 package com.dawoo.chessbox.net;
 
-import android.content.Context;
-
-import com.dawoo.chessbox.BoxApplication;
 import com.dawoo.chessbox.ConstantValue;
-import com.dawoo.chessbox.R;
 import com.dawoo.chessbox.bean.DataCenter;
 import com.dawoo.chessbox.util.ActivityUtil;
 import com.hwangjr.rxbus.RxBus;
@@ -36,8 +32,6 @@ public class ApiException extends RuntimeException {
         switch (code) {
             case UNLOGIN:
                 RxBus.get().post(ConstantValue.EVENT_TYPE_LOGOUT, "logout");
-                DataCenter.getInstance().setLogin(false);
-                ActivityUtil.gotoLogin();
                 return msg;
         }
         return msg;

@@ -13,7 +13,7 @@
 
     <style name="SplashTheme" parent="AppTheme">
         <!-- 将splash图片设置在这，这样这张图片取代白屏 -->
-        <item name="android:windowBackground">@mipmap/bg</item>
+        <item name="android:windowBackground">@mipmap/splash</item>
         <item name="android:windowFullscreen">true</item>
     </style>
 
@@ -25,12 +25,7 @@
         <item name="android:orientation">vertical</item>
     </style>
 
-    <style name="tab_bottom_text_style">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/main_activity_tab_itemtext_selector</item>
-        <item name="android:textSize">12sp</item>
-    </style>
+
 
     <style name="CustomDialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
@@ -109,93 +104,7 @@
         </item><!--取消window默认背景 不然四角会有黑影-->
     </style>
 
-    <style name="register_item_body_root_style">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">37dp</item>
-        <item name="android:background">@drawable/frame_fillet_line_gray</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:orientation">horizontal</item>
-        <item name="android:paddingBottom">1dp</item>
-        <item name="android:paddingLeft">10dp</item>
-        <item name="android:paddingRight">10dp</item>
-        <item name="android:paddingTop">1dp</item>
-    </style>
-
-    <style name="qt_register_item_input">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">38dp</item>
-        <item name="android:background">@drawable/qt_shape_login_input</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textColorHint">@color/login_prompt</item>
-        <item name="android:textSize">11sp</item>
-        <item name="android:layout_marginLeft">2dp</item>
-        <item name="android:paddingLeft">10dp</item>
-        <item name="android:gravity">center_vertical|left</item>
-    </style>
-
-    <style name="qt_safyty_item_input">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">34dp</item>
-        <item name="android:background">@drawable/qt_shape_login_input</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textColorHint">@color/login_prompt</item>
-        <item name="android:textSize">11sp</item>
-        <item name="android:layout_marginLeft">2dp</item>
-        <item name="android:paddingLeft">10dp</item>
-        <item name="android:gravity">left|center_vertical</item>
-    </style>
-
-    <style name="qt_porofit_item_input">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">30dp</item>
-        <item name="android:background">@drawable/qt_shape_login_input</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textColorHint">@color/white</item>
-        <item name="android:textSize">12sp</item>
-        <item name="android:layout_marginLeft">10dp</item>
-        <item name="android:gravity">left|center_vertical</item>
-        <item name="android:paddingLeft">10dp</item>
-    </style>
-
-    <style name="qt_personal_item">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@drawable/qt_shape_personal_circle</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textColorHint">@color/white</item>
-        <item name="android:textSize">12sp</item>
-    </style>
-
-    <style name="qt_progress_style">
-        <item name="android:thumb">@mipmap/circular</item>
-        <item name="android:progressDrawable">@drawable/qt_voice_progress</item>
-    </style>
 
 
-    <style name="NumberProgressBar_Default">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="progress_max">100</item>
-        <item name="progress_current">0</item>
-        <item name="progress_unreached_color">#CCCCCC</item>
-        <item name="progress_reached_color">@color/colorPrimary</item>
-        <item name="progress_text_size">10sp</item>
-        <item name="progress_text_color">@color/colorPrimary</item>
-        <item name="progress_reached_bar_height">1.5dp</item>
-        <item name="progress_unreached_bar_height">0.75dp</item>
-    </style>
-
-    <style name="BasedialogAnim" mce_bogus="1" parent="android:Animation">
-        <item name="android:windowEnterAnimation">@anim/qt_dialog_push_in</item>
-        <item name="android:windowExitAnimation">@anim/qt_dialog_push_out</item>
-    </style>
-
-    <style name="CustomCheckBoxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
-        <item name="android:button">@drawable/qt_login_check_selecte</item>
-         </style>
 
 </resources>

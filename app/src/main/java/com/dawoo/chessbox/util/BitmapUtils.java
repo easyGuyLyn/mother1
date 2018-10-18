@@ -20,8 +20,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.dawoo.pushsdk.util.CommonUtils;
-
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;

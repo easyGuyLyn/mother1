@@ -5,9 +5,7 @@ import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.dawoo.chessbox.BuildConfig;
 import com.dawoo.chessbox.bean.DataCenter;
-import com.dawoo.chessbox.util.NetUtil;
 
 import java.io.IOException;
 import java.net.InetAddress;

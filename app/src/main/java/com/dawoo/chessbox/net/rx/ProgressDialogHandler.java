@@ -1,13 +1,13 @@
 package com.dawoo.chessbox.net.rx;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 
 import com.dawoo.chessbox.util.DialogFramentManager;
 import com.dawoo.chessbox.view.activity.BaseActivity;
-import com.dawoo.chessbox.view.feagment_game.LoadingDialogFragment;
 import com.dawoo.coretool.util.activity.ActivityStackManager;
 
 public class ProgressDialogHandler extends Handler {
@@ -15,7 +15,7 @@ public class ProgressDialogHandler extends Handler {
     public static final int SHOW_PROGRESS_DIALOG = 1;
     public static final int DISMISS_PROGRESS_DIALOG = 2;
 
-    private LoadingDialogFragment pd;
+    private ProgressDialog pd;
 
     private Context context;
     private boolean cancelable;
@@ -39,17 +39,14 @@ public class ProgressDialogHandler extends Handler {
                 if (((Activity) context).isDestroyed()) {
                     return;
                 }
-                pd = new LoadingDialogFragment();
-                BaseActivity activity = (BaseActivity) ActivityStackManager.getInstance().getFirstActivity();
-                if (activity != null && pd != null) {
-                    DialogFramentManager.getInstance().showDialog(activity.getSupportFragmentManager(), pd);
-                }
+                pd = new ProgressDialog(context);
+                pd.show();
             }
         }
     }
 
     private void dismissProgressDialog() {
-        if (pd != null && context != null && pd.getDialog() != null && pd.getDialog().isShowing()) {
+        if (pd != null && context != null && pd != null && pd.isShowing()) {
             if (context instanceof Activity) {
 
                 if (((Activity) context).isFinishing()) {
@@ -61,7 +58,7 @@ public class ProgressDialogHandler extends Handler {
                     return;
                 }
 
-                pd.dismissAllowingStateLoss();
+                pd.dismiss();
                 pd = null;
 
             }

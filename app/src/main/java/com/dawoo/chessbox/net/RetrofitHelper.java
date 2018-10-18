@@ -6,9 +6,6 @@ import android.content.Context;
 import com.dawoo.chessbox.BoxApplication;
 import com.dawoo.chessbox.BuildConfig;
 import com.dawoo.chessbox.bean.DataCenter;
-import com.dawoo.chessbox.bean.SysInfo;
-import com.dawoo.chessbox.ipc.IPCMessageManager;
-import com.dawoo.chessbox.ipc.IPCSocketManager;
 import com.dawoo.chessbox.util.NetUtil;
 import com.dawoo.chessbox.util.NullOnEmptyConverterFactory;
 import com.dawoo.chessbox.util.SSLUtil;
@@ -70,7 +67,7 @@ public class RetrofitHelper {
                 .writeTimeout(DEFAULT_WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS)
                 .retryOnConnectionFailure(true)//失败重连
                 .addInterceptor(new LoggingInterceptor());
-        String domain = DataCenter.getInstance().getDomain();
+      String domain = DataCenter.getInstance().getDomain();
         builder.sslSocketFactory(new TlsSniSocketFactory(domain), new SSLUtil.TrustAllManager())
                 .hostnameVerifier(new TrueHostnameVerifier(domain));
         // HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
@@ -172,13 +169,13 @@ public class RetrofitHelper {
         private Map<String, String> getParamMap(Context context) {
             Map paraMap = new HashMap();
 
-            SysInfo sysInfo = DataCenter.getInstance().getSysInfo();
-            paraMap.put("terminal", sysInfo.getTerminal());
-            paraMap.put("version", sysInfo.getVersionName());
-            paraMap.put("theme", sysInfo.getTheme());
-            paraMap.put("resolution", sysInfo.getResolution());
-            paraMap.put("is_native", sysInfo.getIs_native());
-            paraMap.put("locale", sysInfo.getLocale());
+//            SysInfo sysInfo = DataCenter.getInstance().getSysInfo();
+//            paraMap.put("terminal", sysInfo.getTerminal());
+//            paraMap.put("version", sysInfo.getVersionName());
+//            paraMap.put("theme", sysInfo.getTheme());
+//            paraMap.put("resolution", sysInfo.getResolution());
+//            paraMap.put("is_native", sysInfo.getIs_native());
+//            paraMap.put("locale", sysInfo.getLocale());
 
             return paraMap;
         }

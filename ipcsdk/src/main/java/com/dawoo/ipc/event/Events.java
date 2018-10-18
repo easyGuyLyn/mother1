@@ -6,5 +6,6 @@ package com.dawoo.ipc.event;
 public class Events {
     public static final String PING = "ping";
     public static final String EVENT_REFRSH_API = "EVENT_REFRSH_API";
+    public static final String EVENT_CLOSE_APP = "EVENT_CLOSE_APP";
     public static final String SERVER_DIE = "server_die";
 }

@@ -6,17 +6,12 @@ import android.os.Handler;
 import android.support.multidex.MultiDex;
 import android.util.Log;
 
-import com.dawoo.chessbox.bean.DataCenter;
-import com.dawoo.chessbox.ipc.IPCSocketManager;
+import com.avos.avoscloud.AVOSCloud;
 import com.dawoo.chessbox.net.TlsSniSocketFactory;
 import com.dawoo.chessbox.net.TrueHostnameVerifier;
 import com.dawoo.chessbox.util.ActivityUtil;
-import com.dawoo.chessbox.util.BackGroundUtil;
-import com.dawoo.chessbox.util.ScreenRotateUtil;
-import com.dawoo.chessbox.util.line.CrashHandler;
 import com.dawoo.chessbox.util.SSLUtil;
-import com.dawoo.chessbox.util.SoundUtil;
-import com.squareup.leakcanary.LeakCanary;
+import com.dawoo.chessbox.util.ScreenRotateUtil;
 import com.tencent.smtt.sdk.QbSdk;
 import com.zhy.http.okhttp.OkHttpUtils;
 
@@ -46,32 +41,22 @@ public class BoxApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        //不用这个工具库我浑身难受
-        if (BuildConfig.DEBUG) {
-            if (LeakCanary.isInAnalyzerProcess(this)) {
-                // This process is dedicated to LeakCanary for heap analysis.
-                // You should not connect your app in this process.
-                return;
-            }
-            LeakCanary.install(this);
-        }
         initOkHttpUtils();
         context = getApplicationContext();
-        BackGroundUtil.registerActivityLifecycleCallbacks(this);
-        if (!BuildConfig.DEBUG) {
-            CrashHandler.getInstance().init();
-        }
-        DataCenter.getInstance().getSysInfo().initSysInfo(context);
-        ActivityUtil.setContext(context);
-        // 加载音频
-        SoundUtil.getInstance().load();
 
+        ActivityUtil.setContext(context);
 
         loadX5();
 
         ScreenRotateUtil.getInstance(this).start();
 
-        IPCSocketManager.getInstance().startServerService();
+        initLeanCloud();
+
+    }
+
+    private void initLeanCloud() {
+        AVOSCloud.initialize(this, "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
+                , "bryECrRPYnNa7vkzklGIck6y");
     }
 
 
@@ -105,7 +90,6 @@ public class BoxApplication extends Application {
         //x5内核初始化接口
         QbSdk.initX5Environment(getApplicationContext(), cb);
     }
-
 
 
     public static void initOkHttpUtils() {

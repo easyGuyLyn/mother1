@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -17,7 +16,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -28,12 +26,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
-import com.dawoo.coretool.util.LogUtils;
-import com.dawoo.coretool.util.ToastUtil;
-import com.dawoo.coretool.util.activity.ActivityStackManager;
-import com.dawoo.coretool.util.activity.DensityUtil;
 import com.dawoo.ipc.R;
 import com.dawoo.ipc.event.Events;
+import com.dawoo.ipc.event.bean.CloseAppEvent;
 import com.dawoo.ipc.view.WDragViewLayout;
 import com.gyf.barlibrary.ImmersionBar;
 import com.hwangjr.rxbus.RxBus;
@@ -43,15 +38,12 @@ import com.tencent.smtt.export.external.interfaces.SslErrorHandler;
 import com.tencent.smtt.export.external.interfaces.WebResourceError;
 import com.tencent.smtt.export.external.interfaces.WebResourceRequest;
 import com.tencent.smtt.export.external.interfaces.WebResourceResponse;
-import com.tencent.smtt.sdk.CookieManager;
 import com.tencent.smtt.sdk.DownloadListener;
 import com.tencent.smtt.sdk.ValueCallback;
 import com.tencent.smtt.sdk.WebChromeClient;
 import com.tencent.smtt.sdk.WebSettings;
 import com.tencent.smtt.sdk.WebView;
 import com.tencent.smtt.sdk.WebViewClient;
-
-import java.util.List;
 
 /**
  * archar  天纵神武
@@ -77,7 +69,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
     static final String WEBVIEW_TYPE_ORDINARY = "WEBVIEW_TYPE_ORDINARY";
     // 第三方一般网页
     static final String WEBVIEW_TYPE_THIRD_ORDINARY = "WEBVIEW_TYPE_THIRD_ORDINARY";
-    static final String SCREEN_ORITATION = "ScreenOrientationEvent";
+   public static final String SCREEN_ORITATION = "ScreenOrientationEvent";
     static final String GAME_APIID = "GAME_APIID";
     /**
      * Android 5.0以下版本的文件选择回调
@@ -122,42 +114,11 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
         mWebview.setLayoutParams(layoutParams);
         mWebviewFL.addView(mWebview);
-      //  createDragViewButton();
-    }
-
-    private void createDragViewButton() {
-        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
-                DensityUtil.dp2px(this, 50),
-                DensityUtil.dp2px(this, 56),
-                Gravity.BOTTOM | Gravity.RIGHT);
-        params.setMargins(0, 0, 0, DensityUtil.dp2px(this, 56));
-        mLl = new LinearLayout(this);
-        mLl.setGravity(Gravity.CENTER);
-        mLl.setLayoutParams(params);
-        mLl.setBackgroundResource(R.mipmap.game_bg);
-        mLl.setOrientation(LinearLayout.VERTICAL);
-
         View view = View.inflate(this, R.layout.qt_webview_progressbar, null);
         mProgressBar = view.findViewById(R.id.progressBar);
         mWebviewFL.addView(view);
-
-
-        LinearLayout.LayoutParams childParams = new LinearLayout.LayoutParams(DensityUtil.dp2px(this, 28), DensityUtil.dp2px(this, 28));
-        mHomeIv = new ImageView(this);
-        mHomeIv.setLayoutParams(childParams);
-        mHomeIv.setImageResource(R.mipmap.game_back);
-        mHomeIv.setId(R.id.webview_iv_home);
-        mHomeIv.setOnClickListener(this);
-
-        mBackIv = new ImageView(this);
-        mBackIv.setLayoutParams(childParams);
-        mBackIv.setImageResource(R.mipmap.game_home);
-        mBackIv.setId(R.id.webview_iv_back);
-        mBackIv.setOnClickListener(this);
-        mLl.addView(mHomeIv);
-        mLl.addView(mBackIv);
-        mWebviewFL.addView(mLl);
     }
+
 
     private void initData() {
         Bundle bundle = getIntent().getExtras();
@@ -217,38 +178,12 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
             Log.e(TAG, "横屏");
             setFullScreen(true);
             // 横屏
-            setDragViewLandScapePos();
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
             Log.e(TAG, "竖屏");
             if (!mWebViewType.equals(WEBVIEW_TYPE_GAME_FULLSCREEN_ALWAYS)) {
                 setFullScreen(false);
             }
-            // 竖屏
-            setDragViewPortrait();
         }
-    }
-
-    void setDragViewLandScapePos() {
-        if (mLl == null) {
-            return;
-        }
-        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
-                DensityUtil.dp2px(this, 28),
-                DensityUtil.dp2px(this, 56),
-                Gravity.END);
-        mLl.setLayoutParams(params);
-    }
-
-    void setDragViewPortrait() {
-        if (mLl == null) {
-            return;
-        }
-        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
-                DensityUtil.dp2px(this, 28),
-                DensityUtil.dp2px(this, 56),
-                Gravity.BOTTOM | Gravity.RIGHT);
-        params.setMargins(0, 0, 0, DensityUtil.dp2px(this, 56));
-        mLl.setLayoutParams(params);
     }
 
 
@@ -310,7 +245,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
 
         //    mWebview.addJavascriptInterface(new InJavaScriptCommon(), "gamebox");
 
-        CookieManager.getInstance().setAcceptCookie(true);
+      //  CookieManager.getInstance().setAcceptCookie(true);
 
 
         mWebview.setDownloadListener(new FileDownLoadListener());
@@ -472,16 +407,6 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             Log.e("onPageShoudOver", url);
-            if (url == null) return false;
-            if (url.contains("login/commonLogin.html")) {
-                ToastUtil.showToastLong(getBaseContext(), "需要重新登录");
-                return false;
-
-            } else if (url.contains("/mainIndex.html")) {
-//                ToastUtil.showToastLong(getBaseContext(), "跳到主页面");
-                finish();
-
-            }
             mWebview.loadUrl(url);
             return true;
         }
@@ -607,6 +532,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
             mWebview.goBack();
             return true;
         } else
+            RxBus.get().post(Events.EVENT_CLOSE_APP,"");
             return super.onKeyDown(keyCode, event);
     }
 
@@ -651,10 +577,6 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     protected void onDestroy() {
-        if (mGameApi != -1) {
-            Log.e(TAG, mGameApi + "");
-            RxBus.get().post(Events.EVENT_REFRSH_API, mGameApi + "");
-        }
         try {
             if (mWebview != null) {
                 mWebview.clearHistory();

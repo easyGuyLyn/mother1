@@ -2,9 +2,7 @@ package com.dawoo.chessbox.net;
 
 import android.text.TextUtils;
 
-import com.dawoo.chessbox.BuildConfig;
 import com.dawoo.chessbox.bean.DataCenter;
-import com.dawoo.chessbox.util.NetUtil;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;

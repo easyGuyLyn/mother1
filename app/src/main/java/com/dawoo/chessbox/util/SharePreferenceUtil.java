@@ -20,6 +20,29 @@ public class SharePreferenceUtil {
         return app.getSharedPreferences("Box_Base_NetInfo", Context.MODE_PRIVATE);
     }
 
+
+    /**
+     * 保存　if   first install
+     */
+    public static void saveIsFirstInstall(Context context, boolean isFirstInstall) {
+        SharedPreferences sp = context.getSharedPreferences("Box_Base_Info", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putBoolean("install", isFirstInstall);
+        editor.apply();
+    }
+
+    /**
+     * * get　if   first install
+     *
+     * @param context
+     * @return
+     */
+    public static boolean getIsFirstInstall(Context context) {
+        SharedPreferences sp = context.getSharedPreferences("Box_Base_Info", Context.MODE_PRIVATE);
+        return sp.getBoolean("install", false);
+    }
+
+
     /**
      * 获取保存的域名
      *
@@ -190,7 +213,7 @@ public class SharePreferenceUtil {
     /**
      * 保存背景音乐的音量
      */
-    public static void saveVoiceBGStatus(Context context,float voice){
+    public static void saveVoiceBGStatus(Context context, float voice) {
         SharedPreferences sp = context.getSharedPreferences("Box_Base_Info", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         editor.putFloat("BGVoiceStatus", voice);
@@ -200,15 +223,15 @@ public class SharePreferenceUtil {
     /**
      * 获取背景音乐的音量
      */
-    public static float getVoiceBGSatus(Context context){
+    public static float getVoiceBGSatus(Context context) {
         SharedPreferences sp = context.getSharedPreferences("Box_Base_Info", Context.MODE_PRIVATE);
-        return sp.getFloat("BGVoiceStatus",1);
+        return sp.getFloat("BGVoiceStatus", 1);
     }
 
     /**
      * 保存　音效的声音大小
      */
-    public static void saveSoundStatus(Context context,float voice){
+    public static void saveSoundStatus(Context context, float voice) {
         SharedPreferences sp = context.getSharedPreferences("Box_Base_Info", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         editor.putFloat("SoundStaus", voice);
@@ -218,11 +241,10 @@ public class SharePreferenceUtil {
     /**
      * 获取　音效大小
      */
-    public static float getSoundSatus(Context context){
+    public static float getSoundSatus(Context context) {
         SharedPreferences sp = context.getSharedPreferences("Box_Base_Info", Context.MODE_PRIVATE);
-        return sp.getFloat("SoundStaus",1);
+        return sp.getFloat("SoundStaus", 1);
     }
-
 
 
     /**
@@ -354,27 +376,7 @@ public class SharePreferenceUtil {
         editor.apply();
     }
 
-    /**
-     * 保存是否手勢密碼的flag
-     *
-     * @param flg
-     */
-    public static void putGestureFlag(boolean flg) {
-        SharedPreferences pref = getSharedPreferences();
-        SharedPreferences.Editor editor = pref.edit();
-        editor.putBoolean(GESTURE_FLG + DataCenter.getInstance().getUserName(), flg);
-        editor.commit();
-    }
 
-    /**
-     * 获取是否有手势密码
-     *
-     * @return
-     */
-    public static boolean getGestureFlag() {
-        return getSharedPreferences()
-                .getBoolean(GESTURE_FLG + DataCenter.getInstance().getUserName(), false);
-    }
 
     public static void putGestureTime(long time) {
         SharedPreferences pref = getSharedPreferences();
