@@ -44,6 +44,8 @@ import com.tencent.smtt.sdk.WebChromeClient;
 import com.tencent.smtt.sdk.WebSettings;
 import com.tencent.smtt.sdk.WebView;
 import com.tencent.smtt.sdk.WebViewClient;
+import com.umeng.analytics.MobclickAgent;
+import com.umeng.message.PushAgent;
 
 /**
  * archar  天纵神武
@@ -69,7 +71,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
     static final String WEBVIEW_TYPE_ORDINARY = "WEBVIEW_TYPE_ORDINARY";
     // 第三方一般网页
     static final String WEBVIEW_TYPE_THIRD_ORDINARY = "WEBVIEW_TYPE_THIRD_ORDINARY";
-   public static final String SCREEN_ORITATION = "ScreenOrientationEvent";
+    public static final String SCREEN_ORITATION = "ScreenOrientationEvent";
     static final String GAME_APIID = "GAME_APIID";
     /**
      * Android 5.0以下版本的文件选择回调
@@ -97,6 +99,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_ipc_web_view);
+        PushAgent.getInstance(IpcWebViewActivity.this).onAppStart();
         initView();
         initData();
     }
@@ -245,7 +248,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
 
         //    mWebview.addJavascriptInterface(new InJavaScriptCommon(), "gamebox");
 
-      //  CookieManager.getInstance().setAcceptCookie(true);
+        //  CookieManager.getInstance().setAcceptCookie(true);
 
 
         mWebview.setDownloadListener(new FileDownLoadListener());
@@ -522,6 +525,19 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
+    }
+
     /**
      * 返回上一个页面
      */
@@ -532,8 +548,20 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
             mWebview.goBack();
             return true;
         } else
-            RxBus.get().post(Events.EVENT_CLOSE_APP,"");
-            return super.onKeyDown(keyCode, event);
+            back(keyCode, event);
+        return super.onKeyDown(keyCode, event);
+    }
+
+
+    private boolean back(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            startActivity(intent);
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
 

@@ -9,6 +9,7 @@ import com.dawoo.ipc.event.bean.BaseIpcEvent;
 import com.dawoo.ipc.event.bean.GameApiEvent;
 import com.hwangjr.rxbus.RxBus;
 
+import static com.dawoo.chessbox.ConstantValue.EVENT_CLOSER_App;
 import static com.dawoo.chessbox.ConstantValue.EVENT_REFRSH_API;
 
 /**
@@ -48,7 +49,7 @@ public class IPCMessageManager {
                     break;
                 case Events.EVENT_CLOSE_APP:
                     Log.e(TAG, "destory ipc socket");
-                    IPCSocketManager.getInstance().destroy();
+                    RxBus.get().post(EVENT_CLOSER_App, "");
                     break;
             }
         }

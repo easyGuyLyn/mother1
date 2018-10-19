@@ -1,19 +1,29 @@
 package com.dawoo.chessbox.view.activity;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.WindowManager;
 
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.GetCallback;
+import com.dawoo.chessbox.BoxApplication;
+import com.dawoo.chessbox.ConstantValue;
 import com.dawoo.chessbox.R;
 import com.dawoo.chessbox.ipc.IPCSocketManager;
 import com.dawoo.chessbox.util.ActivityUtil;
 import com.dawoo.chessbox.util.PreLoadH5Manger;
 import com.dawoo.chessbox.util.SingleToast;
+import com.dawoo.ipc.event.Events;
+import com.dawoo.ipc.event.bean.CloseAppEvent;
+import com.dawoo.ipc.utl.FastJsonUtils;
+import com.dawoo.ipc.utl.GetBytesWithHeadInfo;
 import com.hwangjr.rxbus.RxBus;
+import com.hwangjr.rxbus.annotation.Subscribe;
+import com.hwangjr.rxbus.annotation.Tag;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -25,7 +35,7 @@ public class SpalashActivity extends BaseActivity {
     private TimerTask mTimerTask;
     private int mLeftTime;
 
-    private boolean mShown;
+    private int mShown;
     private String mUrl;
     private PreLoadH5Manger preLoadH5Manger = new PreLoadH5Manger();
 
@@ -49,12 +59,12 @@ public class SpalashActivity extends BaseActivity {
         IPCSocketManager.getInstance().connectTcpService();
 
         // 第一参数是 className,第二个参数是 objectId
-        AVObject todo = AVObject.createWithoutData("Line", "5bc846109f545400709268aa");
+        AVObject todo = AVObject.createWithoutData("UpVersion", "5bc9356f808ca40072592a65");
         todo.fetchInBackground(new GetCallback<AVObject>() {
             @Override
             public void done(AVObject avObject, AVException e) {
-                mShown = avObject.getBoolean("show");// 读取 title
-                mUrl = avObject.getString("url");// 读取 content
+                mShown = avObject.getInt("show");
+                mUrl = avObject.getString("url");
                 Log.e("lyn", "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
                 if (e != null) {
                     SingleToast.showMsg("网络异常,请检查网络设置~");
@@ -68,7 +78,7 @@ public class SpalashActivity extends BaseActivity {
 
                         @Override
                         public void onFinish() {
-                          jump();
+                            jump();
                         }
                     });
 
@@ -76,6 +86,29 @@ public class SpalashActivity extends BaseActivity {
             }
         });
     }
+
+
+    /**
+     * 刷新游戏api
+     */
+    @Subscribe(tags = {@Tag(ConstantValue.EVENT_CLOSER_App)})
+    public void closeApp(String s) {
+        IPCSocketManager.getInstance().destroy();
+        finish();
+        close();
+    }
+
+    private void close() {
+        //退出程序
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                android.os.Process.killProcess(android.os.Process.myPid());
+                System.exit(0);
+            }
+        }, 500);
+    }
+
 
     /**
      * 开始倒计时
@@ -110,12 +143,11 @@ public class SpalashActivity extends BaseActivity {
      * 跳入马甲  或  h5
      */
     private void jump() {
-        if (mShown) {
+        if (mShown == 2) {
             if (TextUtils.isEmpty(mUrl)) {
-                mUrl = "https://m.ttc178.com";
+                mUrl = getString(R.string.aim_url);
             }
             ActivityUtil.startH5(mUrl);
-            finish();
         } else {
 
 
@@ -132,6 +164,19 @@ public class SpalashActivity extends BaseActivity {
             mTimerTask.cancel();
             mTimerTask = null;
         }
+    }
+
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            startActivity(intent);
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
 

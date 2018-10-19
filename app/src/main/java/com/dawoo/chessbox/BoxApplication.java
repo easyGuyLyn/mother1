@@ -13,6 +13,10 @@ import com.dawoo.chessbox.util.ActivityUtil;
 import com.dawoo.chessbox.util.SSLUtil;
 import com.dawoo.chessbox.util.ScreenRotateUtil;
 import com.tencent.smtt.sdk.QbSdk;
+import com.umeng.analytics.MobclickAgent;
+import com.umeng.commonsdk.UMConfigure;
+import com.umeng.message.IUmengRegisterCallback;
+import com.umeng.message.PushAgent;
 import com.zhy.http.okhttp.OkHttpUtils;
 
 import java.util.concurrent.TimeUnit;
@@ -52,11 +56,61 @@ public class BoxApplication extends Application {
 
         initLeanCloud();
 
+        initUM();
     }
 
     private void initLeanCloud() {
-        AVOSCloud.initialize(this, "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-                , "bryECrRPYnNa7vkzklGIck6y");
+        AVOSCloud.initialize(this
+                , getString(R.string.leanCloud_appId)
+                , getString(R.string.leanCloud_appKey));
+
+//        AVObject avObject = new AVObject("UpVersion");
+//        avObject.put("name", getString(R.string.app_name);
+//        avObject.put("url", getString(R.string.aim_url));
+//        avObject.put("show", 2);
+//        avObject.put("chanel", "应用宝");
+//        avObject.saveInBackground();
+
+
+    }
+
+
+    private void initUM() {
+        if (BuildConfig.DEBUG) {
+            UMConfigure.setLogEnabled(true);
+        }
+
+        UMConfigure.init(context, getString(R.string.um_appkey)
+                , getString(R.string.um_chanel)
+                , UMConfigure.DEVICE_TYPE_PHONE
+                , getString(R.string.um_Message_Secret));
+
+        //统计
+        MobclickAgent.setScenarioType(context, MobclickAgent.EScenarioType.E_UM_NORMAL);
+        // 将默认Session间隔时长改为40秒。
+        MobclickAgent.setSessionContinueMillis(1000*40);
+
+        //推送
+        PushAgent mPushAgent = PushAgent.getInstance(this);
+
+        mPushAgent.setResourcePackageName("com.dawoo.chessbox");
+
+        //注册推送服务，每次调用register方法都会回调该接口
+        mPushAgent.register(new IUmengRegisterCallback() {
+
+            @Override
+            public void onSuccess(String deviceToken) {
+                //注册成功会返回device token
+                Log.e("u_push", "推送注册成功  deviceToken : " + deviceToken);
+            }
+
+            @Override
+            public void onFailure(String s, String s1) {
+                Log.e("u_push", "推送注册失败  error 1 : " + s + " error 2 " + s1);
+            }
+        });
+
+
     }
 
 

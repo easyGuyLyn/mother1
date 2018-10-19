@@ -12,7 +12,7 @@ android {
         flavorDimensions("channel")
         multiDexEnabled true
         ndk {
-            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips", 'arm64-v8a', 'x86_64', 'mips_64'
         }
     }
 
@@ -102,9 +102,13 @@ android {
     packagingOptions {
         exclude 'META-INF/rxjava.properties'
     }
-
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+    }
     //为了解决部分第三方库重复打包了META-INF的问题
-    packagingOptions{
+    packagingOptions {
         exclude 'META-INF/LICENSE.txt'
         exclude 'META-INF/NOTICE.txt'
     }
@@ -118,9 +122,19 @@ android {
 
         app_pkg1 {
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "test1"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)]
+            resValue "string", "app_name", "p1"
+
+            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
+
+            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
+            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_chanel", "default"
+
+            resValue "string", "aim_url", "https://m.ttc178.com"
+            manifestPlaceholders = [pro_id              : applicationId + pid_pex,
+                                    r_process           : ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+            ]
         }
 
 
@@ -145,7 +159,6 @@ dependencies {
 
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
 
-
     //日志拦截器
     implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
     implementation 'io.reactivex:rxjava:1.3.0'
@@ -162,7 +175,6 @@ dependencies {
     //glide
     implementation 'com.youth.banner:banner:1.4.10'
 
-    // 指示器
     implementation 'com.zhy:okhttputils:2.6.2'
 
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
@@ -171,11 +183,11 @@ dependencies {
     implementation 'org.apache.httpcomponents:httpcore:4.4.4'
     implementation project(':coretool')
 
-
     //独立进程的库  可以用一些东西  可扩展
     implementation project(':ipcsdk')
 
     // LeanCloud 基础包
-    implementation ('cn.leancloud.android:avoscloud-sdk:v4.7.3')
+    implementation('cn.leancloud.android:avoscloud-sdk:v4.7.3')
+
 
 }

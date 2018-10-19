@@ -10,6 +10,8 @@ import android.view.WindowManager;
 import android.widget.EditText;
 
 import com.dawoo.coretool.util.activity.ActivityStackManager;
+import com.umeng.analytics.MobclickAgent;
+import com.umeng.message.PushAgent;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -27,11 +29,13 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         ActivityStackManager.getInstance().addActivity(this);
         createLayoutView();
         //    mImmersionBar = ImmersionBar.with(this);
         //   mImmersionBar.init();   //所有子类都将继承这些相同的属性
         mContext = this;
+        PushAgent.getInstance(mContext).onAppStart();
         mBind = ButterKnife.bind(this); // 初始化ButterKnife
         initViews();
         initData();
@@ -47,6 +51,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        MobclickAgent.onResume(this);
     }
 
     @Override
@@ -57,6 +62,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 
     @Override

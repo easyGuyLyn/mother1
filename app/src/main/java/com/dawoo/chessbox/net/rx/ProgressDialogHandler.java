@@ -6,10 +6,6 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 
-import com.dawoo.chessbox.util.DialogFramentManager;
-import com.dawoo.chessbox.view.activity.BaseActivity;
-import com.dawoo.coretool.util.activity.ActivityStackManager;
-
 public class ProgressDialogHandler extends Handler {
 
     public static final int SHOW_PROGRESS_DIALOG = 1;
@@ -30,7 +26,6 @@ public class ProgressDialogHandler extends Handler {
     }
 
     private void initProgressDialog() {
-        //&& !DialogFramentManager.getInstance().isShowLoading("LoadingDialogFragment")
         if (pd == null) {
             if (context instanceof Activity) {
                 if (((Activity) context).isFinishing()) {

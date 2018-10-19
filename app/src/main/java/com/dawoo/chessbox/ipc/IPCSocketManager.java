@@ -182,13 +182,6 @@ public class IPCSocketManager {
             mConnectThread.interrupt();
         }
         stopServerService();
-        BoxApplication.handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                System.exit(0);
-            }
-        }, 500);
-
     }
 
     private class ConnectedThread extends Thread {

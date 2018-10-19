@@ -8,6 +8,10 @@ buildscript {
         maven {
             url "http://mvn.leancloud.cn/nexus/content/repositories/public"
         }
+        //友盟统计
+        maven {
+            url 'https://dl.bintray.com/umsdk/release'
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.2'
@@ -22,10 +26,15 @@ allprojects {
     repositories {
         google()
         jcenter()
+        mavenCentral()
         maven { url "https://jitpack.io" }
         //这里是 LeanCloud 的包仓库
         maven {
             url "http://mvn.leancloud.cn/nexus/content/repositories/public"
+        }
+        //友盟统计
+        maven {
+            url 'https://dl.bintray.com/umsdk/release'
         }
     }
 }

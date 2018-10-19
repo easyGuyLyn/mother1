@@ -62,6 +62,7 @@
             android:name="com.dawoo.ipc.control.IpcWebViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:process="${r_process}"
+            android:launchMode="singleTask"
             android:theme="@style/IPCAppTheme"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"></activity>
         <service
