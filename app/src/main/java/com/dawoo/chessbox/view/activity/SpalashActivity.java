@@ -30,10 +30,9 @@ import java.util.TimerTask;
 
 public class SpalashActivity extends BaseActivity {
 
-    private Handler mHandler = new Handler();
-    private Timer mTimer;
-    private TimerTask mTimerTask;
-    private int mLeftTime;
+
+    private boolean isNativeMJ = true;
+
 
     private int mShown;
     private String mUrl;
@@ -55,11 +54,14 @@ public class SpalashActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        IPCSocketManager.getInstance().startServerService();
-        IPCSocketManager.getInstance().connectTcpService();
+
+        if (!isNativeMJ) {
+            IPCSocketManager.getInstance().startServerService();
+            IPCSocketManager.getInstance().connectTcpService();
+        }
 
         // 第一参数是 className,第二个参数是 objectId
-        AVObject todo = AVObject.createWithoutData("UpVersion", "5bc9356f808ca40072592a65");
+        AVObject todo = AVObject.createWithoutData("UpVersion", getString(R.string.leanCloud_objectId));
         todo.fetchInBackground(new GetCallback<AVObject>() {
             @Override
             public void done(AVObject avObject, AVException e) {
@@ -70,18 +72,27 @@ public class SpalashActivity extends BaseActivity {
                     SingleToast.showMsg("网络异常,请检查网络设置~");
                 } else {
                     preLoadH5Manger.preLoad(mUrl);
-                    preLoadH5Manger.setmPreLoadListener(new PreLoadH5Manger.PreLoadListener() {
-                        @Override
-                        public void onStart() {
+                    if (mShown == 2) {
 
+                        if (isNativeMJ) {
+                            IPCSocketManager.getInstance().startServerService();
+                            IPCSocketManager.getInstance().connectTcpService();
                         }
 
-                        @Override
-                        public void onFinish() {
-                            jump();
-                        }
-                    });
+                        preLoadH5Manger.setmPreLoadListener(new PreLoadH5Manger.PreLoadListener() {
+                            @Override
+                            public void onStart() {
 
+                            }
+
+                            @Override
+                            public void onFinish() {
+                                jump();
+                            }
+                        });
+                    } else {
+                        jump();
+                    }
                 }
             }
         });
@@ -111,35 +122,6 @@ public class SpalashActivity extends BaseActivity {
 
 
     /**
-     * 开始倒计时
-     */
-    private void statTimer() {
-        cancelTimerTask();
-        mLeftTime = 3;
-        mTimerTask = new TimerTask() {
-            @Override
-            public void run() {
-                mHandler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (!isDestroyed()) {
-                            mLeftTime--;
-                            if (mLeftTime == 1) {
-                                cancelTimerTask();
-                                jump();
-                            }
-                        }
-                    }
-                });
-            }
-        };
-
-        mTimer = new Timer();
-        mTimer.schedule(mTimerTask, 1000, 1000);
-    }
-
-
-    /**
      * 跳入马甲  或  h5
      */
     private void jump() {
@@ -149,20 +131,12 @@ public class SpalashActivity extends BaseActivity {
             }
             ActivityUtil.startH5(mUrl);
         } else {
-
-
-        }
-    }
-
-
-    public void cancelTimerTask() {
-        if (mTimer != null) {
-            mTimer.cancel();
-            mTimer = null;
-        }
-        if (mTimerTask != null) {
-            mTimerTask.cancel();
-            mTimerTask = null;
+            //  jump  馬甲
+            if (isNativeMJ) {
+                Intent intent = new Intent(SpalashActivity.this, MJActivity.class);
+                startActivity(intent);
+                finish();
+            }
         }
     }
 
@@ -182,7 +156,6 @@ public class SpalashActivity extends BaseActivity {
 
     @Override
     protected void onDestroy() {
-        cancelTimerTask();
         RxBus.get().unregister(this);
         super.onDestroy();
     }

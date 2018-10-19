@@ -37,8 +37,8 @@
         <activity
             android:name=".view.activity.SpalashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:windowFullscreen="true"
             android:theme="@style/SplashTheme"
+            android:windowFullscreen="true"
             android:windowSoftInputMode="stateHidden|adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,6 +46,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".view.activity.MJActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -61,8 +66,8 @@
         <activity
             android:name="com.dawoo.ipc.control.IpcWebViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:process="${r_process}"
             android:launchMode="singleTask"
+            android:process="${r_process}"
             android:theme="@style/IPCAppTheme"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"></activity>
         <service
