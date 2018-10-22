@@ -5,11 +5,15 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.dawoo.chessbox.BoxApplication;
 import com.dawoo.chessbox.ConstantValue;
+import com.dawoo.chessbox.R;
 import com.dawoo.chessbox.ipc.IPCSocketManager;
+import com.dawoo.chessbox.util.Utils.MediaplayerUtil;
+import com.dawoo.coretool.util.ToastUtil;
 import com.dawoo.coretool.util.packageref.PackageInfoUtil;
 import com.dawoo.ipc.control.IpcWebViewActivity;
 

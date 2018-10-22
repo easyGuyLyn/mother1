@@ -51,9 +51,6 @@ dependencies {
 
     api 'com.hwangjr.rxbus:rxbus:1.0.6'
 
-    // LeanCloud 基础包
-    api('cn.leancloud.android:avoscloud-sdk:v4.7.3')
-
     //友盟统计
     api  'com.umeng.umsdk:analytics:7.5.4'
 
