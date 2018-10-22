@@ -10,25 +10,17 @@ import android.view.WindowManager;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.GetCallback;
-import com.dawoo.chessbox.BoxApplication;
 import com.dawoo.chessbox.ConstantValue;
 import com.dawoo.chessbox.R;
 import com.dawoo.chessbox.ipc.IPCSocketManager;
 import com.dawoo.chessbox.util.ActivityUtil;
 import com.dawoo.chessbox.util.PreLoadH5Manger;
 import com.dawoo.chessbox.util.SingleToast;
-import com.dawoo.ipc.event.Events;
-import com.dawoo.ipc.event.bean.CloseAppEvent;
-import com.dawoo.ipc.utl.FastJsonUtils;
-import com.dawoo.ipc.utl.GetBytesWithHeadInfo;
 import com.hwangjr.rxbus.RxBus;
 import com.hwangjr.rxbus.annotation.Subscribe;
 import com.hwangjr.rxbus.annotation.Tag;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
-public class SpalashActivity extends BaseActivity {
+public class BaseSplashActivity extends BaseActivity {
 
 
     private boolean isNativeMJ = true;
@@ -100,7 +92,7 @@ public class SpalashActivity extends BaseActivity {
 
 
     /**
-     * 刷新游戏api
+     * close app
      */
     @Subscribe(tags = {@Tag(ConstantValue.EVENT_CLOSER_App)})
     public void closeApp(String s) {
@@ -133,9 +125,9 @@ public class SpalashActivity extends BaseActivity {
         } else {
             //  jump  馬甲
             if (isNativeMJ) {
-                Intent intent = new Intent(SpalashActivity.this, MJActivity.class);
-                startActivity(intent);
-                finish();
+//                Intent intent = new Intent(BaseSplashActivity.this, SplashActivity.class);
+//                startActivity(intent);
+//                finish();
             }
         }
     }

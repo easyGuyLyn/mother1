@@ -1,7 +1,6 @@
 package com.dawoo.chessbox.ipc;
 
 import android.content.Intent;
-import android.os.Handler;
 import android.os.SystemClock;
 import android.util.Log;
 

@@ -1,6 +1,5 @@
 package com.dawoo.chessbox.util;
 
-import android.app.Application;
 import android.os.Looper;
 import android.widget.Toast;
 

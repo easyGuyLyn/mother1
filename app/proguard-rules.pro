@@ -326,6 +326,11 @@
 ##------------------------------------------------------------
 
 
+-keep class com.ywl5320.wlmusic.** { *; }
+-dontwarn com.ywl5320.wlmusic.**
+
+
+
 
 -keep class com.umeng.** {*;}
 

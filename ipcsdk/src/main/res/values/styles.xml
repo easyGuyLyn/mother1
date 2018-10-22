@@ -13,5 +13,10 @@
     <style name="IPCFullScreenThem" parent="IPCAppTheme">
         <item name="android:windowFullscreen">true</item>
     </style>
+    <style name="SplashTheme" parent="IPCAppTheme">
+        <!-- 将splash图片设置在这，这样这张图片取代白屏 -->
+        <item name="android:windowBackground">@mipmap/splash</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
 
 </resources>
