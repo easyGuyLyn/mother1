@@ -21,7 +21,6 @@ import com.umeng.message.PushAgent;
 
 public class BoxApplication extends Application {
     private static Context context;
-    public static Handler handler = new Handler();
 
     //兼容 4.5版本以下 添加MultiDex分包，但未初始化的问题
     @Override
@@ -130,19 +129,6 @@ public class BoxApplication extends Application {
         QbSdk.initX5Environment(getApplicationContext(), cb);
     }
 
-
-//    public static void initOkHttpUtils() {
-//        //设置https
-//        OkHttpClient client = new OkHttpClient.Builder()
-//                .connectTimeout(DEFAULT_TIMEOUT_SECONDS, TimeUnit.SECONDS)
-//                .readTimeout(DEFAULT_READ_TIMEOUT_SECONDS, TimeUnit.SECONDS)
-//                .writeTimeout(DEFAULT_WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS)
-//                .retryOnConnectionFailure(true)//失败重连
-//                .sslSocketFactory(new TlsSniSocketFactory(), new SSLUtil.TrustAllManager())
-//                .hostnameVerifier(new TrueHostnameVerifier())
-//                .build();
-//        OkHttpUtils.initClient(client);
-//    }
 
 
 }
