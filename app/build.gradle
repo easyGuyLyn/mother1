@@ -122,7 +122,7 @@ android {
 
         app_pkg1 {
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "p1"
+            resValue "string", "app_name", "彩票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
@@ -149,46 +149,8 @@ dependencies {
     implementation "com.android.support:design:${rootProject.ext.supportVersion}"
     implementation "com.android.support:support-v4:${rootProject.ext.supportVersion}"
     implementation "com.android.support:recyclerview-v7:${rootProject.ext.supportVersion}"
-
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-
-    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
-    implementation 'com.google.code.gson:gson:2.8.2'
-
-    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
-
-    //日志拦截器
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
-    implementation 'io.reactivex:rxjava:1.3.0'
-    implementation 'io.reactivex:rxandroid:1.2.1'
-
-    implementation 'com.github.Aspsine:SwipeToLoadLayout:1.0.4'
-
-    // recycleview加载刷新
-    implementation 'com.github.bumptech.glide:glide:4.6.1'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
-    implementation 'com.github.bumptech.glide:annotations:4.6.1'
-    implementation 'com.github.bumptech.glide:okhttp3-integration:4.6.1'
-
-    //glide
-    implementation 'com.youth.banner:banner:1.4.10'
-
-    implementation 'com.zhy:okhttputils:2.6.2'
-
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
-
-    implementation 'com.guoqi.widget:iosdialog:0.2'
-    implementation 'org.apache.httpcomponents:httpcore:4.4.4'
     implementation project(':coretool')
-
     //独立进程的库  可以用一些东西  可扩展
     implementation project(':ipcsdk')
-
-    // LeanCloud 基础包
-    implementation('cn.leancloud.android:avoscloud-sdk:v4.7.3')
-
 
 }

@@ -7,25 +7,12 @@ import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.avos.avoscloud.AVOSCloud;
-import com.dawoo.chessbox.net.TlsSniSocketFactory;
-import com.dawoo.chessbox.net.TrueHostnameVerifier;
 import com.dawoo.chessbox.util.ActivityUtil;
-import com.dawoo.chessbox.util.SSLUtil;
-import com.dawoo.chessbox.util.ScreenRotateUtil;
 import com.tencent.smtt.sdk.QbSdk;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
 import com.umeng.message.IUmengRegisterCallback;
 import com.umeng.message.PushAgent;
-import com.zhy.http.okhttp.OkHttpUtils;
-
-import java.util.concurrent.TimeUnit;
-
-import okhttp3.OkHttpClient;
-
-import static com.dawoo.chessbox.net.RetrofitHelper.DEFAULT_READ_TIMEOUT_SECONDS;
-import static com.dawoo.chessbox.net.RetrofitHelper.DEFAULT_TIMEOUT_SECONDS;
-import static com.dawoo.chessbox.net.RetrofitHelper.DEFAULT_WRITE_TIMEOUT_SECONDS;
 
 /**
  * Created by benson on 17-12-27.
@@ -45,14 +32,11 @@ public class BoxApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        initOkHttpUtils();
         context = getApplicationContext();
 
         ActivityUtil.setContext(context);
 
         loadX5();
-
-        ScreenRotateUtil.getInstance(this).start();
 
         initLeanCloud();
 
@@ -146,18 +130,18 @@ public class BoxApplication extends Application {
     }
 
 
-    public static void initOkHttpUtils() {
-        //设置https
-        OkHttpClient client = new OkHttpClient.Builder()
-                .connectTimeout(DEFAULT_TIMEOUT_SECONDS, TimeUnit.SECONDS)
-                .readTimeout(DEFAULT_READ_TIMEOUT_SECONDS, TimeUnit.SECONDS)
-                .writeTimeout(DEFAULT_WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS)
-                .retryOnConnectionFailure(true)//失败重连
-                .sslSocketFactory(new TlsSniSocketFactory(), new SSLUtil.TrustAllManager())
-                .hostnameVerifier(new TrueHostnameVerifier())
-                .build();
-        OkHttpUtils.initClient(client);
-    }
+//    public static void initOkHttpUtils() {
+//        //设置https
+//        OkHttpClient client = new OkHttpClient.Builder()
+//                .connectTimeout(DEFAULT_TIMEOUT_SECONDS, TimeUnit.SECONDS)
+//                .readTimeout(DEFAULT_READ_TIMEOUT_SECONDS, TimeUnit.SECONDS)
+//                .writeTimeout(DEFAULT_WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS)
+//                .retryOnConnectionFailure(true)//失败重连
+//                .sslSocketFactory(new TlsSniSocketFactory(), new SSLUtil.TrustAllManager())
+//                .hostnameVerifier(new TrueHostnameVerifier())
+//                .build();
+//        OkHttpUtils.initClient(client);
+//    }
 
 
 }

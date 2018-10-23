@@ -1,7 +1,6 @@
 package com.dawoo.chessbox.view.activity;
 
 import android.content.Intent;
-import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -11,22 +10,11 @@ import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.GetCallback;
 import com.dawoo.chessbox.BoxApplication;
-import com.dawoo.chessbox.ConstantValue;
 import com.dawoo.chessbox.R;
 import com.dawoo.chessbox.ipc.IPCSocketManager;
 import com.dawoo.chessbox.util.ActivityUtil;
 import com.dawoo.chessbox.util.PreLoadH5Manger;
-import com.dawoo.chessbox.util.SingleToast;
-import com.dawoo.ipc.event.Events;
-import com.dawoo.ipc.event.bean.CloseAppEvent;
-import com.dawoo.ipc.utl.FastJsonUtils;
-import com.dawoo.ipc.utl.GetBytesWithHeadInfo;
-import com.hwangjr.rxbus.RxBus;
-import com.hwangjr.rxbus.annotation.Subscribe;
-import com.hwangjr.rxbus.annotation.Tag;
-
-import java.util.Timer;
-import java.util.TimerTask;
+import com.dawoo.coretool.util.ToastUtil;
 
 public class SpalashActivity extends BaseActivity {
 
@@ -44,7 +32,6 @@ public class SpalashActivity extends BaseActivity {
         setContentView(R.layout.acitivity_spash_scene);
         //设置全屏
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        RxBus.get().register(this);
     }
 
     @Override
@@ -69,7 +56,7 @@ public class SpalashActivity extends BaseActivity {
                 mUrl = avObject.getString("url");
                 Log.e("lyn", "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
                 if (e != null) {
-                    SingleToast.showMsg("网络异常,请检查网络设置~");
+                    ToastUtil.showToastShort(BoxApplication.getContext(),"网络异常,请检查网络设置~");
                 } else {
                     preLoadH5Manger.preLoad(mUrl);
                     if (mShown == 2) {
@@ -98,27 +85,6 @@ public class SpalashActivity extends BaseActivity {
         });
     }
 
-
-    /**
-     * 刷新游戏api
-     */
-    @Subscribe(tags = {@Tag(ConstantValue.EVENT_CLOSER_App)})
-    public void closeApp(String s) {
-        IPCSocketManager.getInstance().destroy();
-        finish();
-        close();
-    }
-
-    private void close() {
-        //退出程序
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                android.os.Process.killProcess(android.os.Process.myPid());
-                System.exit(0);
-            }
-        }, 500);
-    }
 
 
     /**
@@ -154,9 +120,4 @@ public class SpalashActivity extends BaseActivity {
     }
 
 
-    @Override
-    protected void onDestroy() {
-        RxBus.get().unregister(this);
-        super.onDestroy();
-    }
 }
