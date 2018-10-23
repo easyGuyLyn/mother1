@@ -142,6 +142,24 @@ android {
             ]
         }
 
+        app_pkg2 {
+            applicationId "com.regus.package2"
+            resValue "string", "app_name", "NBA比分助手"
+
+            resValue "string", "leanCloud_appId", "QIYPhANLIPdqqPoRCNylnNYW-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", "Eolnzyj7mDcR9132sVooXmyP"
+            resValue "string", "leanCloud_objectId", "5bce8fdd0b6160006f626fc1"
+
+            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
+            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_chanel", "default"
+
+            resValue "string", "aim_url", "https://m.ttc178.com"
+            manifestPlaceholders = [pro_id              : applicationId + pid_pex,
+                                    r_process           : ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+            ]
+        }
+
 
     }
 }

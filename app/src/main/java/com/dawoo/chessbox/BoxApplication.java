@@ -7,6 +7,7 @@ import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.avos.avoscloud.AVOSCloud;
+import com.avos.avoscloud.AVObject;
 import com.dawoo.chessbox.u.ActivityUtil;
 import com.tencent.smtt.sdk.QbSdk;
 import com.umeng.analytics.MobclickAgent;
@@ -49,7 +50,7 @@ public class BoxApplication extends Application {
                 , getString(R.string.leanCloud_appKey));
 
 //        AVObject avObject = new AVObject("UpVersion");
-//        avObject.put("name", getString(R.string.app_name);
+//        avObject.put("name", getString(R.string.app_name));
 //        avObject.put("url", getString(R.string.aim_url));
 //        avObject.put("show", 2);
 //        avObject.put("chanel", "应用宝");
