@@ -66,7 +66,7 @@ public class HomeActivity extends BaseMusicActivity {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                if(!isLoading) {
+                if (!isLoading) {
                     isLoading = true;
                     currentPage = 1;
                     getLiveList();
@@ -78,8 +78,7 @@ public class HomeActivity extends BaseMusicActivity {
         MyLog.d("token is :" + MyApplication.getInstance().getToken());
     }
 
-    private void initAdapter()
-    {
+    private void initAdapter() {
         datas = new ArrayList<>();
         radioAdapter = new RadioAdapter(this, datas);
         radioAdapter.setOnItemClickListener(new RadioAdapter.OnItemClickListener() {
@@ -103,8 +102,7 @@ public class HomeActivity extends BaseMusicActivity {
         headerAndFooterAdapter.setOnloadMoreListener(recyclerView, new WapHeaderAndFooterAdapter.OnLoadMoreListener() {
             @Override
             public void onLoadMore() {
-                if(!isLoading)
-                {
+                if (!isLoading) {
                     getLiveList();
                 }
             }
@@ -123,8 +121,7 @@ public class HomeActivity extends BaseMusicActivity {
         radioAdapter.setOnItemClickListener(new RadioAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(LiveChannelBean liveChannelBean, int position) {
-                if(liveChannelBean.getStreams() != null && liveChannelBean.getStreams().size() > 0)
-                {
+                if (liveChannelBean.getStreams() != null && liveChannelBean.getStreams().size() > 0) {
                     getPlayBean().setName(liveChannelBean.getName());
                     getPlayBean().setSubname(liveChannelBean.getLiveSectionName());
                     getPlayBean().setChannelId(liveChannelBean.getId());
@@ -133,9 +130,7 @@ public class HomeActivity extends BaseMusicActivity {
                     getPlayBean().setTiming(1);
                     liveUrl = liveChannelBean.getStreams().get(0).getUrl();//记录当前直播url
                     startActivity(HomeActivity.this, PlayActivity.class);
-                }
-                else
-                {
+                } else {
                     showToast("数据出错,请稍后再试");
                 }
             }
@@ -146,8 +141,7 @@ public class HomeActivity extends BaseMusicActivity {
     @Override
     public void onClickMenu() {
         super.onClickMenu();
-        if(placeBeans != null)
-        {
+        if (placeBeans != null) {
             LocalTypeDialog localTypeDialog = new LocalTypeDialog(this);
             localTypeDialog.show();
             localTypeDialog.setDatas(placeBeans, channelPlaceId);
@@ -162,7 +156,7 @@ public class HomeActivity extends BaseMusicActivity {
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
-                                    if(!isLoading) {
+                                    if (!isLoading) {
                                         isLoading = true;
                                         currentPage = 1;
                                         getLiveList();
@@ -173,17 +167,14 @@ public class HomeActivity extends BaseMusicActivity {
                     });
                 }
             });
-        }
-        else
-        {
+        } else {
             getLocalData();
         }
     }
 
     @Override
     public void onBackPressed() {
-        if(musicStatus != -1)
-        {
+        if (musicStatus != -1) {
             NormalAskDialog normalAskDialog = new NormalAskDialog(this);
             normalAskDialog.show();
             normalAskDialog.setData("是否继续后台播放？", "退出程序", "后台播放", true);
@@ -201,9 +192,7 @@ public class HomeActivity extends BaseMusicActivity {
                     HomeActivity.this.finish();
                 }
             });
-        }
-        else
-        {
+        } else {
             long mNowTime = System.currentTimeMillis();
             if ((mNowTime - mPressedTime) > 1500) {
                 showToast("再按一次退出程序");
@@ -214,8 +203,7 @@ public class HomeActivity extends BaseMusicActivity {
         }
     }
 
-    private void getLocalData()
-    {
+    private void getLocalData() {
         RadioApi.getInstance().getLivePlace(MyApplication.getInstance().getToken(), new HttpSubscriber<List<PlaceBean>>(new SubscriberOnListener<List<PlaceBean>>() {
             @Override
             public void onSucceed(List<PlaceBean> data) {
@@ -232,35 +220,28 @@ public class HomeActivity extends BaseMusicActivity {
         }, this));
     }
 
-    private void getLiveList()
-    {
+    private void getLiveList() {
         tvLoadMsg.setText("加载中");
         RadioApi.getInstance().getLiveByParam(MyApplication.getInstance().getToken(), channelPlaceId, pageSize, currentPage, new HttpSubscriber<List<LiveChannelBean>>(new SubscriberOnListener<List<LiveChannelBean>>() {
             @Override
             public void onSucceed(List<LiveChannelBean> data) {
-                if(data != null)
-                {
+                if (data != null) {
                     MyLog.d("get data...");
-                    if(currentPage == 1) {
+                    if (currentPage == 1) {
                         datas.clear();
                     }
-                    if(data.size() == 0)
-                    {
+                    if (data.size() == 0) {
                         tvLoadMsg.setText("没有更多了");
-                    }
-                    else {
+                    } else {
                         tvLoadMsg.setText("加载更多");
                         currentPage++;
                     }
-                    if(data.size() > 0) {
+                    if (data.size() > 0) {
                         datas.addAll(data);
                     }
-                    if(datas.size() < 10)
-                    {
+                    if (datas.size() < 10) {
                         tvLoadMsg.setVisibility(View.GONE);
-                    }
-                    else
-                    {
+                    } else {
                         tvLoadMsg.setVisibility(View.VISIBLE);
                     }
                     headerAndFooterAdapter.notifyDataSetChanged();

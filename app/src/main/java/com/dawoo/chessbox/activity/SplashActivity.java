@@ -36,20 +36,14 @@ public class SplashActivity extends BaseActivity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_layout);
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-        {
-            if ( ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED//读取存储卡权限
-                    || ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
-            {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED//读取存储卡权限
+                    || ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_SDCARD_CODE);
-            }
-            else
-            {
+            } else {
                 getToken();
             }
-        }
-        else
-        {
+        } else {
             getToken();
         }
     }
@@ -57,14 +51,10 @@ public class SplashActivity extends BaseActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == REQUEST_SDCARD_CODE)
-        {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
-            {
+        if (requestCode == REQUEST_SDCARD_CODE) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 getToken();
-            }
-            else
-            {
+            } else {
                 NormalAskDialog normalAskDialog = new NormalAskDialog(this);
                 normalAskDialog.show();
                 normalAskDialog.setData("请同意读取存储卡权限", "退出", "好的", false);
@@ -87,8 +77,7 @@ public class SplashActivity extends BaseActivity {
     public void onBackPressed() {
     }
 
-    private void getToken()
-    {
+    private void getToken() {
         pbLoad.setVisibility(View.VISIBLE);
         RadioApi.getInstance().getToken(new HttpSubscriber<Long>(new SubscriberOnListener<Long>() {
             @Override
@@ -104,8 +93,7 @@ public class SplashActivity extends BaseActivity {
         }, this));
     }
 
-    private void toHomeActivity()
-    {
+    private void toHomeActivity() {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
