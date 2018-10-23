@@ -1,4 +1,4 @@
-package com.dawoo.chessbox.util;
+package com.dawoo.chessbox.u;
 
 import android.content.Context;
 import android.content.Intent;

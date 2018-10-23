@@ -7,7 +7,7 @@ import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.avos.avoscloud.AVOSCloud;
-import com.dawoo.chessbox.util.ActivityUtil;
+import com.dawoo.chessbox.u.ActivityUtil;
 import com.tencent.smtt.sdk.QbSdk;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;

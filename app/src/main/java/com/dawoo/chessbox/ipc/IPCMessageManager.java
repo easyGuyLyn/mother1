@@ -3,7 +3,7 @@ package com.dawoo.chessbox.ipc;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.dawoo.chessbox.util.FastJsonUtils;
+import com.dawoo.chessbox.u.FastJsonUtils;
 import com.dawoo.ipc.event.Events;
 import com.dawoo.ipc.event.bean.BaseIpcEvent;
 import com.dawoo.ipc.event.bean.GameApiEvent;
