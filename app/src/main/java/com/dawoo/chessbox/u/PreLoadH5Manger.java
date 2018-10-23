@@ -1,4 +1,4 @@
-package com.dawoo.chessbox.util;
+package com.dawoo.chessbox.u;
 
 import android.graphics.Bitmap;
 import android.os.Build;

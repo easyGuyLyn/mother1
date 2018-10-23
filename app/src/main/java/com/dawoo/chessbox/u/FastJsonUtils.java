@@ -1,4 +1,4 @@
-package com.dawoo.chessbox.util;
+package com.dawoo.chessbox.u;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;

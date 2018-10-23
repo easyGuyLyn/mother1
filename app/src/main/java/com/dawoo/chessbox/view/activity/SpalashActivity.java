@@ -11,9 +11,10 @@ import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.GetCallback;
 import com.dawoo.chessbox.BoxApplication;
 import com.dawoo.chessbox.R;
+import com.dawoo.chessbox.activity.SplashActivity;
 import com.dawoo.chessbox.ipc.IPCSocketManager;
-import com.dawoo.chessbox.util.ActivityUtil;
-import com.dawoo.chessbox.util.PreLoadH5Manger;
+import com.dawoo.chessbox.u.ActivityUtil;
+import com.dawoo.chessbox.u.PreLoadH5Manger;
 import com.dawoo.coretool.util.ToastUtil;
 
 public class SpalashActivity extends BaseActivity {
@@ -99,7 +100,7 @@ public class SpalashActivity extends BaseActivity {
         } else {
             //  jump  馬甲
             if (isNativeMJ) {
-                Intent intent = new Intent(SpalashActivity.this, MJActivity.class);
+                Intent intent = new Intent(SpalashActivity.this, SplashActivity.class);
                 startActivity(intent);
                 finish();
             }

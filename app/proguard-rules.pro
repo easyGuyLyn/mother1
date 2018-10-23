@@ -157,9 +157,9 @@
 #-keep class com.google.gson.stream.** { *; }
 
 # Application classes that will be serialized/deserialized over Gson
--keep class com.dawoo.chessbox.bean.**{*;}   #------实体类不可混淆
--keep class com.dawoo.chessbox.net.HttpResult.**{*;}   #------模板实体类不可混淆
--keep class com.dawoo.chessbox.util.NetUtil{*;}   #------项目中的NetUtil x5 settings不混淆
+-keep class com.dawoo.chessbox.beans.**{*;}   #------实体类不可混淆
+-keep class com.dawoo.chessbox.http.**{*;}   #------模板实体类不可混淆
+-keep class com.dawoo.chessbox.base.**{*;}   #------项目中的NetUtil x5 settings不混淆
 # Prevent proguard from stripping interface information from TypeAdapterFactory,
 # JsonSerializer, JsonDeserializer instances (so they can be used in @JsonAdapter)
 -keep class * implements com.google.gson.TypeAdapterFactory
@@ -175,7 +175,16 @@
 -keep class com.hwangjr.rxbus.** { *; }
 #---------------------------------------Rxbus------------------------------------------------
 
+-keepattributes *Annotation*
+-keepclassmembers class ** {
+    @org.greenrobot.eventbus.Subscribe <methods>;
+}
+-keep enum org.greenrobot.eventbus.ThreadMode { *; }
 
+# Only required if you use AsyncExecutor
+-keepclassmembers class * extends org.greenrobot.eventbus.util.ThrowableFailureEvent {
+    <init>(java.lang.Throwable);
+}
 
 
 #---------------------------------webview------------------------------------
@@ -319,6 +328,11 @@
 
 -keep class com.dawoo.ipcsdk.** { *; }
 -dontwarn com.dawoo.ipcsdk.**
+
+-keep class com.ywl5320.** { *; }
+-dontwarn com.ywl5320.**
+
+
 
 ##------------------------------------------------------------
 -keep class com.alibaba.fastjson.** { *; }
