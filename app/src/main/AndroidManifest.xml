@@ -25,17 +25,16 @@
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/app_icon"
-        android:label="@string/app_name"
+        android:label="2123123"
         android:largeHeap="true"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
         <meta-data
             android:name="android.max_aspect"
             android:value="2.2" />
 
         <activity
-            android:name=".view.activity.SpalashActivity"
+            android:name="com.dawoo.ipc.control.SpalashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/SplashTheme"
             android:windowFullscreen="true"
@@ -47,34 +46,15 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".view.activity.MJActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait" />
-
-        <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="${pro_id}"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <!--元数据-->
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
-        </provider>
         <!--ipc-->
         <activity
             android:name="com.dawoo.ipc.control.IpcWebViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:launchMode="singleTask"
-            android:process="${r_process}"
+            android:process=":lyn"
             android:theme="@style/IPCAppTheme"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"></activity>
-        <service
-            android:name="com.dawoo.ipc.server.IPCServerService"
-            android:process="${r_process}" />
         <!--ipc-->
-
 
     </application>
 

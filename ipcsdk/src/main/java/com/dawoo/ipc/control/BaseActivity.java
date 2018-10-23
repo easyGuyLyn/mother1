@@ -1,4 +1,4 @@
-package com.dawoo.chessbox.view.activity;
+package com.dawoo.ipc.control;
 
 import android.content.Context;
 import android.os.Bundle;

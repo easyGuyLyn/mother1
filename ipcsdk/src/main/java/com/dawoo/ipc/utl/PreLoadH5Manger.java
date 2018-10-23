@@ -1,11 +1,11 @@
-package com.dawoo.chessbox.u;
+package com.dawoo.ipc.utl;
 
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.util.Log;
 import android.view.View;
 
-import com.dawoo.chessbox.BoxApplication;
+import com.dawoo.ipc.HostManager;
 import com.tencent.smtt.export.external.interfaces.SslError;
 import com.tencent.smtt.export.external.interfaces.SslErrorHandler;
 import com.tencent.smtt.export.external.interfaces.WebResourceError;
@@ -32,7 +32,7 @@ public class PreLoadH5Manger {
     }
 
     public void preLoad(String url) {
-        mWebview = new WebView(BoxApplication.getContext());
+        mWebview = new WebView(HostManager.getInstance().getContext());
         initWebSetting();
         mWebview.loadUrl(url);
     }

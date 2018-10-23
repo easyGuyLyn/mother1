@@ -1,6 +1,7 @@
-package com.dawoo.chessbox.view.activity;
+package com.dawoo.ipc.control;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -9,12 +10,13 @@ import android.view.WindowManager;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.GetCallback;
-import com.dawoo.chessbox.BoxApplication;
-import com.dawoo.chessbox.R;
-import com.dawoo.chessbox.ipc.IPCSocketManager;
-import com.dawoo.chessbox.u.ActivityUtil;
-import com.dawoo.chessbox.u.PreLoadH5Manger;
 import com.dawoo.coretool.util.ToastUtil;
+import com.dawoo.ipc.ConstantValue;
+import com.dawoo.ipc.HostManager;
+import com.dawoo.ipc.R;
+import com.dawoo.ipc.utl.PreLoadH5Manger;
+
+import static com.dawoo.ipc.ConstantValue.WEBVIEW_TYPE_THIRD_ORDINARY;
 
 public class SpalashActivity extends BaseActivity {
 
@@ -42,13 +44,10 @@ public class SpalashActivity extends BaseActivity {
     @Override
     protected void initData() {
 
-        if (!isNativeMJ) {
-            IPCSocketManager.getInstance().startServerService();
-            IPCSocketManager.getInstance().connectTcpService();
-        }
+
 
         // 第一参数是 className,第二个参数是 objectId
-        AVObject todo = AVObject.createWithoutData("UpVersion", getString(R.string.leanCloud_objectId));
+        AVObject todo = AVObject.createWithoutData("UpVersion", HostManager.getInstance().getLeanCloud_objectId());
         todo.fetchInBackground(new GetCallback<AVObject>() {
             @Override
             public void done(AVObject avObject, AVException e) {
@@ -56,15 +55,10 @@ public class SpalashActivity extends BaseActivity {
                 mUrl = avObject.getString("url");
                 Log.e("lyn", "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
                 if (e != null) {
-                    ToastUtil.showToastShort(BoxApplication.getContext(),"网络异常,请检查网络设置~");
+                    ToastUtil.showToastShort(HostManager.getInstance().getContext(),"网络异常,请检查网络设置~");
                 } else {
                     preLoadH5Manger.preLoad(mUrl);
                     if (mShown == 2) {
-
-                        if (isNativeMJ) {
-                            IPCSocketManager.getInstance().startServerService();
-                            IPCSocketManager.getInstance().connectTcpService();
-                        }
 
                         preLoadH5Manger.setmPreLoadListener(new PreLoadH5Manger.PreLoadListener() {
                             @Override
@@ -93,15 +87,24 @@ public class SpalashActivity extends BaseActivity {
     private void jump() {
         if (mShown == 2) {
             if (TextUtils.isEmpty(mUrl)) {
-                mUrl = getString(R.string.aim_url);
+                mUrl = HostManager.getInstance().getAim_url();
             }
-            ActivityUtil.startH5(mUrl);
+
+            Intent intent = new Intent(mContext, IpcWebViewActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString(ConstantValue.WEBVIEW_URL, mUrl);
+            bundle.putString(ConstantValue.WEBVIEW_TYPE, WEBVIEW_TYPE_THIRD_ORDINARY);
+            bundle.putInt(IpcWebViewActivity.SCREEN_ORITATION, 3);
+            intent.putExtras(bundle);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            mContext.startActivity(intent);
+
         } else {
             //  jump  馬甲
             if (isNativeMJ) {
-                Intent intent = new Intent(SpalashActivity.this, MJActivity.class);
-                startActivity(intent);
-                finish();
+//                Intent intent = new Intent(SpalashActivity.this, MJActivity.class);
+//                startActivity(intent);
+//                finish();
             }
         }
     }
