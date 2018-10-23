@@ -146,9 +146,9 @@ android {
             applicationId "com.regus.package2"
             resValue "string", "app_name", "NBA比分助手"
 
-            resValue "string", "leanCloud_appId", "QIYPhANLIPdqqPoRCNylnNYW-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "Eolnzyj7mDcR9132sVooXmyP"
-            resValue "string", "leanCloud_objectId", "5bce8fdd0b6160006f626fc1"
+            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
+            resValue "string", "leanCloud_objectId", "5bce9399fb4ffe0069e6e452"
 
             resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
             resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
