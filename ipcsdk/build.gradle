@@ -41,7 +41,7 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //noinspection GradleCompatible
-    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportVersion}"
+    implementation "com.android.support:appcompat-v7:27.1.0"
     // x5
     api files('libs/tbs_sdk_thirdapp_v3.5.0.1004_43500_sharewithdownload_withoutGame_obfs_20170801_113025.jar')
     // 改 statusBar
@@ -67,5 +67,4 @@ dependencies {
     //PushSDK
     api 'com.umeng.sdk:push:4.2.0'
 
-    implementation project(':coretool')
 }

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.dawoo.coretool.util.activity.ActivityStackManager;
+import com.dawoo.ipc.utl.ActivityStackManager;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.message.PushAgent;
 

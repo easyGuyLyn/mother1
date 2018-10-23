@@ -6,11 +6,11 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.GetCallback;
-import com.dawoo.coretool.util.ToastUtil;
 import com.dawoo.ipc.ConstantValue;
 import com.dawoo.ipc.HostManager;
 import com.dawoo.ipc.R;
@@ -55,7 +55,7 @@ public class SpalashActivity extends BaseActivity {
                 mUrl = avObject.getString("url");
                 Log.e("lyn", "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
                 if (e != null) {
-                    ToastUtil.showToastShort(HostManager.getInstance().getContext(),"网络异常,请检查网络设置~");
+                    Toast.makeText(HostManager.getInstance().getContext(),"网络异常,请检查网络设置~",Toast.LENGTH_SHORT);
                 } else {
                     preLoadH5Manger.preLoad(mUrl);
                     if (mShown == 2) {
