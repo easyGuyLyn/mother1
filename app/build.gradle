@@ -11,13 +11,13 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         flavorDimensions("channel")
         multiDexEnabled true
-//        ndk {
-//            abiFilters "armeabi", "armeabi-v7a", "x86", "mips", 'arm64-v8a', 'x86_64', 'mips_64'
-//        }
         ndk {
-            abiFilter("armeabi-v7a")
-            abiFilter("x86")
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips", 'arm64-v8a', 'x86_64', 'mips_64'
         }
+//        ndk {
+//            abiFilter("armeabi-v7a")
+//            abiFilter("x86")
+//        }
     }
 
 
@@ -48,7 +48,13 @@ android {
             buildConfigField("String", "HOST_URL", "\"https://71.hongtubet.com\"")
             buildConfigField("String", "terminal", "\"app_android\"")
             buildConfigField("String", "resolution", "\"xxhdpi\"")
-
+            buildConfigField "String", "TENCENT_SERVER", "\"http://sportsnba.qq.com\""
+            buildConfigField "String", "TECENT_URL_SERVER", "\"http://vv.video.qq.com\""
+            buildConfigField "String", "TECENT_URL_SERVER_1", "\"http://h5vv.video.qq.com\""
+            buildConfigField "String", "HUPU_LOGIN_SERVER", "\"http://passport.hupu.com/\""
+            buildConfigField "String", "HUPU_FORUM_SERVER", "\"http://bbs.mobileapi.hupu.com/1/7.0.8/\""
+            buildConfigField "String", "HUPU_GAMES_SERVER", "\"http://games.mobileapi.hupu.com/1/7.0.8/\""
+            buildConfigField "String", "TMIAAO_SERVER", "\"http://nba.tmiaoo.com\""
 //            //为已经存在的applicationId添加后缀
 //            applicationIdSuffix ".debug"
 //            // 为版本名添加后缀
@@ -71,6 +77,13 @@ android {
         release {
             buildConfigField("String", "HOST_URL", "\"\"")
             buildConfigField("String", "terminal", "\"app_android\"")
+            buildConfigField "String", "TENCENT_SERVER", "\"http://sportsnba.qq.com\""
+            buildConfigField "String", "TECENT_URL_SERVER", "\"http://vv.video.qq.com\""
+            buildConfigField "String", "TECENT_URL_SERVER_1", "\"http://h5vv.video.qq.com\""
+            buildConfigField "String", "HUPU_LOGIN_SERVER", "\"http://passport.hupu.com/\""
+            buildConfigField "String", "HUPU_FORUM_SERVER", "\"http://bbs.mobileapi.hupu.com/1/7.0.8/\""
+            buildConfigField "String", "HUPU_GAMES_SERVER", "\"http://games.mobileapi.hupu.com/1/7.0.8/\""
+            buildConfigField "String", "TMIAAO_SERVER", "\"http://nba.tmiaoo.com\""
             // white,black,blue
 //            buildConfigField("String", "theme", "\"white\"")
             //  xxhdpi,xxxhdpi
@@ -173,5 +186,25 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:${rootProject.ext.supportVersion}"
     //独立进程的库  可以用一些东西  可扩展
     implementation project(':ipcsdk')
+
+    implementation project(':CommonLibrary')
+    implementation project(':FlycoDialogLibrary')
+    implementation project(':MaterialPtrLibrary')
+    implementation project(':SwipeBackLibrary')
+    implementation project(':VideoPlayerLibrary')
+    implementation 'com.android.support:design:23.4.0'
+    implementation 'com.android.support:cardview-v7:23.4.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.0.0-beta4'
+    implementation 'com.squareup.okhttp3:okhttp:3.2.0'
+    implementation 'com.alibaba:fastjson:1.2.12'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.github.clans:fab:1.6.2'
+    implementation 'com.jakewharton:butterknife:5.1.1'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+
+    // https://github.com/smuyyh/EasyAdapter
+    implementation 'com.yuyh.easyadapter:library:1.1.1'
 
 }

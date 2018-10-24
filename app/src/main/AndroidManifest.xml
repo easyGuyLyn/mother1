@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.dawoo.chessbox">
+    package="com.yuyh.sprintnba">
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -21,7 +21,7 @@
         tools:ignore="ProtectedPermissions" />
 
     <application
-        android:name="com.dawoo.chessbox.BoxApplication"
+        android:name="com.yuyh.sprintnba.BoxApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/app_icon"
@@ -34,7 +34,7 @@
             android:value="2.2" />
 
         <activity
-            android:name="com.dawoo.ipc.control.SpalashActivity"
+            android:name="com.yuyh.ipc.control.SpalashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/SplashTheme"
             android:windowFullscreen="true"
@@ -48,7 +48,7 @@
 
         <!--ipc-->
         <activity
-            android:name="com.dawoo.ipc.control.IpcWebViewActivity"
+            android:name="com.yuyh.ipc.control.IpcWebViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:launchMode="singleTask"
             android:process="${r_process}"
