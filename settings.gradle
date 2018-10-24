@@ -1,1 +1,1 @@
-include ':app', ':coretool', ':ipcsdk'
+include ':app', ':ipcsdk'
