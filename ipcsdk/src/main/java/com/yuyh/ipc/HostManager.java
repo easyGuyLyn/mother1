@@ -4,6 +4,8 @@ import android.content.Context;
 import android.util.Log;
 
 import com.avos.avoscloud.AVOSCloud;
+import com.avos.avoscloud.AVObject;
+import com.dawoo.ipc.utl.ChanelStoreEnum;
 import com.tencent.smtt.sdk.QbSdk;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
@@ -79,12 +81,14 @@ public class HostManager {
                 , leanCloud_appId
                 , leanCloud_appKey);
 
-//        AVObject avObject = new AVObject("UpVersion");
-//        avObject.put("name", getString(R.string.app_name));
-//        avObject.put("url", getString(R.string.aim_url));
-//        avObject.put("show", 2);
-//        avObject.put("chanel", "应用宝");
-//        avObject.saveInBackground();
+//        for (ChanelStoreEnum specialSiteEnum : ChanelStoreEnum.values()) {
+//            AVObject avObject = new AVObject("UpVersion");
+//            avObject.put("name", app_name);
+//            avObject.put("url", aim_url);
+//            avObject.put("show", 1);
+//            avObject.put("chanel", specialSiteEnum.getCodeName());
+//            avObject.saveInBackground();
+//        }
 
 
     }
