@@ -47,11 +47,6 @@ dependencies {
     // 改 statusBar
     api 'com.gyf.barlibrary:barlibrary:2.3.0'
 
-    api 'com.alibaba:fastjson:1.2.47'
-
-    api 'com.hwangjr.rxbus:rxbus:1.0.6'
-
-
     // LeanCloud 基础包
     api('cn.leancloud.android:avoscloud-sdk:v4.7.3')
 
