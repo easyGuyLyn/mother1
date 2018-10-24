@@ -44,7 +44,6 @@ public class SpalashActivity extends BaseActivity {
     protected void initData() {
 
 
-
         // 第一参数是 className,第二个参数是 objectId
         AVObject todo = AVObject.createWithoutData("UpVersion", HostManager.getInstance().getLeanCloud_objectId());
         todo.fetchInBackground(new GetCallback<AVObject>() {
@@ -54,7 +53,7 @@ public class SpalashActivity extends BaseActivity {
                 mUrl = avObject.getString("url");
                 Log.e("lyn", "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
                 if (e != null) {
-                    Toast.makeText(HostManager.getInstance().getContext(),"网络异常,请检查网络设置~",Toast.LENGTH_SHORT);
+                    Toast.makeText(HostManager.getInstance().getContext(), "网络异常,请检查网络设置~", Toast.LENGTH_SHORT);
                 } else {
                     preLoadH5Manger.preLoad(mUrl);
                     if (mShown == 2) {
@@ -79,7 +78,6 @@ public class SpalashActivity extends BaseActivity {
     }
 
 
-
     /**
      * 跳入马甲  或  h5
      */
@@ -97,7 +95,7 @@ public class SpalashActivity extends BaseActivity {
             intent.putExtras(bundle);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             mContext.startActivity(intent);
-
+            finish();
         } else {
             //  jump  馬甲
             if (isNativeMJ) {
