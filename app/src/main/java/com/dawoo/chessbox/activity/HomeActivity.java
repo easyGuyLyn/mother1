@@ -3,16 +3,24 @@ package com.dawoo.chessbox.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.dawoo.chessbox.MusicService;
 import com.dawoo.chessbox.MyApplication;
+import com.dawoo.chessbox.R;
 import com.dawoo.chessbox.adapter.RadioAdapter;
 import com.dawoo.chessbox.adapter.WapHeaderAndFooterAdapter;
 import com.dawoo.chessbox.base.BaseMusicActivity;
@@ -24,23 +32,34 @@ import com.dawoo.chessbox.http.serviceapi.RadioApi;
 import com.dawoo.chessbox.http.subscribers.HttpSubscriber;
 import com.dawoo.chessbox.http.subscribers.SubscriberOnListener;
 import com.dawoo.chessbox.log.MyLog;
-import com.dawoo.chessbox.R;
+import com.dawoo.chessbox.u.ActivityUtil;
+import com.dawoo.chessbox.view.activity.MoreActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by ywl on 2018/1/10.
  */
 
-public class HomeActivity extends BaseMusicActivity {
+public class HomeActivity extends BaseMusicActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @BindView(R.id.recyclerview)
     RecyclerView recyclerView;
     @BindView(R.id.swipRefresh)
     SwipeRefreshLayout swipeRefreshLayout;
+    @BindView(R.id.ly_status)
+    LinearLayout lyStatus;
+    @BindView(R.id.navigation_view)
+    NavigationView mNavigationView;
+    @BindView(R.id.simple_navigation_drawer)
+    DrawerLayout mNavigationDrawer;
+    @BindView(R.id.iv_sldie)
+    ImageView mIv_sldie;
+
 
     private List<PlaceBean> placeBeans;
     private RadioAdapter radioAdapter;
@@ -57,9 +76,11 @@ public class HomeActivity extends BaseMusicActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_layout);
+        setContentView(R.layout.activity_home_layout1);
+        ButterKnife.bind(this);
         setTitle("网络广播");
         setRightView(R.mipmap.icon_more);
+        initNavigationView();
         showDadaLoad();
         initAdapter();
         swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.color_ec4c48));
@@ -77,6 +98,24 @@ public class HomeActivity extends BaseMusicActivity {
         getLocalData();
         MyLog.d("token is :" + MyApplication.getInstance().getToken());
     }
+
+
+    /**
+     * 初始化抽屉
+     */
+    private void initNavigationView() {
+        mIv_sldie.setVisibility(View.VISIBLE);
+        mIv_sldie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mNavigationDrawer.openDrawer(GravityCompat.START);
+            }
+        });
+
+        mNavigationView.setNavigationItemSelectedListener(this);
+        mNavigationDrawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+    }
+
 
     private void initAdapter() {
         datas = new ArrayList<>();
@@ -138,6 +177,7 @@ public class HomeActivity extends BaseMusicActivity {
 
     }
 
+
     @Override
     public void onClickMenu() {
         super.onClickMenu();
@@ -174,6 +214,13 @@ public class HomeActivity extends BaseMusicActivity {
 
     @Override
     public void onBackPressed() {
+
+        if (mNavigationDrawer.isDrawerOpen(GravityCompat.START)) {
+            mNavigationDrawer.closeDrawer(GravityCompat.START);
+            return;
+        }
+
+
         if (musicStatus != -1) {
             NormalAskDialog normalAskDialog = new NormalAskDialog(this);
             normalAskDialog.show();
@@ -264,5 +311,24 @@ public class HomeActivity extends BaseMusicActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.mm:
+                ActivityUtil.startH5("http://sports.rbc.cn/");
+                break;
+            case R.id.mm1:
+                ActivityUtil.startH5("http://www.rthk.hk/");
+                break;
+            case R.id.more:
+                Intent intent = new Intent(HomeActivity.this, MoreActivity.class);
+                startActivity(intent);
+                break;
+            default:
+        }
+        mNavigationDrawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 }

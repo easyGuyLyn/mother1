@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.WindowManager;
 
 import com.avos.avoscloud.AVException;
@@ -16,6 +17,8 @@ import com.dawoo.chessbox.ipc.IPCSocketManager;
 import com.dawoo.chessbox.u.ActivityUtil;
 import com.dawoo.chessbox.u.PreLoadH5Manger;
 import com.dawoo.coretool.util.ToastUtil;
+
+import java.util.logging.Handler;
 
 public class SpalashActivity extends BaseActivity {
 
@@ -92,32 +95,31 @@ public class SpalashActivity extends BaseActivity {
      * 跳入马甲  或  h5
      */
     private void jump() {
+        findViewById(R.id.iv_b2).setVisibility(View.VISIBLE);
         if (mShown == 2) {
             if (TextUtils.isEmpty(mUrl)) {
                 mUrl = getString(R.string.aim_url);
             }
             ActivityUtil.startH5(mUrl);
+            finish();
         } else {
             //  jump  馬甲
             if (isNativeMJ) {
-                Intent intent = new Intent(SpalashActivity.this, SplashActivity.class);
-                startActivity(intent);
-                finish();
+
+                new android.os.Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent(SpalashActivity.this, SplashActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                },1500);
+
+
+
+
             }
         }
-    }
-
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.addCategory(Intent.CATEGORY_HOME);
-            startActivity(intent);
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
     }
 
 

@@ -3,17 +3,17 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/color_ec4c48</item>
+        <item name="colorPrimaryDark">@color/color_ec4c48</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/color_ec4c48</item>
         <!--<item name="android:windowTranslucentStatus">true</item>-->
         <!--   <item name="android:fitsSystemWindows">true</item>-->
     </style>
 
     <style name="SplashTheme" parent="AppTheme">
         <!-- 将splash图片设置在这，这样这张图片取代白屏 -->
-        <item name="android:windowBackground">@mipmap/splash</item>
+        <item name="android:windowBackground">@mipmap/s2</item>
         <item name="android:windowFullscreen">true</item>
     </style>
 
@@ -31,7 +31,7 @@
     <style name="StartAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
-        <item name="android:windowBackground">@mipmap/splash_bg</item>
+        <item name="android:windowBackground">@mipmap/s1</item>
     </style>
 
     <style name="DialogEnter" parent="@android:style/Animation">

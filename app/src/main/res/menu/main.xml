@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/nav_tab_transfer"
+        android:checkableBehavior="single"
+        android:title="tab_transfer">
+        <item
+            android:id="@+id/mm"
+            android:icon="@mipmap/mine_share_friend_icon"
+            android:title="更多体育广播" />
+        <item
+            android:id="@+id/mm1"
+            android:icon="@mipmap/mine_share_friend_icon"
+            android:title="更多其他广播" />
+        <item
+            android:id="@+id/more"
+            android:icon="@mipmap/mine_see_more_icon"
+            android:title="设置" />
+
+    </group>
+
+
+</menu>

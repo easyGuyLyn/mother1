@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import com.dawoo.chessbox.util.CommonUtil;
 import com.dawoo.chessbox.R;
+import com.umeng.analytics.MobclickAgent;
+import com.umeng.message.PushAgent;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -77,7 +79,19 @@ public abstract class BaseActivity extends AppCompatActivity {
         else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {//4.4全透明
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
+        PushAgent.getInstance(getBaseContext()).onAppStart();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 
     @Override

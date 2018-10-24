@@ -76,13 +76,9 @@
         <!--ipc-->
 
 
-
-
-
         <activity
             android:name="com.dawoo.chessbox.activity.SplashActivity"
-            android:theme="@style/StartAppTheme">
-        </activity>
+            android:theme="@style/StartAppTheme"></activity>
         <activity
             android:name="com.dawoo.chessbox.activity.HomeActivity"
             android:screenOrientation="portrait" />
@@ -91,6 +87,10 @@
             android:screenOrientation="portrait" />
 
         <service android:name="com.dawoo.chessbox.MusicService" />
+
+        <activity
+            android:name=".view.activity.MoreActivity"
+            android:screenOrientation="portrait" />
 
     </application>
 

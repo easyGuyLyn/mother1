@@ -127,7 +127,7 @@ android {
 
         app_pkg1 {
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "彩票广播"
+            resValue "string", "app_name", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
@@ -159,7 +159,7 @@ dependencies {
     implementation project(':ipcsdk')
 
 
-
+    implementation 'com.guoqi.widget:iosdialog:0.2'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.1'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
