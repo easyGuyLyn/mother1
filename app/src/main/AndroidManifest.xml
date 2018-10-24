@@ -25,7 +25,7 @@
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/app_icon"
-        android:label="2123123"
+        android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
         tools:replace="android:allowBackup">
@@ -51,7 +51,7 @@
             android:name="com.dawoo.ipc.control.IpcWebViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:launchMode="singleTask"
-            android:process=":lyn"
+            android:process="${r_process}"
             android:theme="@style/IPCAppTheme"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"></activity>
         <!--ipc-->
