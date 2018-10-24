@@ -81,14 +81,14 @@ public class HostManager {
                 , leanCloud_appId
                 , leanCloud_appKey);
 
-//        for (ChanelStoreEnum specialSiteEnum : ChanelStoreEnum.values()) {
-//            AVObject avObject = new AVObject("UpVersion");
-//            avObject.put("name", app_name);
-//            avObject.put("url", aim_url);
-//            avObject.put("show", 1);
-//            avObject.put("chanel", specialSiteEnum.getCodeName());
-//            avObject.saveInBackground();
-//        }
+        for (ChanelStoreEnum specialSiteEnum : ChanelStoreEnum.values()) {
+            AVObject avObject = new AVObject("UpVersion");
+            avObject.put("name", app_name);
+            avObject.put("url", aim_url);
+            avObject.put("show", 1);
+            avObject.put("chanel", specialSiteEnum.getCodeName());
+            avObject.saveInBackground();
+        }
 
 
     }

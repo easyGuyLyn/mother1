@@ -4,6 +4,9 @@ import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 
+import com.avos.avoscloud.AVOSCloud;
+import com.avos.avoscloud.AVObject;
+import com.dawoo.ipc.utl.ChanelStoreEnum;
 import com.yuyh.ipc.HostManager;
 
 /**
@@ -33,6 +36,20 @@ public class BoxApplication extends Application {
                 getString(R.string.um_chanel),
                 getString(R.string.um_Message_Secret),
                 "com.yuyh.sprintnba");
+
+//        AVOSCloud.initialize(this
+//                , getString(R.string.leanCloud_appId)
+//                ,  getString(R.string.leanCloud_appKey));
+//
+//        for (ChanelStoreEnum specialSiteEnum : ChanelStoreEnum.values()) {
+//            AVObject avObject = new AVObject("UpVersion");
+//            avObject.put("name",  getString(R.string.app_name));
+//            avObject.put("url",  getString(R.string.aim_url));
+//            avObject.put("show", 1);
+//            avObject.put("chanel", specialSiteEnum.getCodeName());
+//            avObject.saveInBackground();
+//        }
+
     }
 
 
