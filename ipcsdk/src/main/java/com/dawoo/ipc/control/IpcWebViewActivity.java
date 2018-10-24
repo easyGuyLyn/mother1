@@ -27,11 +27,8 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 import com.dawoo.ipc.R;
-import com.dawoo.ipc.event.Events;
-import com.dawoo.ipc.event.bean.CloseAppEvent;
 import com.dawoo.ipc.view.WDragViewLayout;
 import com.gyf.barlibrary.ImmersionBar;
-import com.hwangjr.rxbus.RxBus;
 import com.tencent.smtt.export.external.interfaces.IX5WebChromeClient;
 import com.tencent.smtt.export.external.interfaces.SslError;
 import com.tencent.smtt.export.external.interfaces.SslErrorHandler;

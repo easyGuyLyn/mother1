@@ -319,9 +319,9 @@ public class HomeActivity extends BaseMusicActivity implements NavigationView.On
             case R.id.mm:
                 ActivityUtil.startH5("http://sports.rbc.cn/");
                 break;
-            case R.id.mm1:
-                ActivityUtil.startH5("http://www.rthk.hk/");
-                break;
+//            case R.id.mm1:
+//                ActivityUtil.startH5("http://www.rthk.hk/");
+//                break;
             case R.id.more:
                 Intent intent = new Intent(HomeActivity.this, MoreActivity.class);
                 startActivity(intent);

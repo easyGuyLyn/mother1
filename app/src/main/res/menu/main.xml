@@ -8,10 +8,10 @@
             android:id="@+id/mm"
             android:icon="@mipmap/mine_share_friend_icon"
             android:title="更多体育广播" />
-        <item
-            android:id="@+id/mm1"
-            android:icon="@mipmap/mine_share_friend_icon"
-            android:title="更多其他广播" />
+        <!--<item-->
+            <!--android:id="@+id/mm1"-->
+            <!--android:icon="@mipmap/mine_share_friend_icon"-->
+            <!--android:title="更多其他广播" />-->
         <item
             android:id="@+id/more"
             android:icon="@mipmap/mine_see_more_icon"

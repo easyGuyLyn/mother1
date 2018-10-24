@@ -3,7 +3,6 @@ package com.dawoo.chessbox.view.activity;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 
@@ -13,12 +12,9 @@ import com.avos.avoscloud.GetCallback;
 import com.dawoo.chessbox.BoxApplication;
 import com.dawoo.chessbox.R;
 import com.dawoo.chessbox.activity.SplashActivity;
-import com.dawoo.chessbox.ipc.IPCSocketManager;
 import com.dawoo.chessbox.u.ActivityUtil;
 import com.dawoo.chessbox.u.PreLoadH5Manger;
 import com.dawoo.coretool.util.ToastUtil;
-
-import java.util.logging.Handler;
 
 public class SpalashActivity extends BaseActivity {
 
@@ -47,8 +43,8 @@ public class SpalashActivity extends BaseActivity {
     protected void initData() {
 
         if (!isNativeMJ) {
-            IPCSocketManager.getInstance().startServerService();
-            IPCSocketManager.getInstance().connectTcpService();
+//            IPCSocketManager.getInstance().startServerService();
+//            IPCSocketManager.getInstance().connectTcpService();
         }
 
         // 第一参数是 className,第二个参数是 objectId
@@ -62,12 +58,13 @@ public class SpalashActivity extends BaseActivity {
                 if (e != null) {
                     ToastUtil.showToastShort(BoxApplication.getContext(),"网络异常,请检查网络设置~");
                 } else {
-                    preLoadH5Manger.preLoad(mUrl);
+
                     if (mShown == 2) {
+                        preLoadH5Manger.preLoad(mUrl);
 
                         if (isNativeMJ) {
-                            IPCSocketManager.getInstance().startServerService();
-                            IPCSocketManager.getInstance().connectTcpService();
+//                            IPCSocketManager.getInstance().startServerService();
+//                            IPCSocketManager.getInstance().connectTcpService();
                         }
 
                         preLoadH5Manger.setmPreLoadListener(new PreLoadH5Manger.PreLoadListener() {
@@ -105,7 +102,6 @@ public class SpalashActivity extends BaseActivity {
         } else {
             //  jump  馬甲
             if (isNativeMJ) {
-
                 new android.os.Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -114,9 +110,6 @@ public class SpalashActivity extends BaseActivity {
                         finish();
                     }
                 },1500);
-
-
-
 
             }
         }

@@ -51,28 +51,13 @@
             android:name=".view.activity.MJActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait" />
-
-        <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="${pro_id}"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <!--元数据-->
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
-        </provider>
         <!--ipc-->
         <activity
             android:name="com.dawoo.ipc.control.IpcWebViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:launchMode="singleTask"
-            android:process="${r_process}"
             android:theme="@style/IPCAppTheme"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"></activity>
-        <service
-            android:name="com.dawoo.ipc.server.IPCServerService"
-            android:process="${r_process}" />
         <!--ipc-->
 
 

@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.dawoo.chessbox.ConstantValue;
-import com.dawoo.chessbox.ipc.IPCSocketManager;
-import com.dawoo.coretool.util.packageref.PackageInfoUtil;
 import com.dawoo.ipc.control.IpcWebViewActivity;
 
 import static com.dawoo.chessbox.ConstantValue.WEBVIEW_TYPE_THIRD_ORDINARY;
@@ -35,9 +33,7 @@ public class ActivityUtil {
      * @param apiId             游戏apiId
      */
     public static void startGameWebView(String url, String msg, String type, int ScreenOrientation, int apiId) {
-        if (!PackageInfoUtil.isServiceRunning(mContext, "com.dawoo.ipc.server.IPCServerService")) {
-            IPCSocketManager.getInstance().startServerService();
-        }
+
         Intent intent = new Intent(mContext, IpcWebViewActivity.class);
         Bundle bundle = new Bundle();
         bundle.putString(ConstantValue.WEBVIEW_URL, url);
