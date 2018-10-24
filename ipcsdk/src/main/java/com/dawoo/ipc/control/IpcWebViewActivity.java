@@ -545,7 +545,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
             mWebview.goBack();
             return true;
         } else
-            back(keyCode, event);
+           // back(keyCode, event);
         return super.onKeyDown(keyCode, event);
     }
 
