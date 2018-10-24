@@ -55,9 +55,9 @@ public class SpalashActivity extends BaseActivity {
                 if (e != null) {
                     Toast.makeText(HostManager.getInstance().getContext(), "网络异常,请检查网络设置~", Toast.LENGTH_SHORT);
                 } else {
-                    preLoadH5Manger.preLoad(mUrl);
-                    if (mShown == 2) {
 
+                    if (mShown == 2) {
+                        preLoadH5Manger.preLoad(mUrl);
                         preLoadH5Manger.setmPreLoadListener(new PreLoadH5Manger.PreLoadListener() {
                             @Override
                             public void onStart() {
