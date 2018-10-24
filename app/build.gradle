@@ -167,10 +167,7 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportVersion}"
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation "com.android.support:design:${rootProject.ext.supportVersion}"
-    implementation "com.android.support:support-v4:${rootProject.ext.supportVersion}"
-    implementation "com.android.support:recyclerview-v7:${rootProject.ext.supportVersion}"
+
     //独立进程的库  可以用一些东西  可扩展
     implementation project(':ipcsdk')
 
