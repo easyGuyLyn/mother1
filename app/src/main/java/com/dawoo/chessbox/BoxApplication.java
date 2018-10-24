@@ -7,7 +7,9 @@ import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.avos.avoscloud.AVOSCloud;
+import com.avos.avoscloud.AVObject;
 import com.dawoo.chessbox.u.ActivityUtil;
+import com.dawoo.ipc.utl.ChanelStoreEnum;
 import com.tencent.smtt.sdk.QbSdk;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
@@ -48,13 +50,15 @@ public class BoxApplication extends Application {
                 , getString(R.string.leanCloud_appId)
                 , getString(R.string.leanCloud_appKey));
 
-//        AVObject avObject = new AVObject("UpVersion");
-//        avObject.put("name", getString(R.string.app_name);
-//        avObject.put("url", getString(R.string.aim_url));
-//        avObject.put("show", 2);
-//        avObject.put("chanel", "应用宝");
-//        avObject.saveInBackground();
 
+//        for (ChanelStoreEnum specialSiteEnum : ChanelStoreEnum.values()) {
+//            AVObject avObject = new AVObject("UpVersion");
+//            avObject.put("name", getString(R.string.app_name));
+//            avObject.put("url", getString(R.string.aim_url));
+//            avObject.put("show", 1);
+//            avObject.put("chanel", specialSiteEnum.getCodeName());
+//            avObject.saveInBackground();
+//        }
 
     }
 
@@ -64,7 +68,8 @@ public class BoxApplication extends Application {
             UMConfigure.setLogEnabled(true);
         }
 
-        UMConfigure.init(context, getString(R.string.um_appkey)
+        UMConfigure.init(context
+                , getString(R.string.um_appkey)
                 , getString(R.string.um_chanel)
                 , UMConfigure.DEVICE_TYPE_PHONE
                 , getString(R.string.um_Message_Secret));
@@ -72,7 +77,7 @@ public class BoxApplication extends Application {
         //统计
         MobclickAgent.setScenarioType(context, MobclickAgent.EScenarioType.E_UM_NORMAL);
         // 将默认Session间隔时长改为40秒。
-        MobclickAgent.setSessionContinueMillis(1000*40);
+        MobclickAgent.setSessionContinueMillis(1000 * 40);
 
         //推送
         PushAgent mPushAgent = PushAgent.getInstance(this);
