@@ -150,8 +150,8 @@ android {
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
             resValue "string", "leanCloud_objectId", "5bce9399fb4ffe0069e6e452"
 
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_appkey", "5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", "8b090f521c96e5bedd15f846a783f1bb"
             resValue "string", "um_chanel", "default"
 
             resValue "string", "aim_url", "https://m.ttc178.com"
