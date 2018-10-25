@@ -1,1 +1,1 @@
-include ':app', ':ipcsdk', ':CommonLibrary', ':FlycoDialogLibrary', ':MaterialPtrLibrary', ':SwipeBackLibrary', ':VideoPlayerLibrary'
+include ':app', ':ipcsdk'
