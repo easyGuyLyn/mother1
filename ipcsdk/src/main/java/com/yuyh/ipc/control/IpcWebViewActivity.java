@@ -102,9 +102,9 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void initView() {
-        mWebviewFL = findViewById(R.id.webview_fl);
-        mProgressBar = findViewById(R.id.progressBar);
-        mVideoContainer = findViewById(R.id.videoContainer);
+        mWebviewFL = (WDragViewLayout) findViewById(R.id.webview_fl);
+        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
+        mVideoContainer = (FrameLayout) findViewById(R.id.videoContainer);
         createWebView();
         initWebSetting();
     }
