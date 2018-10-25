@@ -127,11 +127,6 @@ android {
     packagingOptions {
         exclude 'META-INF/rxjava.properties'
     }
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['src/main/jniLibs']
-        }
-    }
     //为了解决部分第三方库重复打包了META-INF的问题
     packagingOptions {
         exclude 'META-INF/LICENSE.txt'
@@ -266,7 +261,7 @@ android {
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
-            resValue "string", "leanCloud_objectId", "5bd0692f17d0090062cdd02a"
+            resValue "string", "leanCloud_objectId", "5bd1232a9f5454006ee12fb3"
 
             resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
             resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
@@ -545,19 +540,5 @@ dependencies {
     //独立进程的库  可以用一些东西  可扩展
     implementation project(':ipcsdk')
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportVersion}"
-    implementation "com.android.support:design:23.4.0"
-    implementation "com.android.support:cardview-v7:23.4.0"
-    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
-    implementation 'com.squareup.retrofit2:converter-scalars:2.0.0-beta4'
-    implementation 'com.squareup.okhttp3:okhttp:3.2.0'
-    implementation 'com.alibaba:fastjson:1.2.12'
-    implementation 'com.github.bumptech.glide:glide:3.7.0'
-    implementation 'com.github.clans:fab:1.6.2'
-    implementation 'com.jakewharton:butterknife:5.1.1'
-    implementation 'org.greenrobot:eventbus:3.0.0'
-
-    // https://github.com/smuyyh/EasyAdapter
-    implementation 'com.yuyh.easyadapter:library:1.1.1'
 
 }
