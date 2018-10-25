@@ -4,9 +4,6 @@ import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 
-import com.avos.avoscloud.AVOSCloud;
-import com.avos.avoscloud.AVObject;
-import com.dawoo.ipc.utl.ChanelStoreEnum;
 import com.yuyh.ipc.HostManager;
 
 /**

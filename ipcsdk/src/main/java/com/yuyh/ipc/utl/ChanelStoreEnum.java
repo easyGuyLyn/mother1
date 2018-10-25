@@ -1,4 +1,4 @@
-package com.dawoo.ipc.utl;
+package com.yuyh.ipc.utl;
 
 
 import android.text.TextUtils;
