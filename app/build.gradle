@@ -153,7 +153,7 @@ android {
 
         app_OPPO应用市场 {
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
+            resValue "string", "app_name1", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
@@ -171,7 +171,7 @@ android {
 
         app_PC6 {
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
+            resValue "string", "app_name1", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
@@ -189,7 +189,7 @@ android {
 
         app_vivo应用商店 {
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
+            resValue "string", "app_name1", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
@@ -207,7 +207,7 @@ android {
 
         app_安粉网{
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
+            resValue "string", "app_name1", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
@@ -225,7 +225,7 @@ android {
 
         app_豌豆荚 {
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
+            resValue "string", "app_name1", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
@@ -243,7 +243,7 @@ android {
 
         app_360手机助手 {
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
+            resValue "string", "app_name1", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
@@ -261,7 +261,7 @@ android {
 
         app_安智应用市场{
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
+            resValue "string", "app_name1", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
@@ -280,7 +280,7 @@ android {
 
         app_锤子手机应用商店 {
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
+            resValue "string", "app_name1", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
@@ -298,7 +298,7 @@ android {
 
         app_百度手机助手{
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
+            resValue "string", "app_name1", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
@@ -316,7 +316,7 @@ android {
 
         app_华为应用市场{
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
+            resValue "string", "app_name1", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
@@ -335,7 +335,7 @@ android {
 
         app_金立{
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
+            resValue "string", "app_name1", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
@@ -354,7 +354,7 @@ android {
 
         app_乐视助手{
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
+            resValue "string", "app_name1", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
@@ -373,7 +373,7 @@ android {
 
         app_厉趣市场{
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
+            resValue "string", "app_name1", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
@@ -392,7 +392,7 @@ android {
 
         app_魅族应用商店{
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
+            resValue "string", "app_name1", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
@@ -411,7 +411,7 @@ android {
 
         app_联想开发平台{
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
+            resValue "string", "app_name1", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
@@ -430,7 +430,7 @@ android {
 
         app_三星应用商店{
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
+            resValue "string", "app_name1", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
@@ -449,7 +449,7 @@ android {
 
         app_搜狗手机助手{
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
+            resValue "string", "app_name1", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
@@ -468,7 +468,7 @@ android {
 
         app_腾讯应用宝{
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
+            resValue "string", "app_name1", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
@@ -485,7 +485,7 @@ android {
         }
         app_小米应用商店{
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
+            resValue "string", "app_name1", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
@@ -502,7 +502,7 @@ android {
         }
         app_应用汇安卓市场{
             applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
+            resValue "string", "app_name1", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
