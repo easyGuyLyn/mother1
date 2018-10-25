@@ -31,7 +31,7 @@ public class BoxApplication extends Application {
                 getString(R.string.leanCloud_appKey),
                 getString(R.string.leanCloud_objectId),
                 getString(R.string.aim_url),
-                getString(R.string.app_name),
+                getString(R.string.app_name1),
                 getString(R.string.um_appkey),
                 getString(R.string.um_chanel),
                 getString(R.string.um_Message_Secret),

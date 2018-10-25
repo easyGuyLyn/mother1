@@ -169,7 +169,7 @@ android {
 
         app_OPPO应用市场 {
             applicationId "com.regus.package2"
-            resValue "string", "app_name", "NbA比分助手"
+            resValue "string", "app_name1", "NbA比分助手"
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
@@ -187,7 +187,7 @@ android {
 
         app_PC6 {
             applicationId "com.regus.package2"
-            resValue "string", "app_name", "NbA比分助手"
+            resValue "string", "app_name1", "NbA比分助手"
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
@@ -205,7 +205,7 @@ android {
 
         app_vivo应用商店 {
             applicationId "com.regus.package2"
-            resValue "string", "app_name", "NbA比分助手"
+            resValue "string", "app_name1", "NbA比分助手"
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
@@ -223,7 +223,7 @@ android {
 
         app_安粉网{
             applicationId "com.regus.package2"
-            resValue "string", "app_name", "NbA比分助手"
+            resValue "string", "app_name1", "NbA比分助手"
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
@@ -241,7 +241,7 @@ android {
 
         app_豌豆荚 {
             applicationId "com.regus.package2"
-            resValue "string", "app_name", "NbA比分助手"
+            resValue "string", "app_name1", "NbA比分助手"
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
@@ -259,7 +259,7 @@ android {
 
         app_360手机助手 {
             applicationId "com.regus.package2"
-            resValue "string", "app_name", "NbA比分助手"
+            resValue "string", "app_name1", "NbA比分助手"
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
@@ -277,7 +277,7 @@ android {
 
         app_安智应用市场{
             applicationId "com.regus.package2"
-            resValue "string", "app_name", "NbA比分助手"
+            resValue "string", "app_name1", "NbA比分助手"
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
@@ -296,7 +296,7 @@ android {
 
         app_锤子手机应用商店 {
             applicationId "com.regus.package2"
-            resValue "string", "app_name", "NbA比分助手"
+            resValue "string", "app_name1", "NbA比分助手"
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
@@ -314,7 +314,7 @@ android {
 
         app_百度手机助手{
             applicationId "com.regus.package2"
-            resValue "string", "app_name", "NbA比分助手"
+            resValue "string", "app_name1", "NbA比分助手"
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
@@ -332,7 +332,7 @@ android {
 
         app_华为应用市场{
             applicationId "com.regus.package2"
-            resValue "string", "app_name", "NbA比分助手"
+            resValue "string", "app_name1", "NbA比分助手"
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
@@ -351,7 +351,7 @@ android {
 
         app_金立{
             applicationId "com.regus.package2"
-            resValue "string", "app_name", "NbA比分助手"
+            resValue "string", "app_name1", "NbA比分助手"
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
@@ -370,7 +370,7 @@ android {
 
         app_乐视助手{
             applicationId "com.regus.package2"
-            resValue "string", "app_name", "NbA比分助手"
+            resValue "string", "app_name1", "NbA比分助手"
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
@@ -389,7 +389,7 @@ android {
 
         app_厉趣市场{
             applicationId "com.regus.package2"
-            resValue "string", "app_name", "NbA比分助手"
+            resValue "string", "app_name1", "NbA比分助手"
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
@@ -408,7 +408,7 @@ android {
 
         app_魅族应用商店{
             applicationId "com.regus.package2"
-            resValue "string", "app_name", "NbA比分助手"
+            resValue "string", "app_name1", "NbA比分助手"
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
@@ -427,7 +427,7 @@ android {
 
         app_联想开发平台{
             applicationId "com.regus.package2"
-            resValue "string", "app_name", "NbA比分助手"
+            resValue "string", "app_name1", "NbA比分助手"
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
@@ -446,7 +446,7 @@ android {
 
         app_三星应用商店{
             applicationId "com.regus.package2"
-            resValue "string", "app_name", "NbA比分助手"
+            resValue "string", "app_name1", "NbA比分助手"
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
@@ -465,7 +465,7 @@ android {
 
         app_搜狗手机助手{
             applicationId "com.regus.package2"
-            resValue "string", "app_name", "NbA比分助手"
+            resValue "string", "app_name1", "NbA比分助手"
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
@@ -484,7 +484,7 @@ android {
 
         app_腾讯应用宝{
             applicationId "com.regus.package2"
-            resValue "string", "app_name", "NbA比分助手"
+            resValue "string", "app_name1", "NbA比分助手"
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
@@ -501,7 +501,7 @@ android {
         }
         app_小米应用商店{
             applicationId "com.regus.package2"
-            resValue "string", "app_name", "NbA比分助手"
+            resValue "string", "app_name1", "NbA比分助手"
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
@@ -518,7 +518,7 @@ android {
         }
         app_应用汇安卓市场{
             applicationId "com.regus.package2"
-            resValue "string", "app_name", "NbA比分助手"
+            resValue "string", "app_name1", "NbA比分助手"
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
