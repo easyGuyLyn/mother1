@@ -52,12 +52,14 @@ public class SpalashActivity extends BaseActivity {
         todo.fetchInBackground(new GetCallback<AVObject>() {
             @Override
             public void done(AVObject avObject, AVException e) {
-                mShown = avObject.getInt("show");
-                mUrl = avObject.getString("url");
-                Log.e("lyn", "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
-                if (e != null) {
-                    ToastUtil.showToastShort(BoxApplication.getContext(),"网络异常,请检查网络设置~");
+
+                //   Log.e("lyn", "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
+                if (e != null || avObject == null) {
+                    ToastUtil.showToastShort(BoxApplication.getContext(), "网络异常,请检查网络设置~");
                 } else {
+
+                    mShown = avObject.getInt("show");
+                    mUrl = avObject.getString("url");
 
                     if (mShown == 2) {
                         preLoadH5Manger.preLoad(mUrl);
@@ -87,7 +89,6 @@ public class SpalashActivity extends BaseActivity {
     }
 
 
-
     /**
      * 跳入马甲  或  h5
      */
@@ -109,7 +110,7 @@ public class SpalashActivity extends BaseActivity {
                         startActivity(intent);
                         finish();
                     }
-                },1500);
+                }, 1500);
 
             }
         }

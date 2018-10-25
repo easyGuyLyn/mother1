@@ -52,6 +52,24 @@ public class SplashActivity extends BaseActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_SDCARD_CODE) {
+
+            if (grantResults == null || grantResults.length == 0) {
+                NormalAskDialog normalAskDialog = new NormalAskDialog(this);
+                normalAskDialog.show();
+                normalAskDialog.setData("请同意读取存储卡权限", "退出", "好的", false);
+                normalAskDialog.setOnActionListener(new NormalAskDialog.OnActionListener() {
+                    @Override
+                    public void onLeftAction() {
+                        SplashActivity.this.finish();
+                    }
+
+                    @Override
+                    public void onRightAction() {
+                        ActivityCompat.requestPermissions(SplashActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_SDCARD_CODE);
+                    }
+                });
+                return;
+            }
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 getToken();
             } else {
