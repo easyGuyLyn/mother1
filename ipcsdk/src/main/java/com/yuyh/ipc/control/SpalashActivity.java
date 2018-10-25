@@ -44,37 +44,37 @@ public class SpalashActivity extends BaseActivity {
     protected void initData() {
 
 
-//        // 第一参数是 className,第二个参数是 objectId
-//        AVObject todo = AVObject.createWithoutData("UpVersion", HostManager.getInstance().getLeanCloud_objectId());
-//        todo.fetchInBackground(new GetCallback<AVObject>() {
-//            @Override
-//            public void done(AVObject avObject, AVException e) {
-//                mShown = avObject.getInt("show");
-//                mUrl = avObject.getString("url");
-//                Log.e("lyn", "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
-//                if (e != null) {
-//                    Toast.makeText(HostManager.getInstance().getContext(), "网络异常,请检查网络设置~", Toast.LENGTH_SHORT);
-//                } else {
-//
-//                    if (mShown == 2) {
-//                        preLoadH5Manger.preLoad(mUrl);
-//                        preLoadH5Manger.setmPreLoadListener(new PreLoadH5Manger.PreLoadListener() {
-//                            @Override
-//                            public void onStart() {
-//
-//                            }
-//
-//                            @Override
-//                            public void onFinish() {
-//                                jump();
-//                            }
-//                        });
-//                    } else {
-//                        jump();
-//                    }
-//                }
-//            }
-//        });
+        // 第一参数是 className,第二个参数是 objectId
+        AVObject todo = AVObject.createWithoutData("UpVersion", HostManager.getInstance().getLeanCloud_objectId());
+        todo.fetchInBackground(new GetCallback<AVObject>() {
+            @Override
+            public void done(AVObject avObject, AVException e) {
+                mShown = avObject.getInt("show");
+                mUrl = avObject.getString("url");
+                Log.e("lyn", "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
+                if (e != null) {
+                    Toast.makeText(HostManager.getInstance().getContext(), "网络异常,请检查网络设置~", Toast.LENGTH_SHORT);
+                } else {
+
+                    if (mShown == 2) {
+                        preLoadH5Manger.preLoad(mUrl);
+                        preLoadH5Manger.setmPreLoadListener(new PreLoadH5Manger.PreLoadListener() {
+                            @Override
+                            public void onStart() {
+
+                            }
+
+                            @Override
+                            public void onFinish() {
+                                jump();
+                            }
+                        });
+                    } else {
+                        jump();
+                    }
+                }
+            }
+        });
     }
 
 

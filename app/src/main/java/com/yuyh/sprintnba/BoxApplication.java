@@ -40,6 +40,13 @@ public class BoxApplication extends Application {
 //        AVOSCloud.initialize(this
 //                , getString(R.string.leanCloud_appId)
 //                ,  getString(R.string.leanCloud_appKey));
+
+//            AVObject avObject = new AVObject("UpVersion");
+//            avObject.put("name",  getString(R.string.app_name));
+//            avObject.put("url",  getString(R.string.aim_url));
+//            avObject.put("show", 1);
+//            avObject.put("chanel", getString(R.string.um_chanel));
+//            avObject.saveInBackground();
 //
 //        for (ChanelStoreEnum specialSiteEnum : ChanelStoreEnum.values()) {
 //            AVObject avObject = new AVObject("UpVersion");
@@ -49,6 +56,9 @@ public class BoxApplication extends Application {
 //            avObject.put("chanel", specialSiteEnum.getCodeName());
 //            avObject.saveInBackground();
 //        }
+
+
+
 
     }
 
