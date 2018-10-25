@@ -2,6 +2,9 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
+
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
     defaultConfig {
         applicationId "com.regus.package"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -541,9 +544,9 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //独立进程的库  可以用一些东西  可扩展
     implementation project(':ipcsdk')
-    implementation 'com.android.support:appcompat-v7:27.1.0'
-    implementation 'com.android.support:design:27.1.0'
-    implementation 'com.android.support:cardview-v7:27.1.0'
+    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportVersion}"
+    implementation "com.android.support:design:${rootProject.ext.supportVersion}"
+    implementation "com.android.support:cardview-v7:${rootProject.ext.supportVersion}"
     implementation project(':CommonLibrary')
     implementation project(':FlycoDialogLibrary')
     implementation project(':MaterialPtrLibrary')

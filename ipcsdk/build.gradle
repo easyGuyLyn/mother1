@@ -3,6 +3,7 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
 
     defaultConfig {
@@ -41,7 +42,7 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //noinspection GradleCompatible
-    implementation "com.android.support:appcompat-v7:27.1.0"
+    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportVersion}"
     // x5
     api files('libs/tbs_sdk_thirdapp_v3.5.0.1004_43500_sharewithdownload_withoutGame_obfs_20170801_113025.jar')
     // 改 statusBar
