@@ -28,7 +28,6 @@ import android.widget.ProgressBar;
 
 import com.yuyh.ipc.R;
 import com.yuyh.ipc.view.WDragViewLayout;
-import com.gyf.barlibrary.ImmersionBar;
 import com.tencent.smtt.export.external.interfaces.IX5WebChromeClient;
 import com.tencent.smtt.export.external.interfaces.SslError;
 import com.tencent.smtt.export.external.interfaces.SslErrorHandler;
@@ -41,8 +40,6 @@ import com.tencent.smtt.sdk.WebChromeClient;
 import com.tencent.smtt.sdk.WebSettings;
 import com.tencent.smtt.sdk.WebView;
 import com.tencent.smtt.sdk.WebViewClient;
-import com.umeng.analytics.MobclickAgent;
-import com.umeng.message.PushAgent;
 
 /**
  * archar  天纵神武
@@ -51,7 +48,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
 
     private static final String TAG = "IpcWebViewActivity  ";
 
-    private ImmersionBar mImmersionBar;
+    //private ImmersionBar mImmersionBar;
 
     private WDragViewLayout mWebviewFL;
     private ProgressBar mProgressBar;
@@ -96,7 +93,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_ipc_web_view);
-        PushAgent.getInstance(IpcWebViewActivity.this).onAppStart();
+    //    PushAgent.getInstance(IpcWebViewActivity.this).onAppStart();
         initView();
         initData();
     }
@@ -151,8 +148,8 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
         //除了电子之外的游戏和彩票                   第三方网页
         if (WEBVIEW_TYPE_GAME.equals(mWebViewType) || WEBVIEW_TYPE_THIRD_ORDINARY.equals(mWebViewType)) {
             setFullScreen(false);
-            mImmersionBar = ImmersionBar.with(this).statusBarColor(R.color.black);
-            mImmersionBar.init();
+//            mImmersionBar = ImmersionBar.with(this).statusBarColor(R.color.black);
+//            mImmersionBar.init();
         } else if (WEBVIEW_TYPE_GAME_FULLSCREEN_ALWAYS.equals(mWebViewType)) {//电子有些游戏一开始不设置全屏，他会认为你永远不全屏
             setFullScreen(true);
         }
@@ -526,13 +523,13 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
     @Override
     protected void onResume() {
         super.onResume();
-        MobclickAgent.onResume(this);
+   //     MobclickAgent.onResume(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        MobclickAgent.onPause(this);
+      //  MobclickAgent.onPause(this);
     }
 
     /**
@@ -614,9 +611,9 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
         }
 
 
-        if (mImmersionBar != null) {
-            mImmersionBar.destroy();
-        }
+//        if (mImmersionBar != null) {
+//            mImmersionBar.destroy();
+//        }
         super.onDestroy();
 
     }

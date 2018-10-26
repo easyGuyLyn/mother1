@@ -261,7 +261,7 @@ android {
 
             resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
-            resValue "string", "leanCloud_objectId", "5bd1232a9f5454006ee12fb3"
+            resValue "string", "leanCloud_objectId", "5bd1232a0b61600066bfae59"
 
             resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
             resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"

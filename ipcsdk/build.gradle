@@ -32,7 +32,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -45,8 +49,8 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:23.1.1'
     // x5
     api files('libs/tbs_sdk_thirdapp_v3.5.0.1004_43500_sharewithdownload_withoutGame_obfs_20170801_113025.jar')
-    // 改 statusBar
-    api 'com.gyf.barlibrary:barlibrary:2.3.0'
+//    // 改 statusBar
+//    api 'com.gyf.barlibrary:barlibrary:2.3.0'
     // LeanCloud 基础包
     api 'cn.leancloud.android:avoscloud-sdk:v4.7.3'
     //
@@ -61,9 +65,9 @@ dependencies {
     //
     //    //PushSDK
     //    api 'com.umeng.sdk:push:4.2.0'
-    implementation files('libs/umeng-common-1.5.4.jar')
-    implementation files('libs/umeng-analytics-7.5.4.jar')
-    implementation files('libs/SecurityEnvSDK-release-1.1.0.jar')
-    implementation files('libs/utdid4all-1.1.5.3_proguard.jar')
-    implementation project(':push')
+//    implementation files('libs/umeng-common-1.5.4.jar')
+//    implementation files('libs/umeng-analytics-7.5.4.jar')
+//    implementation files('libs/SecurityEnvSDK-release-1.1.0.jar')
+//    implementation files('libs/utdid4all-1.1.5.3_proguard.jar')
+//    implementation project(':push')
 }

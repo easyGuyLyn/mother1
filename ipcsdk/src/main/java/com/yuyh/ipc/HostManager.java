@@ -5,10 +5,10 @@ import android.util.Log;
 
 import com.avos.avoscloud.AVOSCloud;
 import com.tencent.smtt.sdk.QbSdk;
-import com.umeng.analytics.MobclickAgent;
-import com.umeng.commonsdk.UMConfigure;
-import com.umeng.message.IUmengRegisterCallback;
-import com.umeng.message.PushAgent;
+//import com.umeng.analytics.MobclickAgent;
+//import com.umeng.commonsdk.UMConfigure;
+//import com.umeng.message.IUmengRegisterCallback;
+//import com.umeng.message.PushAgent;
 
 
 public class HostManager {
@@ -65,7 +65,7 @@ public class HostManager {
 
         initLeanCloud(leanCloud_appId, leanCloud_appKey, aimUrl, app_name);
 
-        initUM(um_appkey, um_chanel, um_Message_Secret, resourcePackageName);
+      //  initUM(um_appkey, um_chanel, um_Message_Secret, resourcePackageName);
 
         loadX5();
     }
@@ -81,49 +81,49 @@ public class HostManager {
     }
 
 
-    private void initUM(
-            String um_appkey,
-            String um_chanel,
-            String um_Message_Secret,
-            String ResourcePackageName) {
-
-        if (BuildConfig.DEBUG) {
-            UMConfigure.setLogEnabled(true);
-        }
-
-        UMConfigure.init(context, um_appkey
-                , um_chanel
-                , UMConfigure.DEVICE_TYPE_PHONE
-                , um_Message_Secret);
-
-        //统计
-        MobclickAgent.setScenarioType(context, MobclickAgent.EScenarioType.E_UM_NORMAL);
-        // 将默认Session间隔时长改为40秒。
-        MobclickAgent.setSessionContinueMillis(1000 * 40);
-
-        //推送
-        PushAgent mPushAgent = PushAgent.getInstance(context);
-
-        mPushAgent.setResourcePackageName(ResourcePackageName);
-
-        //注册推送服务，每次调用register方法都会回调该接口
-        mPushAgent.register(new IUmengRegisterCallback() {
-
-            @Override
-            public void onSuccess(String deviceToken) {
-                //注册成功会返回device token
-                Log.e("u_push", "推送注册成功  deviceToken : " + deviceToken);
-            }
-
-            @Override
-            public void onFailure(String s, String s1) {
-                Log.e("u_push", "推送注册失败  error 1 : " + s + " error 2 " + s1);
-            }
-        });
-
-
-    }
-
+//    private void initUM(
+//            String um_appkey,
+//            String um_chanel,
+//            String um_Message_Secret,
+//            String ResourcePackageName) {
+//
+//        if (BuildConfig.DEBUG) {
+//            UMConfigure.setLogEnabled(true);
+//        }
+//
+//        UMConfigure.init(context, um_appkey
+//                , um_chanel
+//                , UMConfigure.DEVICE_TYPE_PHONE
+//                , um_Message_Secret);
+//
+//        //统计
+//        MobclickAgent.setScenarioType(context, MobclickAgent.EScenarioType.E_UM_NORMAL);
+//        // 将默认Session间隔时长改为40秒。
+//        MobclickAgent.setSessionContinueMillis(1000 * 40);
+//
+//        //推送
+//        PushAgent mPushAgent = PushAgent.getInstance(context);
+//
+//        mPushAgent.setResourcePackageName(ResourcePackageName);
+//
+//        //注册推送服务，每次调用register方法都会回调该接口
+//        mPushAgent.register(new IUmengRegisterCallback() {
+//
+//            @Override
+//            public void onSuccess(String deviceToken) {
+//                //注册成功会返回device token
+//                Log.e("u_push", "推送注册成功  deviceToken : " + deviceToken);
+//            }
+//
+//            @Override
+//            public void onFailure(String s, String s1) {
+//                Log.e("u_push", "推送注册失败  error 1 : " + s + " error 2 " + s1);
+//            }
+//        });
+//
+//
+//    }
+//
 
     /**
      * 加载x5
