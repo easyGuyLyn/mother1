@@ -152,15 +152,15 @@ android {
         def pid_pex = ".fileprovider"
 
         app_OPPO应用市场 {
-            applicationId "com.regus.package1"
-            resValue "string", "app_name1", "菜票广播"
+            applicationId "com.regus.package2"
+            resValue "string", "app_name1", "极速彩票资讯"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f39f545400666f78bf"
+            resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
+            resValue "string", "leanCloud_objectId", "5bd12352ee920a0068c1ef19"
 
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_appkey", "5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", "8b090f521c96e5bedd15f846a783f1bb"
             resValue "string", "um_chanel", "app_OPPO应用市场"
 
             resValue "string", "aim_url", "https://m.ttc178.com"
@@ -170,15 +170,15 @@ android {
         }
 
         app_PC6 {
-            applicationId "com.regus.package1"
-            resValue "string", "app_name1", "菜票广播"
+            applicationId "com.regus.package2"
+            resValue "string", "app_name1", "极速彩票资讯"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f3ee920a0068cb78da"
+            resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
+            resValue "string", "leanCloud_objectId", "5bd1232a0b61600066bfae52"
 
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
             resValue "string", "um_chanel", "app_PC6"
 
             resValue "string", "aim_url", "https://m.ttc178.com"
@@ -188,15 +188,15 @@ android {
         }
 
         app_vivo应用商店 {
-            applicationId "com.regus.package1"
-            resValue "string", "app_name1", "菜票广播"
+            applicationId "com.regus.package2"
+            resValue "string", "app_name1", "极速彩票资讯"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f30b61600066b7879f"
+            resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
+            resValue "string", "leanCloud_objectId", "5bd0692fac502e0061a85ccb"
 
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
             resValue "string", "um_chanel", "app_vivo应用商店"
 
             resValue "string", "aim_url", "https://m.ttc178.com"
@@ -206,15 +206,15 @@ android {
         }
 
         app_安粉网{
-            applicationId "com.regus.package1"
-            resValue "string", "app_name1", "菜票广播"
+            applicationId "com.regus.package2"
+            resValue "string", "app_name1", "极速彩票资讯"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f39f5454006ed906da"
+            resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
+            resValue "string", "leanCloud_objectId", "5bd0692f9f5454006eda5236"
 
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
             resValue "string", "um_chanel", "app_安粉网"
 
             resValue "string", "aim_url", "https://m.ttc178.com"
@@ -224,15 +224,15 @@ android {
         }
 
         app_豌豆荚 {
-            applicationId "com.regus.package1"
-            resValue "string", "app_name1", "菜票广播"
+            applicationId "com.regus.package2"
+            resValue "string", "app_name1", "极速彩票资讯"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f39f5454006ed906e1"
+            resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
+            resValue "string", "leanCloud_objectId", "5bd0692fac502e0061a85ccc"
 
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
             resValue "string", "um_chanel", "app_豌豆荚"
 
             resValue "string", "aim_url", "https://m.ttc178.com"
@@ -242,15 +242,15 @@ android {
         }
 
         app_360手机助手 {
-            applicationId "com.regus.package1"
-            resValue "string", "app_name1", "菜票广播"
+            applicationId "com.regus.package2"
+            resValue "string", "app_name1", "极速彩票资讯"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f344d904005e816513"
+            resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
+            resValue "string", "leanCloud_objectId", "5bd1232a0b61600066bfae59"
 
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
             resValue "string", "um_chanel", "app_360手机助手"
 
             resValue "string", "aim_url", "https://m.ttc178.com"
@@ -260,15 +260,15 @@ android {
         }
 
         app_安智应用市场{
-            applicationId "com.regus.package1"
-            resValue "string", "app_name1", "菜票广播"
+            applicationId "com.regus.package2"
+            resValue "string", "app_name1", "极速彩票资讯"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f3ee920a0068cb78dc"
+            resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
+            resValue "string", "leanCloud_objectId", "5bd0692fac502e0061a85ccd"
 
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
             resValue "string", "um_chanel", "app_安智应用市场"
 
             resValue "string", "aim_url", "https://m.ttc178.com"
@@ -279,15 +279,15 @@ android {
 
 
         app_锤子手机应用商店 {
-            applicationId "com.regus.package1"
-            resValue "string", "app_name1", "菜票广播"
+            applicationId "com.regus.package2"
+            resValue "string", "app_name1", "极速彩票资讯"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f39f5454006ed906e0"
+            resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
+            resValue "string", "leanCloud_objectId", "5bd0692f17d0090062cdd02c"
 
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
             resValue "string", "um_chanel", "app_锤子手机应用商店"
 
             resValue "string", "aim_url", "https://m.ttc178.com"
@@ -297,15 +297,15 @@ android {
         }
 
         app_百度手机助手{
-            applicationId "com.regus.package1"
-            resValue "string", "app_name1", "菜票广播"
+            applicationId "com.regus.package2"
+            resValue "string", "app_name1", "极速彩票资讯"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f30b61600066b787a2"
+            resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
+            resValue "string", "leanCloud_objectId", "5bd0692f44d904005e82af95"
 
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
             resValue "string", "um_chanel", "app_百度手机助手"
 
             resValue "string", "aim_url", "https://m.ttc178.com"
@@ -315,15 +315,15 @@ android {
         }
 
         app_华为应用市场{
-            applicationId "com.regus.package1"
-            resValue "string", "app_name1", "菜票广播"
+            applicationId "com.regus.package2"
+            resValue "string", "app_name1", "极速彩票资讯"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f3ee920a0068cb78df"
+            resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
+            resValue "string", "leanCloud_objectId", "5bd0692f0b61600066b8d011"
 
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
             resValue "string", "um_chanel", "app_华为应用市场"
 
             resValue "string", "aim_url", "https://m.ttc178.com"
@@ -334,15 +334,15 @@ android {
 
 
         app_金立{
-            applicationId "com.regus.package1"
-            resValue "string", "app_name1", "菜票广播"
+            applicationId "com.regus.package2"
+            resValue "string", "app_name1", "极速彩票资讯"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f39f545400666f78c8"
+            resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
+            resValue "string", "leanCloud_objectId", "5bd0692f17d0090062cdd02e"
 
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
             resValue "string", "um_chanel", "app_金立"
 
             resValue "string", "aim_url", "https://m.ttc178.com"
@@ -353,15 +353,15 @@ android {
 
 
         app_乐视助手{
-            applicationId "com.regus.package1"
-            resValue "string", "app_name1", "菜票广播"
+            applicationId "com.regus.package2"
+            resValue "string", "app_name1", "极速彩票资讯"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f3ee920a0068cb78e0"
+            resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
+            resValue "string", "leanCloud_objectId", "5bd0692fee920a0068bb141e"
 
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
             resValue "string", "um_chanel", "app_乐视助手"
 
             resValue "string", "aim_url", "https://m.ttc178.com"
@@ -372,15 +372,15 @@ android {
 
 
         app_厉趣市场{
-            applicationId "com.regus.package1"
-            resValue "string", "app_name1", "菜票广播"
+            applicationId "com.regus.package2"
+            resValue "string", "app_name1", "极速彩票资讯"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f344d904005e816517"
+            resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
+            resValue "string", "leanCloud_objectId", "5bd0692f9f5454006670c03c"
 
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
             resValue "string", "um_chanel", "app_厉趣市场"
 
             resValue "string", "aim_url", "https://m.ttc178.com"
@@ -391,15 +391,15 @@ android {
 
 
         app_魅族应用商店{
-            applicationId "com.regus.package1"
-            resValue "string", "app_name1", "菜票广播"
+            applicationId "com.regus.package2"
+            resValue "string", "app_name1", "极速彩票资讯"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f30b61600066b787a3"
+            resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
+            resValue "string", "leanCloud_objectId", "5bd0692f17d0090062cdd030"
 
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
             resValue "string", "um_chanel", "app_魅族应用商店"
 
             resValue "string", "aim_url", "https://m.ttc178.com"
@@ -410,15 +410,15 @@ android {
 
 
         app_联想开发平台{
-            applicationId "com.regus.package1"
-            resValue "string", "app_name1", "菜票广播"
+            applicationId "com.regus.package2"
+            resValue "string", "app_name1", "极速彩票资讯"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f39f545400666f78cd"
+            resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
+            resValue "string", "leanCloud_objectId", "5bd0692f44d904005e82af97"
 
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
             resValue "string", "um_chanel", "app_联想开发平台"
 
             resValue "string", "aim_url", "https://m.ttc178.com"
@@ -429,15 +429,15 @@ android {
 
 
         app_三星应用商店{
-            applicationId "com.regus.package1"
-            resValue "string", "app_name1", "菜票广播"
+            applicationId "com.regus.package2"
+            resValue "string", "app_name1", "极速彩票资讯"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f344d904005e81651d"
+            resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
+            resValue "string", "leanCloud_objectId", "5bd0692f0b61600066b8d013"
 
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
             resValue "string", "um_chanel", "app_三星应用商店"
 
             resValue "string", "aim_url", "https://m.ttc178.com"
@@ -448,15 +448,15 @@ android {
 
 
         app_搜狗手机助手{
-            applicationId "com.regus.package1"
-            resValue "string", "app_name1", "菜票广播"
+            applicationId "com.regus.package2"
+            resValue "string", "app_name1", "极速彩票资讯"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f30b61600066b787a5"
+            resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
+            resValue "string", "leanCloud_objectId", "5bd0692f9f5454006eda523b"
 
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
             resValue "string", "um_chanel", "app_搜狗手机助手"
 
             resValue "string", "aim_url", "https://m.ttc178.com"
@@ -467,15 +467,15 @@ android {
 
 
         app_腾讯应用宝{
-            applicationId "com.regus.package1"
-            resValue "string", "app_name1", "菜票广播"
+            applicationId "com.regus.package2"
+            resValue "string", "app_name1", "极速彩票资讯"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f39f5454006ed906e3"
+            resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
+            resValue "string", "leanCloud_objectId", "5bd0692fac502e0061a85cce"
 
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
             resValue "string", "um_chanel", "app_腾讯应用宝"
 
             resValue "string", "aim_url", "https://m.ttc178.com"
@@ -484,15 +484,15 @@ android {
             ]
         }
         app_小米应用商店{
-            applicationId "com.regus.package1"
-            resValue "string", "app_name1", "菜票广播"
+            applicationId "com.regus.package2"
+            resValue "string", "app_name1", "极速彩票资讯"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "285bd055f49f545400666f78d2"
+            resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
+            resValue "string", "leanCloud_objectId", "5bd0692f9f5454006eda523d"
 
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
             resValue "string", "um_chanel", "app_小米应用商店"
 
             resValue "string", "aim_url", "https://m.ttc178.com"
@@ -501,15 +501,15 @@ android {
             ]
         }
         app_应用汇安卓市场{
-            applicationId "com.regus.package1"
-            resValue "string", "app_name1", "菜票广播"
+            applicationId "com.regus.package2"
+            resValue "string", "app_name1", "极速彩票资讯"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f49f5454006ed906e5"
+            resValue "string", "leanCloud_appId", " KlePqJVzyo5uJLTzKuCBBjpz-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", " zGYq3EABvp9s9LingruPMGAI"
+            resValue "string", "leanCloud_objectId", "5bd06930ee920a0068ccc178"
 
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
             resValue "string", "um_chanel", "app_应用汇安卓市场"
 
             resValue "string", "aim_url", "https://m.ttc178.com"
@@ -517,7 +517,6 @@ android {
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
         }
-
     }
 }
 
