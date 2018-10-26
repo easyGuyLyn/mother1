@@ -69,6 +69,9 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
     // 第三方一般网页
     static final String WEBVIEW_TYPE_THIRD_ORDINARY = "WEBVIEW_TYPE_THIRD_ORDINARY";
     public static final String SCREEN_ORITATION = "ScreenOrientationEvent";
+
+    public static final String IS_H5_MJ ="is_h5_mj";
+
     static final String GAME_APIID = "GAME_APIID";
     /**
      * Android 5.0以下版本的文件选择回调
@@ -91,6 +94,9 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
     private int mGameApi = -1;//游戏api id
     private boolean misRefreshPage;
 
+    private boolean mIS_h5;
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,6 +111,11 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
         mWebviewFL = findViewById(R.id.webview_fl);
         mProgressBar = findViewById(R.id.progressBar);
         mVideoContainer = findViewById(R.id.videoContainer);
+        if(mIS_h5){
+            mProgressBar.setVisibility(View.GONE);
+        }else {
+            mProgressBar.setVisibility(View.VISIBLE);
+        }
         createWebView();
         initWebSetting();
     }
@@ -126,6 +137,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
         mScreenOrientatioType = bundle.getInt(SCREEN_ORITATION);
         mWebViewType = bundle.getString(WEBVIEW_TYPE);
         mGameApi = bundle.getInt(GAME_APIID);
+        mIS_h5=bundle.getBoolean(IS_H5_MJ);
         initScreenOrientation();
         initStatusBar();
         if (!TextUtils.isEmpty(mUrl) && mWebview != null) {
@@ -579,6 +591,9 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
      * @param progress
      */
     private void setProgressBar(int progress) {
+
+        if(mIS_h5)return;
+
         if (progress == 100) {
             mProgressBar.setVisibility(View.INVISIBLE);
         } else {

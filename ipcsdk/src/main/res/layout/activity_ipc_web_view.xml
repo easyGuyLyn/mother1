@@ -18,6 +18,7 @@
             style="@android:style/Widget.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="3dp"
+            android:visibility="gone"
             android:progressDrawable="@drawable/progress_bar_horizontal" />
 
         <FrameLayout
