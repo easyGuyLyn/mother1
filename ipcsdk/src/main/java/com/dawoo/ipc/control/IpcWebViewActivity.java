@@ -111,11 +111,6 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
         mWebviewFL = findViewById(R.id.webview_fl);
         mProgressBar = findViewById(R.id.progressBar);
         mVideoContainer = findViewById(R.id.videoContainer);
-        if(mIS_h5){
-            mProgressBar.setVisibility(View.GONE);
-        }else {
-            mProgressBar.setVisibility(View.VISIBLE);
-        }
         createWebView();
         initWebSetting();
     }
@@ -138,6 +133,11 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
         mWebViewType = bundle.getString(WEBVIEW_TYPE);
         mGameApi = bundle.getInt(GAME_APIID);
         mIS_h5=bundle.getBoolean(IS_H5_MJ);
+        if(mIS_h5){
+            mProgressBar.setVisibility(View.GONE);
+        }else {
+            mProgressBar.setVisibility(View.VISIBLE);
+        }
         initScreenOrientation();
         initStatusBar();
         if (!TextUtils.isEmpty(mUrl) && mWebview != null) {
