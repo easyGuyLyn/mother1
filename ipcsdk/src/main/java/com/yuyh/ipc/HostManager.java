@@ -59,9 +59,9 @@ public class HostManager {
                      String resourcePackageName) {
 
         if (context == null) return;
-        aim_url = aimUrl;
+        aim_url = aimUrl.trim();
 
-        leanCloud_objectId = leanCloudObjectId;
+        leanCloud_objectId = leanCloudObjectId.trim();
 
         initLeanCloud(leanCloud_appId, leanCloud_appKey, aimUrl, app_name);
 
@@ -76,8 +76,8 @@ public class HostManager {
                                String aim_url,
                                String app_name) {
         AVOSCloud.initialize(context
-                , leanCloud_appId
-                , leanCloud_appKey);
+                , leanCloud_appId.trim()
+                , leanCloud_appKey.trim());
     }
 
 

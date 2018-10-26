@@ -136,6 +136,12 @@ android {
         abortOnError false
     }
 
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+    }
+
     // 多渠道 的不同配置
     productFlavors {
 
@@ -539,6 +545,27 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //独立进程的库  可以用一些东西  可扩展
     implementation project(':ipcsdk')
-    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportVersion}"
+
+
+
+    implementation project(':CommonLibrary')
+    implementation project(':FlycoDialogLibrary')
+    implementation project(':MaterialPtrLibrary')
+    implementation project(':SwipeBackLibrary')
+    implementation project(':VideoPlayerLibrary')
+    implementation 'com.android.support:appcompat-v7:23.1.1'
+    implementation 'com.android.support:design:23.4.0'
+    implementation 'com.android.support:cardview-v7:23.4.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.0.0-beta4'
+    implementation 'com.squareup.okhttp3:okhttp:3.8.0'
+    implementation 'com.alibaba:fastjson:1.2.12'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.github.clans:fab:1.6.2'
+    implementation 'com.jakewharton:butterknife:5.1.1'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    // https://github.com/smuyyh/EasyAdapter
+    implementation 'com.yuyh.easyadapter:library:1.1.1'
 
 }
