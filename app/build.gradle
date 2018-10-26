@@ -21,11 +21,11 @@ android {
 //            abiFilter("armeabi-v7a")
 //            abiFilter("x86")
 //        }
-        javaCompileOptions {
-            annotationProcessorOptions {
-                includeCompileClasspath false
-            }
-        }
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                includeCompileClasspath false
+//            }
+//        }
     }
 
 
@@ -279,7 +279,7 @@ android {
             ]
         }
 
-        app_安智应用市场{
+        app_安智应用市场 {
             applicationId "com.regus.package2"
             resValue "string", "app_name1", "NbA比分助手"
 
@@ -298,7 +298,7 @@ android {
         }
 
 
-        app_锤子手机应用商店 {
+        app_锤子手机商店 {
             applicationId "com.regus.package2"
             resValue "string", "app_name1", "NbA比分助手"
 
@@ -316,7 +316,7 @@ android {
             ]
         }
 
-        app_百度手机助手{
+        app_百度 {
             applicationId "com.regus.package2"
             resValue "string", "app_name1", "NbA比分助手"
 
@@ -334,7 +334,7 @@ android {
             ]
         }
 
-        app_华为应用市场{
+        app_华为应用市场 {
             applicationId "com.regus.package2"
             resValue "string", "app_name1", "NbA比分助手"
 
@@ -353,7 +353,7 @@ android {
         }
 
 
-        app_金立{
+        app_金立 {
             applicationId "com.regus.package2"
             resValue "string", "app_name1", "NbA比分助手"
 
@@ -372,7 +372,7 @@ android {
         }
 
 
-        app_乐视助手{
+        app_乐视助手 {
             applicationId "com.regus.package2"
             resValue "string", "app_name1", "NbA比分助手"
 
@@ -391,7 +391,7 @@ android {
         }
 
 
-        app_厉趣市场{
+        app_厉趣市场 {
             applicationId "com.regus.package2"
             resValue "string", "app_name1", "NbA比分助手"
 
@@ -410,7 +410,7 @@ android {
         }
 
 
-        app_魅族应用商店{
+        app_魅族应用商店 {
             applicationId "com.regus.package2"
             resValue "string", "app_name1", "NbA比分助手"
 
@@ -429,7 +429,7 @@ android {
         }
 
 
-        app_联想开发平台{
+        app_联想开发平台 {
             applicationId "com.regus.package2"
             resValue "string", "app_name1", "NbA比分助手"
 
@@ -448,7 +448,7 @@ android {
         }
 
 
-        app_三星应用商店{
+        app_三星应用商店 {
             applicationId "com.regus.package2"
             resValue "string", "app_name1", "NbA比分助手"
 
@@ -467,7 +467,7 @@ android {
         }
 
 
-        app_搜狗手机助手{
+        app_搜狗手机助手 {
             applicationId "com.regus.package2"
             resValue "string", "app_name1", "NbA比分助手"
 
@@ -486,7 +486,7 @@ android {
         }
 
 
-        app_腾讯应用宝{
+        app_腾讯应用宝 {
             applicationId "com.regus.package2"
             resValue "string", "app_name1", "NbA比分助手"
 
@@ -503,7 +503,7 @@ android {
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
         }
-        app_小米应用商店{
+        app_小米应用商店 {
             applicationId "com.regus.package2"
             resValue "string", "app_name1", "NbA比分助手"
 
@@ -520,7 +520,7 @@ android {
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
         }
-        app_应用汇安卓市场{
+        app_应用汇安卓市场 {
             applicationId "com.regus.package2"
             resValue "string", "app_name1", "NbA比分助手"
 
@@ -542,30 +542,30 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     //独立进程的库  可以用一些东西  可扩展
-    implementation project(':ipcsdk')
+    compile project(':ipcsdk')
 
 
 
-    implementation project(':CommonLibrary')
-    implementation project(':FlycoDialogLibrary')
-    implementation project(':MaterialPtrLibrary')
-    implementation project(':SwipeBackLibrary')
-    implementation project(':VideoPlayerLibrary')
-    implementation 'com.android.support:appcompat-v7:23.1.1'
-    implementation 'com.android.support:design:23.4.0'
-    implementation 'com.android.support:cardview-v7:23.4.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
-    implementation 'com.squareup.retrofit2:converter-scalars:2.0.0-beta4'
-    implementation 'com.squareup.okhttp3:okhttp:3.8.0'
-    implementation 'com.alibaba:fastjson:1.2.12'
-    implementation 'com.github.bumptech.glide:glide:3.7.0'
-    implementation 'com.github.clans:fab:1.6.2'
-    implementation 'com.jakewharton:butterknife:5.1.1'
-    implementation 'org.greenrobot:eventbus:3.0.0'
+    compile project(':CommonLibrary')
+    compile project(':FlycoDialogLibrary')
+    compile project(':MaterialPtrLibrary')
+    compile project(':SwipeBackLibrary')
+    compile project(':VideoPlayerLibrary')
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.android.support:cardview-v7:23.4.0'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    compile 'com.squareup.retrofit2:converter-scalars:2.0.0-beta4'
+    compile 'com.squareup.okhttp3:okhttp:3.8.0'
+    compile 'com.alibaba:fastjson:1.2.12'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.github.clans:fab:1.6.2'
+    compile 'com.jakewharton:butterknife:5.1.1'
+    compile 'org.greenrobot:eventbus:3.0.0'
     // https://github.com/smuyyh/EasyAdapter
-    implementation 'com.yuyh.easyadapter:library:1.1.1'
+    compile 'com.yuyh.easyadapter:library:1.1.1'
 
 }
