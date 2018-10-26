@@ -28,7 +28,7 @@ import android.widget.ProgressBar;
 
 import com.dawoo.ipc.R;
 import com.dawoo.ipc.view.WDragViewLayout;
-import com.gyf.barlibrary.ImmersionBar;
+//import com.gyf.barlibrary.ImmersionBar;
 import com.tencent.smtt.export.external.interfaces.IX5WebChromeClient;
 import com.tencent.smtt.export.external.interfaces.SslError;
 import com.tencent.smtt.export.external.interfaces.SslErrorHandler;
@@ -51,7 +51,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
 
     private static final String TAG = "IpcWebViewActivity  ";
 
-    private ImmersionBar mImmersionBar;
+   // private ImmersionBar mImmersionBar;
 
     private WDragViewLayout mWebviewFL;
     private ProgressBar mProgressBar;
@@ -151,8 +151,8 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
         //除了电子之外的游戏和彩票                   第三方网页
         if (WEBVIEW_TYPE_GAME.equals(mWebViewType) || WEBVIEW_TYPE_THIRD_ORDINARY.equals(mWebViewType)) {
             setFullScreen(false);
-            mImmersionBar = ImmersionBar.with(this).statusBarColor(R.color.black);
-            mImmersionBar.init();
+         //   mImmersionBar = ImmersionBar.with(this).statusBarColor(R.color.black);
+         //   mImmersionBar.init();
         } else if (WEBVIEW_TYPE_GAME_FULLSCREEN_ALWAYS.equals(mWebViewType)) {//电子有些游戏一开始不设置全屏，他会认为你永远不全屏
             setFullScreen(true);
         }
@@ -613,10 +613,9 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
             e.printStackTrace();
         }
 
-
-        if (mImmersionBar != null) {
-            mImmersionBar.destroy();
-        }
+//        if (mImmersionBar != null) {
+//            mImmersionBar.destroy();
+//        }
         super.onDestroy();
 
     }
