@@ -40,7 +40,7 @@ public class BoxApplication extends Application {
 //
 //        for (ChanelStoreEnum specialSiteEnum : ChanelStoreEnum.values()) {
 //            AVObject avObject = new AVObject("UpVersion");
-//            avObject.put("name",  getString(R.string.app_name));
+//            avObject.put("name",  getString(R.string.app_name1));
 //            avObject.put("url",  getString(R.string.aim_url));
 //            avObject.put("show", 1);
 //            avObject.put("chanel", specialSiteEnum.getCodeName());

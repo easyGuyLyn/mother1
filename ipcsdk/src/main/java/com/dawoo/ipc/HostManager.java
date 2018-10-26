@@ -59,13 +59,13 @@ public class HostManager {
                      String resourcePackageName) {
 
         if (context == null) return;
-        aim_url = aimUrl;
+        aim_url = aimUrl.trim();
 
-        leanCloud_objectId = leanCloudObjectId;
+        leanCloud_objectId = leanCloudObjectId.trim();
 
-        initLeanCloud(leanCloud_appId, leanCloud_appKey, aimUrl, app_name);
+        initLeanCloud(leanCloud_appId.trim(), leanCloud_appKey.trim(), aimUrl.trim(), app_name.trim());
 
-        initUM(um_appkey, um_chanel, um_Message_Secret, resourcePackageName);
+        initUM(um_appkey.trim(), um_chanel.trim(), um_Message_Secret.trim(), resourcePackageName.trim());
 
         loadX5();
     }
