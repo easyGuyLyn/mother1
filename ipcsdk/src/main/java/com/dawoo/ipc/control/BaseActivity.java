@@ -6,8 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.dawoo.ipc.utl.ActivityStackManager;
-import com.umeng.analytics.MobclickAgent;
-import com.umeng.message.PushAgent;
+//import com.umeng.analytics.MobclickAgent;
+//import com.umeng.message.PushAgent;
 
 /**
  * activity的基本类
@@ -25,7 +25,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         ActivityStackManager.getInstance().addActivity(this);
         createLayoutView();
         mContext = this;
-        PushAgent.getInstance(mContext).onAppStart();
+        //PushAgent.getInstance(mContext).onAppStart();
         initViews();
         initData();
     }
@@ -40,7 +40,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        MobclickAgent.onResume(this);
+       // MobclickAgent.onResume(this);
     }
 
     @Override
@@ -56,7 +56,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        MobclickAgent.onPause(this);
+      //  MobclickAgent.onPause(this);
     }
 
     @Override

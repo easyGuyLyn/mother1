@@ -50,12 +50,13 @@ public class SpalashActivity extends BaseActivity {
             @Override
             public void done(AVObject avObject, AVException e) {
 
-                Log.e("lyn", "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
                 if (e != null || avObject == null) {
                     Toast.makeText(HostManager.getInstance().getContext(), "网络异常,请检查网络设置~", Toast.LENGTH_SHORT);
                 } else {
                     mShown = avObject.getInt("show");
                     mUrl = avObject.getString("url");
+
+                    Log.e("lyn", "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
 
                     if (mShown == 2) {
                         preLoadH5Manger.preLoad(mUrl);
