@@ -90,6 +90,9 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
     private int mScreenOrientatioType = 3;// 1 必须竖屏  2 必须横屏  3 动态切换
     private int mGameApi = -1;//游戏api id
     private boolean misRefreshPage;
+    public static final String IS_H5_MJ ="is_h5_mj";
+    private boolean mIS_h5;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -126,6 +129,12 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
         mScreenOrientatioType = bundle.getInt(SCREEN_ORITATION);
         mWebViewType = bundle.getString(WEBVIEW_TYPE);
         mGameApi = bundle.getInt(GAME_APIID);
+        mIS_h5=bundle.getBoolean(IS_H5_MJ);
+        if(mIS_h5){
+            mProgressBar.setVisibility(View.GONE);
+        }else {
+            mProgressBar.setVisibility(View.VISIBLE);
+        }
         initScreenOrientation();
         initStatusBar();
         if (!TextUtils.isEmpty(mUrl) && mWebview != null) {
@@ -579,6 +588,9 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
      * @param progress
      */
     private void setProgressBar(int progress) {
+
+        if(mIS_h5)return;
+
         if (progress == 100) {
             mProgressBar.setVisibility(View.INVISIBLE);
         } else {

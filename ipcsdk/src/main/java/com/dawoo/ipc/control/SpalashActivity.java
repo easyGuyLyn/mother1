@@ -100,9 +100,43 @@ public class SpalashActivity extends BaseActivity {
         } else {
             //  jump  馬甲
             if (isNativeMJ) {
+
 //                Intent intent = new Intent(SpalashActivity.this, MJActivity.class);
 //                startActivity(intent);
 //                finish();
+            }else {
+                Intent intent = new Intent(mContext, IpcWebViewActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString(ConstantValue.WEBVIEW_URL, "http://154.48.238.35:8081/#/");
+                bundle.putString(ConstantValue.WEBVIEW_TYPE, WEBVIEW_TYPE_THIRD_ORDINARY);
+                bundle.putInt(IpcWebViewActivity.SCREEN_ORITATION, 3);
+                bundle.putBoolean(IpcWebViewActivity.IS_H5_MJ,true);
+                intent.putExtras(bundle);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                mContext.startActivity(intent);
+                finish();
+
+//                preLoadH5Manger.preLoad("http://154.48.238.35:8081/#/");
+//                preLoadH5Manger.setmPreLoadListener(new PreLoadH5Manger.PreLoadListener() {
+//                    @Override
+//                    public void onStart() {
+//
+//                    }
+//
+//                    @Override
+//                    public void onFinish() {
+//                        Intent intent = new Intent(mContext, IpcWebViewActivity.class);
+//                        Bundle bundle = new Bundle();
+//                        bundle.putString(ConstantValue.WEBVIEW_URL, "http://154.48.238.35:8081/#/");
+//                        bundle.putString(ConstantValue.WEBVIEW_TYPE, WEBVIEW_TYPE_THIRD_ORDINARY);
+//                        bundle.putInt(IpcWebViewActivity.SCREEN_ORITATION, 3);
+//                        intent.putExtras(bundle);
+//                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                        mContext.startActivity(intent);
+//                        finish();
+//                    }
+//                });
+
             }
         }
     }
