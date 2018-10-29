@@ -10,27 +10,8 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
 
-    buildTypes {
-        debug {
-            // debug模式下，显示log
-            buildConfigField("boolean", "LOG_DEBUG", "true")
-            // 不开启混淆
-            minifyEnabled false
-            // 混淆文件位置
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-        release {
-            // release模式下，不显示log
-            buildConfigField("boolean", "LOG_DEBUG", "true")
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

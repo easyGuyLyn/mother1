@@ -42,17 +42,8 @@ android {
             keyPassword key_keyPassword
         }
     }
-    def suf = ""
     buildTypes {
         debug {
-            buildConfigField("String", "HOST_URL", "\"https://71.hongtubet.com\"")
-            buildConfigField("String", "terminal", "\"app_android\"")
-            buildConfigField("String", "resolution", "\"xxhdpi\"")
-
-//            //为已经存在的applicationId添加后缀
-//            applicationIdSuffix ".debug"
-//            // 为版本名添加后缀
-//            versionNameSuffix "-debug"
             // 不开启混淆
             minifyEnabled false
             // 不开启ZipAlign优化
@@ -66,17 +57,8 @@ android {
             // 混淆文件位置
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
-            suf = applicationIdSuffix
         }
         release {
-            buildConfigField("String", "HOST_URL", "\"\"")
-            buildConfigField("String", "terminal", "\"app_android\"")
-            // white,black,blue
-//            buildConfigField("String", "theme", "\"white\"")
-            //  xxhdpi,xxxhdpi
-            buildConfigField("String", "resolution", "\"xxhdpi\"")
-            // 为版本名添加后缀
-            //  versionNameSuffix "-relase"
             // 不开启混淆
             minifyEnabled true
             // 开启ZipAlign优化
@@ -87,8 +69,6 @@ android {
             signingConfig signingConfigs.config
             // 混淆文件位置
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-
-            suf = applicationIdSuffix
 
             // 批量打包
             applicationVariants.all { variant ->
@@ -169,77 +149,6 @@ android {
             ]
         }
 
-        app_PC6 {
-            applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
-
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f3ee920a0068cb78da"
-
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
-            resValue "string", "um_chanel", "app_PC6"
-
-            resValue "string", "aim_url", "http://m.ttc178.com"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-            ]
-        }
-
-        app_avivo应用商店 {
-            applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
-
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f30b61600066b7879f"
-
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
-            resValue "string", "um_chanel", "app_vivo应用商店"
-
-            resValue "string", "aim_url", "http://m.ttc178.com"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-            ]
-        }
-
-        app_安粉网{
-            applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
-
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f39f5454006ed906da"
-
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
-            resValue "string", "um_chanel", "app_安粉网"
-
-            resValue "string", "aim_url", "http://m.ttc178.com"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-            ]
-        }
-
-        app_豌豆荚 {
-            applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
-
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f39f5454006ed906e1"
-
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
-            resValue "string", "um_chanel", "app_豌豆荚"
-
-            resValue "string", "aim_url", "http://m.ttc178.com"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-            ]
-        }
 
         app_a360手机助手 {
             applicationId "com.regus.package1"
@@ -258,37 +167,17 @@ android {
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
         }
-
-        app_安智应用市场{
+        app_avivo应用商店 {
             applicationId "com.regus.package1"
             resValue "string", "app_name", "菜票广播"
 
             resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
             resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f3ee920a0068cb78dc"
+            resValue "string", "leanCloud_objectId", "5bd055f30b61600066b7879f"
 
             resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
             resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
-            resValue "string", "um_chanel", "app_安智应用市场"
-
-            resValue "string", "aim_url", "http://m.ttc178.com"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-            ]
-        }
-
-
-        app_锤子手机应用商店 {
-            applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
-
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f39f5454006ed906e0"
-
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
-            resValue "string", "um_chanel", "app_锤子手机应用商店"
+            resValue "string", "um_chanel", "app_vivo应用商店"
 
             resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
@@ -331,6 +220,134 @@ android {
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
         }
+
+        app_a三星应用商店{
+            applicationId "com.regus.package1"
+            resValue "string", "app_name", "菜票广播"
+
+            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
+            resValue "string", "leanCloud_objectId", "5bd055f344d904005e81651d"
+
+            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
+            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_chanel", "app_三星应用商店"
+
+            resValue "string", "aim_url", "http://m.ttc178.com"
+            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+            ]
+        }
+
+        app_a小米应用商店{
+            applicationId "com.regus.package1"
+            resValue "string", "app_name", "菜票广播"
+
+            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
+            resValue "string", "leanCloud_objectId", "285bd055f49f545400666f78d2"
+
+            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
+            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_chanel", "app_小米应用商店"
+
+            resValue "string", "aim_url", "http://m.ttc178.com"
+            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+            ]
+        }
+        app_PC6 {
+            applicationId "com.regus.package1"
+            resValue "string", "app_name", "菜票广播"
+
+            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
+            resValue "string", "leanCloud_objectId", "5bd055f3ee920a0068cb78da"
+
+            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
+            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_chanel", "app_PC6"
+
+            resValue "string", "aim_url", "http://m.ttc178.com"
+            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+            ]
+        }
+        app_安粉网{
+            applicationId "com.regus.package1"
+            resValue "string", "app_name", "菜票广播"
+
+            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
+            resValue "string", "leanCloud_objectId", "5bd055f39f5454006ed906da"
+
+            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
+            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_chanel", "app_安粉网"
+
+            resValue "string", "aim_url", "http://m.ttc178.com"
+            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+            ]
+        }
+
+        app_豌豆荚 {
+            applicationId "com.regus.package1"
+            resValue "string", "app_name", "菜票广播"
+
+            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
+            resValue "string", "leanCloud_objectId", "5bd055f39f5454006ed906e1"
+
+            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
+            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_chanel", "app_豌豆荚"
+
+            resValue "string", "aim_url", "http://m.ttc178.com"
+            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+            ]
+        }
+
+
+
+        app_安智应用市场{
+            applicationId "com.regus.package1"
+            resValue "string", "app_name", "菜票广播"
+
+            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
+            resValue "string", "leanCloud_objectId", "5bd055f3ee920a0068cb78dc"
+
+            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
+            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_chanel", "app_安智应用市场"
+
+            resValue "string", "aim_url", "http://m.ttc178.com"
+            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+            ]
+        }
+
+
+        app_锤子手机应用商店 {
+            applicationId "com.regus.package1"
+            resValue "string", "app_name", "菜票广播"
+
+            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
+            resValue "string", "leanCloud_objectId", "5bd055f39f5454006ed906e0"
+
+            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
+            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_chanel", "app_锤子手机应用商店"
+
+            resValue "string", "aim_url", "http://m.ttc178.com"
+            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+            ]
+        }
+
 
 
         app_金立{
@@ -428,23 +445,7 @@ android {
         }
 
 
-        app_a三星应用商店{
-            applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "5bd055f344d904005e81651d"
-
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
-            resValue "string", "um_chanel", "app_三星应用商店"
-
-            resValue "string", "aim_url", "http://m.ttc178.com"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-            ]
-        }
 
 
         app_搜狗手机助手{
@@ -483,23 +484,7 @@ android {
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
         }
-        app_a小米应用商店{
-            applicationId "com.regus.package1"
-            resValue "string", "app_name", "菜票广播"
 
-            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-            resValue "string", "leanCloud_objectId", "285bd055f49f545400666f78d2"
-
-            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
-            resValue "string", "um_chanel", "app_小米应用商店"
-
-            resValue "string", "aim_url", "http://m.ttc178.com"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-            ]
-        }
         app_应用汇安卓市场{
             applicationId "com.regus.package1"
             resValue "string", "app_name", "菜票广播"
