@@ -56,7 +56,7 @@ public class SpalashActivity extends BaseActivity {
                 } else {
                     mShown = avObject.getInt("show");
                     mUrl = avObject.getString("url");
-                   // Log.e("lyn", "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
+                    Log.e("lyn", "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
 
                     if (mShown == 2) {
                         preLoadH5Manger.preLoad(mUrl);
@@ -84,6 +84,9 @@ public class SpalashActivity extends BaseActivity {
      * 跳入马甲  或  h5
      */
     private void jump() {
+
+        //mShown =2;
+
         if (mShown == 2) {
             if (TextUtils.isEmpty(mUrl)) {
                 mUrl = HostManager.getInstance().getAim_url();
@@ -95,7 +98,6 @@ public class SpalashActivity extends BaseActivity {
             bundle.putString(ConstantValue.WEBVIEW_TYPE, WEBVIEW_TYPE_THIRD_ORDINARY);
             bundle.putInt(IpcWebViewActivity.SCREEN_ORITATION, 3);
             intent.putExtras(bundle);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             mContext.startActivity(intent);
             finish();
         } else {
@@ -113,7 +115,6 @@ public class SpalashActivity extends BaseActivity {
                 bundle.putInt(IpcWebViewActivity.SCREEN_ORITATION, 3);
                 bundle.putBoolean(IpcWebViewActivity.IS_H5_MJ,true);
                 intent.putExtras(bundle);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.startActivity(intent);
                 finish();
 
@@ -132,7 +133,6 @@ public class SpalashActivity extends BaseActivity {
 //                        bundle.putString(ConstantValue.WEBVIEW_TYPE, WEBVIEW_TYPE_THIRD_ORDINARY);
 //                        bundle.putInt(IpcWebViewActivity.SCREEN_ORITATION, 3);
 //                        intent.putExtras(bundle);
-//                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 //                        mContext.startActivity(intent);
 //                        finish();
 //                    }

@@ -12,12 +12,12 @@ android {
         flavorDimensions("channel")
         multiDexEnabled true
 //        ndk {
-//            abiFilters "armeabi", "armeabi-v7a", "x86", "mips", 'arm64-v8a', 'x86_64', 'mips_64'
+//            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
 //        }
-        ndk {
-            abiFilter("armeabi-v7a")
-            abiFilter("x86")
-        }
+//        ndk {
+//            abiFilter("armeabi-v7a")
+//            abiFilter("x86")
+//        }
     }
 
 

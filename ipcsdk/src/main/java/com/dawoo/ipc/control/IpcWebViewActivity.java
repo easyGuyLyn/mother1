@@ -387,7 +387,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
         @Override
         public void onLoadResource(WebView webView, String s) {
             super.onLoadResource(webView, s);
-          //  Log.e("onPageLoadResource", s);
+            Log.e("onPageLoadResource", s);
         }
 
 
