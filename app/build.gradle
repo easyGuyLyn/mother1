@@ -300,7 +300,7 @@ android {
 
             resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e63017d0090062ea5592"
+            resValue "string", "leanCloud_objectId", "5bd2e81c0b61600066d58cf9"
 
             resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
             resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
@@ -318,7 +318,7 @@ android {
 
             resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e630ee920a0068e94802"
+            resValue "string", "leanCloud_objectId", "5bd2e81c0b61600066d58cf8"
 
             resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
             resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
@@ -338,7 +338,7 @@ android {
 
             resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e63044d904005e9f4852"
+            resValue "string", "leanCloud_objectId", "5bd2e81cee920a0068e967cb"
 
             resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
             resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
@@ -357,7 +357,7 @@ android {
 
             resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e630ee920a0068e94808"
+            resValue "string", "leanCloud_objectId", "5bd2e81c0b61600066d58cfc"
 
             resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
             resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
@@ -376,7 +376,7 @@ android {
 
             resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e6300b61600066d56f44"
+            resValue "string", "leanCloud_objectId", "5bd2e81c0b61600066d58cfd"
 
             resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
             resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
@@ -395,7 +395,7 @@ android {
 
             resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e6309f5454006ef6d9c2"
+            resValue "string", "leanCloud_objectId", "5bd2e81c9f5454006ef6f8d0"
 
             resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
             resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
@@ -414,7 +414,7 @@ android {
 
             resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e630ee920a0068e16c8d"
+            resValue "string", "leanCloud_objectId", "5bd2e81c44d904005e9f6821"
 
             resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
             resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
@@ -433,7 +433,7 @@ android {
 
             resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e630ac502e0061c4e3b2"
+            resValue "string", "leanCloud_objectId", "5bd2e81cee920a0068e967d2"
 
             resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
             resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
@@ -452,7 +452,7 @@ android {
 
             resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e63044d904005e9f4855"
+            resValue "string", "leanCloud_objectId", "5bd2e81c0b61600066d58cff"
 
             resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
             resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
@@ -472,7 +472,7 @@ android {
 
             resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e6309f545400668d551a"
+            resValue "string", "leanCloud_objectId", "5bd2e81cee920a0068e19c73"
 
             resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
             resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
@@ -492,7 +492,7 @@ android {
 
             resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e6300b61600066d56f4a"
+            resValue "string", "leanCloud_objectId", "5bd2e81c17d0090062ea74e9"
 
             resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
             resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
