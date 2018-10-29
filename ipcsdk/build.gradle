@@ -46,5 +46,5 @@ dependencies {
     api 'com.umeng.sdk:utdid:1.1.5.3'
     //PushSDK
     api 'com.umeng.sdk:push:4.2.0'
-    implementation files('libs/tbs_sdk_thirdapp_v3.6.0.1310_43612_sharewithdownload_withoutGame_obfs_20180706_163319.jar')
+  //  implementation files('libs/tbs_sdk_thirdapp_v3.6.0.1310_43612_sharewithdownload_withoutGame_obfs_20180706_163319.jar')
 }

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.util.Log;
 
 import com.avos.avoscloud.AVOSCloud;
-import com.tencent.smtt.sdk.QbSdk;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
 import com.umeng.message.IUmengRegisterCallback;
@@ -67,7 +66,7 @@ public class HostManager {
 
         initUM(um_appkey.trim(), um_chanel.trim(), um_Message_Secret.trim(), resourcePackageName.trim());
 
-        loadX5();
+//        loadX5();
     }
 
 
@@ -126,29 +125,29 @@ public class HostManager {
 
     }
 
-
-    /**
-     * 加载x5
-     */
-    void loadX5() {
-        //搜集本地tbs内核信息并上报服务器，服务器返回结果决定使用哪个内核。
-
-        QbSdk.PreInitCallback cb = new QbSdk.PreInitCallback() {
-
-            @Override
-            public void onViewInitFinished(boolean arg0) {
-                // TODO Auto-generated method stub
-                //x5內核初始化完成的回调，为true表示x5内核加载成功，否则表示x5内核加载失败，会自动切换到系统内核。
-                Log.d("loadX5", " onViewInitFinished is " + arg0);
-            }
-
-            @Override
-            public void onCoreInitFinished() {
-                // TODO Auto-generated method stub
-            }
-        };
-        //x5内核初始化接口
-        QbSdk.initX5Environment(context, cb);
-    }
+//
+//    /**
+//     * 加载x5
+//     */
+//    void loadX5() {
+//        //搜集本地tbs内核信息并上报服务器，服务器返回结果决定使用哪个内核。
+//
+//        QbSdk.PreInitCallback cb = new QbSdk.PreInitCallback() {
+//
+//            @Override
+//            public void onViewInitFinished(boolean arg0) {
+//                // TODO Auto-generated method stub
+//                //x5內核初始化完成的回调，为true表示x5内核加载成功，否则表示x5内核加载失败，会自动切换到系统内核。
+//                Log.d("loadX5", " onViewInitFinished is " + arg0);
+//            }
+//
+//            @Override
+//            public void onCoreInitFinished() {
+//                // TODO Auto-generated method stub
+//            }
+//        };
+//        //x5内核初始化接口
+//        QbSdk.initX5Environment(context, cb);
+//    }
 
 }

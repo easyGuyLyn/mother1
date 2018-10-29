@@ -13,7 +13,6 @@ import com.avos.avoscloud.GetCallback;
 import com.regus.ipc.ConstantValue;
 import com.regus.ipc.HostManager;
 import com.regus.ipc.R;
-import com.regus.ipc.utl.PreLoadH5Manger;
 
 import static com.regus.ipc.ConstantValue.WEBVIEW_TYPE_THIRD_ORDINARY;
 
@@ -25,8 +24,6 @@ public class SpalashActivity extends BaseActivity {
 
     private int mShown;
     private String mUrl;
-    private PreLoadH5Manger preLoadH5Manger = new PreLoadH5Manger();
-
 
     @Override
     protected void createLayoutView() {
@@ -56,24 +53,8 @@ public class SpalashActivity extends BaseActivity {
                 } else {
                     mShown = avObject.getInt("show");
                     mUrl = avObject.getString("url");
-                     Log.e("lyn", "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
-
-                    if (mShown == 2) {
-                        preLoadH5Manger.preLoad(mUrl);
-                        preLoadH5Manger.setmPreLoadListener(new PreLoadH5Manger.PreLoadListener() {
-                            @Override
-                            public void onStart() {
-
-                            }
-
-                            @Override
-                            public void onFinish() {
-                                jump();
-                            }
-                        });
-                    } else {
-                        jump();
-                    }
+                    Log.e("lyn", "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
+                    jump();
                 }
             }
         });
@@ -88,20 +69,17 @@ public class SpalashActivity extends BaseActivity {
             if (TextUtils.isEmpty(mUrl)) {
                 mUrl = HostManager.getInstance().getAim_url();
             }
-
             Intent intent = new Intent(mContext, IpcWebViewActivity.class);
             Bundle bundle = new Bundle();
             bundle.putString(ConstantValue.WEBVIEW_URL, mUrl);
             bundle.putString(ConstantValue.WEBVIEW_TYPE, WEBVIEW_TYPE_THIRD_ORDINARY);
             bundle.putInt(IpcWebViewActivity.SCREEN_ORITATION, 3);
             intent.putExtras(bundle);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             mContext.startActivity(intent);
             finish();
         } else {
             //  jump  馬甲
             if (isNativeMJ) {
-
 //                Intent intent = new Intent(SpalashActivity.this, MJActivity.class);
 //                startActivity(intent);
 //                finish();
@@ -113,31 +91,8 @@ public class SpalashActivity extends BaseActivity {
                 bundle.putInt(IpcWebViewActivity.SCREEN_ORITATION, 3);
                 bundle.putBoolean(IpcWebViewActivity.IS_H5_MJ, true);
                 intent.putExtras(bundle);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.startActivity(intent);
                 finish();
-
-//                preLoadH5Manger.preLoad("http://154.48.238.35:8081/#/");
-//                preLoadH5Manger.setmPreLoadListener(new PreLoadH5Manger.PreLoadListener() {
-//                    @Override
-//                    public void onStart() {
-//
-//                    }
-//
-//                    @Override
-//                    public void onFinish() {
-//                        Intent intent = new Intent(mContext, IpcWebViewActivity.class);
-//                        Bundle bundle = new Bundle();
-//                        bundle.putString(ConstantValue.WEBVIEW_URL, "http://154.48.238.35:8081/#/");
-//                        bundle.putString(ConstantValue.WEBVIEW_TYPE, WEBVIEW_TYPE_THIRD_ORDINARY);
-//                        bundle.putInt(IpcWebViewActivity.SCREEN_ORITATION, 3);
-//                        intent.putExtras(bundle);
-//                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                        mContext.startActivity(intent);
-//                        finish();
-//                    }
-//                });
-
             }
         }
     }
