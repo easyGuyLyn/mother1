@@ -387,20 +387,20 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
         @Override
         public void onLoadResource(WebView webView, String s) {
             super.onLoadResource(webView, s);
-            Log.e("onPageLoadResource", s);
+          //  Log.e("onPageLoadResource", s);
         }
 
 
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
-            Log.e("onPageStarted", url);
+        //    Log.e("onPageStarted", url);
         }
 
         @Override
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
-            Log.e("onPageFinished", url);
+        //    Log.e("onPageFinished", url);
             setRefreshPageClearHistory();
         }
 
@@ -418,7 +418,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
 
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            Log.e("onPageShoudOver", url);
+          //  Log.e("onPageShoudOver", url);
             mWebview.loadUrl(url);
             return true;
         }
@@ -447,7 +447,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
          * 通过解析WebResourceRequest对象获取网络请求相关信息
          */
         public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
-            Log.e("WebResourceRequest  ", "Cookie: " + " \n Method: " + request.getMethod() + "  \n Headers: " + request.getRequestHeaders().toString() + "\n");
+         //   Log.e("WebResourceRequest  ", "Cookie: " + " \n Method: " + request.getMethod() + "  \n Headers: " + request.getRequestHeaders().toString() + "\n");
             return super.shouldInterceptRequest(view, request);
         }
     }
