@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+import android.graphics.PixelFormat;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -100,7 +101,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        getWindow().setFormat(PixelFormat.TRANSLUCENT);
         setContentView(R.layout.activity_ipc_web_view);
         PushAgent.getInstance(IpcWebViewActivity.this).onAppStart();
         initView();
@@ -260,12 +261,12 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
         //  CookieManager.getInstance().setAcceptCookie(true);
 
 
-        mWebview.setDownloadListener(new FileDownLoadListener());
-        mWebview.setOnTouchListener(new MyWebviewOnTouchListener());
-        mWebview.setWebViewClient(new CommonWebViewClient());
-        mWebview.setWebChromeClient(new CommonWebChromeClient());
-        mWebview.setBackgroundColor(ContextCompat.getColor(this, android.R.color.transparent));
-        mWebview.setBackgroundResource(R.color.black);
+//        mWebview.setDownloadListener(new FileDownLoadListener());
+//        mWebview.setOnTouchListener(new MyWebviewOnTouchListener());
+//        mWebview.setWebViewClient(new CommonWebViewClient());
+//        mWebview.setWebChromeClient(new CommonWebChromeClient());
+//        mWebview.setBackgroundColor(ContextCompat.getColor(this, android.R.color.transparent));
+//        mWebview.setBackgroundResource(R.color.black);
 
     }
 
@@ -387,7 +388,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
         @Override
         public void onLoadResource(WebView webView, String s) {
             super.onLoadResource(webView, s);
-          //  Log.e("onPageLoadResource", s);
+            Log.e("onPageLoadResource", s);
         }
 
 
@@ -447,7 +448,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
          * 通过解析WebResourceRequest对象获取网络请求相关信息
          */
         public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
-         //   Log.e("WebResourceRequest  ", "Cookie: " + " \n Method: " + request.getMethod() + "  \n Headers: " + request.getRequestHeaders().toString() + "\n");
+            Log.e("WebResourceRequest  ", "Cookie: " + " \n Method: " + request.getMethod() + "  \n Headers: " + request.getRequestHeaders().toString() + "\n");
             return super.shouldInterceptRequest(view, request);
         }
     }

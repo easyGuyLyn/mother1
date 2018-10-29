@@ -3,6 +3,7 @@ package com.regus.ipc.control;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Toast;
 
@@ -55,7 +56,7 @@ public class SpalashActivity extends BaseActivity {
                 } else {
                     mShown = avObject.getInt("show");
                     mUrl = avObject.getString("url");
-                    // Log.e("lyn", "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
+                     Log.e("lyn", "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
 
                     if (mShown == 2) {
                         preLoadH5Manger.preLoad(mUrl);
