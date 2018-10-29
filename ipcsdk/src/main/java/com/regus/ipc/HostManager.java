@@ -1,4 +1,4 @@
-package com.dawoo.ipc;
+package com.regus.ipc;
 
 import android.content.Context;
 import android.util.Log;

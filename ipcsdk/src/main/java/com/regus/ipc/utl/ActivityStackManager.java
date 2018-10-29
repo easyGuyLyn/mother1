@@ -1,4 +1,4 @@
-package com.dawoo.ipc.utl;
+package com.regus.ipc.utl;
 
 import android.app.Activity;
 

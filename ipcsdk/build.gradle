@@ -14,11 +14,6 @@ android {
     }
 
 
-//    sourceSets {
-//        main {
-//            jniLibs.srcDirs = ['libs']
-//        }
-//    }
 
     //为了解决部分第三方库重复打包了META-INF的问题
     packagingOptions {
@@ -38,25 +33,18 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //noinspection GradleCompatible
-    implementation "com.android.support:appcompat-v7:27.1.0"
-    // x5
-    api files('libs/tbs_sdk_thirdapp_v3.5.0.1004_43500_sharewithdownload_withoutGame_obfs_20170801_113025.jar')
+    implementation 'com.android.support:appcompat-v7:27.1.0'
     // 改 statusBar
     api 'com.gyf.barlibrary:barlibrary:2.3.0'
-
     // LeanCloud 基础包
-    api('cn.leancloud.android:avoscloud-sdk:v4.7.3')
-
+    api 'cn.leancloud.android:avoscloud-sdk:v4.7.3'
     //友盟统计
-    api  'com.umeng.umsdk:analytics:7.5.4'
-
-    api  'com.umeng.umsdk:common:1.5.4'
-
+    api 'com.umeng.umsdk:analytics:7.5.4'
+    api 'com.umeng.umsdk:common:1.5.4'
     //友盟推送
     //PushSDK必须依赖utdid库，所以需要加入对应依赖
     api 'com.umeng.sdk:utdid:1.1.5.3'
-
     //PushSDK
     api 'com.umeng.sdk:push:4.2.0'
-
+    implementation files('libs/tbs_sdk_thirdapp_v3.6.0.1310_43612_sharewithdownload_withoutGame_obfs_20180706_163319.jar')
 }

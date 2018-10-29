@@ -1,4 +1,4 @@
-package com.dawoo.ipc.control;
+package com.regus.ipc.control;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -26,8 +26,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
-import com.dawoo.ipc.R;
-import com.dawoo.ipc.view.WDragViewLayout;
+import com.regus.ipc.R;
+import com.regus.ipc.view.WDragViewLayout;
 import com.gyf.barlibrary.ImmersionBar;
 import com.tencent.smtt.export.external.interfaces.IX5WebChromeClient;
 import com.tencent.smtt.export.external.interfaces.SslError;

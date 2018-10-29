@@ -1,11 +1,11 @@
-package com.dawoo.ipc.control;
+package com.regus.ipc.control;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.dawoo.ipc.utl.ActivityStackManager;
+import com.regus.ipc.utl.ActivityStackManager;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.message.PushAgent;
 

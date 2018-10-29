@@ -1,4 +1,4 @@
-package com.dawoo.ipc.view;
+package com.regus.ipc.view;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

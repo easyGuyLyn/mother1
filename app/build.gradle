@@ -11,12 +11,11 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         flavorDimensions("channel")
         multiDexEnabled true
-//        ndk {
-//            abiFilters "armeabi", "armeabi-v7a", "x86", "mips", 'arm64-v8a', 'x86_64', 'mips_64'
-//        }
+
         ndk {
-            abiFilter("armeabi-v7a")
-            abiFilter("x86")
+            ndk {
+                abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+            }
         }
     }
 
@@ -87,11 +86,11 @@ android {
     packagingOptions {
         exclude 'META-INF/rxjava.properties'
     }
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['src/main/jniLibs']
-        }
-    }
+//    sourceSets {
+//        main {
+//            jniLibs.srcDirs = ['src/main/jniLibs']
+//        }
+//    }
 
 
     // 多渠道 的不同配置
@@ -124,6 +123,27 @@ android {
 
 
         def pid_pex = ".fileprovider"
+
+
+        app_a华为应用市场{
+            applicationId "com.regus.package2"
+            resValue "string", "app_name1", "极速时时彩彩票"
+
+            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
+            resValue "string", "leanCloud_objectId", "5bd2e81cac502e0061c503e1"
+
+            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
+            resValue "string", "um_chanel", "app_华为应用市场"
+
+            resValue "string", "aim_url", "http://m.ttc178.com"
+            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+            ]
+        }
+
+
 
         app_aOPPO应用市场 {
             applicationId "com.regus.package2"
@@ -199,23 +219,6 @@ android {
             ]
         }
 
-        app_a华为应用市场{
-            applicationId "com.regus.package2"
-            resValue "string", "app_name1", "极速时时彩彩票"
-
-            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e81cac502e0061c503e1"
-
-            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
-            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
-            resValue "string", "um_chanel", "app_华为应用市场"
-
-            resValue "string", "aim_url", "http://m.ttc178.com"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-            ]
-        }
 
 
         app_a三星应用商店{

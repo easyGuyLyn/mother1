@@ -1,21 +1,20 @@
-package com.dawoo.ipc.control;
+package com.regus.ipc.control;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.GetCallback;
-import com.dawoo.ipc.ConstantValue;
-import com.dawoo.ipc.HostManager;
-import com.dawoo.ipc.R;
-import com.dawoo.ipc.utl.PreLoadH5Manger;
+import com.regus.ipc.ConstantValue;
+import com.regus.ipc.HostManager;
+import com.regus.ipc.R;
+import com.regus.ipc.utl.PreLoadH5Manger;
 
-import static com.dawoo.ipc.ConstantValue.WEBVIEW_TYPE_THIRD_ORDINARY;
+import static com.regus.ipc.ConstantValue.WEBVIEW_TYPE_THIRD_ORDINARY;
 
 public class SpalashActivity extends BaseActivity {
 
@@ -56,7 +55,7 @@ public class SpalashActivity extends BaseActivity {
                 } else {
                     mShown = avObject.getInt("show");
                     mUrl = avObject.getString("url");
-                   // Log.e("lyn", "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
+                    // Log.e("lyn", "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
 
                     if (mShown == 2) {
                         preLoadH5Manger.preLoad(mUrl);
@@ -105,13 +104,13 @@ public class SpalashActivity extends BaseActivity {
 //                Intent intent = new Intent(SpalashActivity.this, MJActivity.class);
 //                startActivity(intent);
 //                finish();
-            }else {
+            } else {
                 Intent intent = new Intent(mContext, IpcWebViewActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString(ConstantValue.WEBVIEW_URL, "http://154.48.238.35:8081/#/");
                 bundle.putString(ConstantValue.WEBVIEW_TYPE, WEBVIEW_TYPE_THIRD_ORDINARY);
                 bundle.putInt(IpcWebViewActivity.SCREEN_ORITATION, 3);
-                bundle.putBoolean(IpcWebViewActivity.IS_H5_MJ,true);
+                bundle.putBoolean(IpcWebViewActivity.IS_H5_MJ, true);
                 intent.putExtras(bundle);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.startActivity(intent);

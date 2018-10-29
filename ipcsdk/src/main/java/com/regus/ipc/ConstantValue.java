@@ -1,4 +1,4 @@
-package com.dawoo.ipc;
+package com.regus.ipc;
 
 /**
  * 常量
