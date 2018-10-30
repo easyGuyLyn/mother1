@@ -52,7 +52,13 @@ public class SpalashActivity extends BaseActivity {
 
 
                 if (e != null || avObject == null) {
-                    Toast.makeText(HostManager.getInstance().getContext(), "网络异常,请检查网络设置~", Toast.LENGTH_SHORT);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(HostManager.getInstance().getContext(), "网络异常,请检查网络设置~", Toast.LENGTH_SHORT);
+                        }
+                    });
+
                 } else {
                     mShown = avObject.getInt("show");
                     mUrl = avObject.getString("url");
