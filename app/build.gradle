@@ -550,6 +550,7 @@ dependencies {
     implementation 'jp.wasabeef:glide-transformations:3.0.1'
     // If you want to use the GPU Filters
     implementation 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+    implementation 'com.zhy:okhttputils:2.6.2'
 
     implementation 'ywl.ywl5320:libmusic:1.2.4'
 
