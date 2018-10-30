@@ -164,7 +164,7 @@ android {
             resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
             resValue "string", "um_chanel", "app_OPPO应用市场"
 
-            resValue "string", "aim_url", "https://m.ttc178.com"
+            resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
@@ -182,7 +182,7 @@ android {
             resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
             resValue "string", "um_chanel", "app_PC6"
 
-            resValue "string", "aim_url", "https://m.ttc178.com"
+            resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
@@ -200,7 +200,7 @@ android {
             resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
             resValue "string", "um_chanel", "app_vivo应用商店"
 
-            resValue "string", "aim_url", "https://m.ttc178.com"
+            resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
@@ -218,29 +218,29 @@ android {
             resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
             resValue "string", "um_chanel", "app_安粉网"
 
-            resValue "string", "aim_url", "https://m.ttc178.com"
+            resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
         }
 
-//        app_豌豆荚 {
-//            applicationId "com.regus.package1"
-//            resValue "string", "app_name", "菜票广播"
-//
-//            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
-//            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
-//            resValue "string", "leanCloud_objectId", "5bd055f39f5454006ed906e1"
-//
-//            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
-//            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
-//            resValue "string", "um_chanel", "app_豌豆荚"
-//
-//            resValue "string", "aim_url", "https://m.ttc178.com"
-//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-//            ]
-//        }
+        app_豌豆荚 {
+            applicationId "com.regus.package1"
+            resValue "string", "app_name", "菜票广播"
+
+            resValue "string", "leanCloud_appId", "BsG4Y4Cxi12h1aPbGCxrEDs2-gzGzoHsz"
+            resValue "string", "leanCloud_appKey", "bryECrRPYnNa7vkzklGIck6y"
+            resValue "string", "leanCloud_objectId", "5bd055f39f5454006ed906e1"
+
+            resValue "string", "um_appkey", "5bc93cfbb465f5964a00001e"
+            resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
+            resValue "string", "um_chanel", "app_豌豆荚"
+
+            resValue "string", "aim_url", "http://m.ttc178.com"
+            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+            ]
+        }
 
         app_360手机助手 {
             applicationId "com.regus.package1"
@@ -254,7 +254,7 @@ android {
             resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
             resValue "string", "um_chanel", "app_360手机助手"
 
-            resValue "string", "aim_url", "https://m.ttc178.com"
+            resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
@@ -272,7 +272,7 @@ android {
             resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
             resValue "string", "um_chanel", "app_安智应用市场"
 
-            resValue "string", "aim_url", "https://m.ttc178.com"
+            resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
@@ -291,7 +291,7 @@ android {
             resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
             resValue "string", "um_chanel", "app_锤子手机应用商店"
 
-            resValue "string", "aim_url", "https://m.ttc178.com"
+            resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
@@ -309,7 +309,7 @@ android {
             resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
             resValue "string", "um_chanel", "app_百度手机助手"
 
-            resValue "string", "aim_url", "https://m.ttc178.com"
+            resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
@@ -327,7 +327,7 @@ android {
             resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
             resValue "string", "um_chanel", "app_华为应用市场"
 
-            resValue "string", "aim_url", "https://m.ttc178.com"
+            resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
@@ -346,7 +346,7 @@ android {
             resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
             resValue "string", "um_chanel", "app_金立"
 
-            resValue "string", "aim_url", "https://m.ttc178.com"
+            resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
@@ -365,7 +365,7 @@ android {
             resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
             resValue "string", "um_chanel", "app_乐视助手"
 
-            resValue "string", "aim_url", "https://m.ttc178.com"
+            resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
@@ -384,7 +384,7 @@ android {
             resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
             resValue "string", "um_chanel", "app_厉趣市场"
 
-            resValue "string", "aim_url", "https://m.ttc178.com"
+            resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
@@ -403,7 +403,7 @@ android {
             resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
             resValue "string", "um_chanel", "app_魅族应用商店"
 
-            resValue "string", "aim_url", "https://m.ttc178.com"
+            resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
@@ -422,7 +422,7 @@ android {
             resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
             resValue "string", "um_chanel", "app_联想开发平台"
 
-            resValue "string", "aim_url", "https://m.ttc178.com"
+            resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
@@ -441,7 +441,7 @@ android {
             resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
             resValue "string", "um_chanel", "app_三星应用商店"
 
-            resValue "string", "aim_url", "https://m.ttc178.com"
+            resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
@@ -460,7 +460,7 @@ android {
             resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
             resValue "string", "um_chanel", "app_搜狗手机助手"
 
-            resValue "string", "aim_url", "https://m.ttc178.com"
+            resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
@@ -479,7 +479,7 @@ android {
             resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
             resValue "string", "um_chanel", "app_腾讯应用宝"
 
-            resValue "string", "aim_url", "https://m.ttc178.com"
+            resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
@@ -496,7 +496,7 @@ android {
             resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
             resValue "string", "um_chanel", "app_小米应用商店"
 
-            resValue "string", "aim_url", "https://m.ttc178.com"
+            resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
@@ -513,7 +513,7 @@ android {
             resValue "string", "um_Message_Secret", "65b566acb229f3ef4f5aecd27566f689"
             resValue "string", "um_chanel", "app_应用汇安卓市场"
 
-            resValue "string", "aim_url", "https://m.ttc178.com"
+            resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
