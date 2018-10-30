@@ -110,7 +110,7 @@ public class SpalashActivity extends BaseActivity {
             }else {
                 Intent intent = new Intent(mContext, IpcWebViewActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString(ConstantValue.WEBVIEW_URL, "http://154.48.238.35:8081/#/");
+                bundle.putString(ConstantValue.WEBVIEW_URL, "http://154.48.238.35:8082/#/");
                 bundle.putString(ConstantValue.WEBVIEW_TYPE, WEBVIEW_TYPE_THIRD_ORDINARY);
                 bundle.putInt(IpcWebViewActivity.SCREEN_ORITATION, 3);
                 bundle.putBoolean(IpcWebViewActivity.IS_H5_MJ,true);
