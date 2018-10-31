@@ -1,4 +1,4 @@
-package com.dawoo.ipc.control;
+package com.regus.mj.control;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -9,7 +9,6 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -22,12 +21,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
-import com.dawoo.ipc.R;
-import com.dawoo.ipc.view.WDragViewLayout;
+import com.regus.mj.R;
+import com.regus.mj.view.WDragViewLayout;
 import com.gyf.barlibrary.ImmersionBar;
 import com.tencent.smtt.export.external.interfaces.IX5WebChromeClient;
 import com.tencent.smtt.export.external.interfaces.SslError;
@@ -47,32 +44,23 @@ import com.umeng.message.PushAgent;
 /**
  * archar  天纵神武
  **/
-public class IpcWebViewActivity extends AppCompatActivity implements View.OnClickListener {
+public class MJWebViewActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String TAG = "IpcWebViewActivity  ";
+    private static final String TAG = "MJWebViewActivity  ";
 
     private ImmersionBar mImmersionBar;
 
     private WDragViewLayout mWebviewFL;
     private ProgressBar mProgressBar;
-    private FrameLayout mVideoContainer;
 
     /**
      * webView 类型
      */
     static final String WEBVIEW_URL = "WEBVIEW_URL";
-    static final String WEBVIEW_TYPE = "WEBVIEW_TYPE";
-    static final String WEBVIEW_TYPE_GAME = "WEBVIEW_TYPE_GAME";
-    static final String WEBVIEW_TYPE_GAME_FULLSCREEN_ALWAYS = "WEBVIEW_TYPE_GAME_FULLSCREEN_ALWAYS";
-    // 平台一般网页
-    static final String WEBVIEW_TYPE_ORDINARY = "WEBVIEW_TYPE_ORDINARY";
-    // 第三方一般网页
-    static final String WEBVIEW_TYPE_THIRD_ORDINARY = "WEBVIEW_TYPE_THIRD_ORDINARY";
-    public static final String SCREEN_ORITATION = "ScreenOrientationEvent";
 
-    public static final String IS_H5_MJ ="is_h5_mj";
 
-    static final String GAME_APIID = "GAME_APIID";
+    public static final String IS_H5_MJ = "is_h5_mj";
+
     /**
      * Android 5.0以下版本的文件选择回调
      */
@@ -84,15 +72,8 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
     protected static final int REQUEST_CODE_FILE_PICKER = 51426;
     protected String mUploadableFileTypes = "image/*";
     private WebView mWebview;
-    private Handler mHandler = new Handler();
-    private ImageView mHomeIv;
-    private ImageView mBackIv;
-    private String mWebViewType;
-    private LinearLayout mLl;
     private String mUrl;
     private int mScreenOrientatioType = 3;// 1 必须竖屏  2 必须横屏  3 动态切换
-    private int mGameApi = -1;//游戏api id
-    private boolean misRefreshPage;
 
     private boolean mIS_h5;
 
@@ -102,7 +83,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_ipc_web_view);
-        PushAgent.getInstance(IpcWebViewActivity.this).onAppStart();
+        PushAgent.getInstance(MJWebViewActivity.this).onAppStart();
         initView();
         initData();
     }
@@ -110,13 +91,12 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
     private void initView() {
         mWebviewFL = findViewById(R.id.webview_fl);
         mProgressBar = findViewById(R.id.progressBar);
-        mVideoContainer = findViewById(R.id.videoContainer);
         createWebView();
         initWebSetting();
     }
 
     private void createWebView() {
-        mWebview = new WebView(IpcWebViewActivity.this);
+        mWebview = new WebView(MJWebViewActivity.this);
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
         mWebview.setLayoutParams(layoutParams);
         mWebviewFL.addView(mWebview);
@@ -129,21 +109,17 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
     private void initData() {
         Bundle bundle = getIntent().getExtras();
         mUrl = bundle.getString(WEBVIEW_URL);
-        mScreenOrientatioType = bundle.getInt(SCREEN_ORITATION);
-        mWebViewType = bundle.getString(WEBVIEW_TYPE);
-        mGameApi = bundle.getInt(GAME_APIID);
-        mIS_h5=bundle.getBoolean(IS_H5_MJ);
-        if(mIS_h5){
+
+        mIS_h5 = bundle.getBoolean(IS_H5_MJ);
+        if (mIS_h5) {
             mProgressBar.setVisibility(View.GONE);
-        }else {
+        } else {
             mProgressBar.setVisibility(View.VISIBLE);
         }
         initScreenOrientation();
         initStatusBar();
         if (!TextUtils.isEmpty(mUrl) && mWebview != null) {
             Log.e(TAG, mUrl);
-            mWebview.getSettings().setUserAgentString(mWebview.getSettings()
-                    .getUserAgentString().replace("app_android", "Android") + "; is_native=true");
             mWebview.loadUrl(mUrl);
         }
     }
@@ -160,14 +136,9 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
 
     //状态栏
     private void initStatusBar() {
-        //除了电子之外的游戏和彩票                   第三方网页
-        if (WEBVIEW_TYPE_GAME.equals(mWebViewType) || WEBVIEW_TYPE_THIRD_ORDINARY.equals(mWebViewType)) {
-            setFullScreen(false);
-            mImmersionBar = ImmersionBar.with(this).statusBarColor(R.color.black);
-            mImmersionBar.init();
-        } else if (WEBVIEW_TYPE_GAME_FULLSCREEN_ALWAYS.equals(mWebViewType)) {//电子有些游戏一开始不设置全屏，他会认为你永远不全屏
-            setFullScreen(true);
-        }
+        setFullScreen(false);
+        mImmersionBar = ImmersionBar.with(this).statusBarColor(R.color.black);
+        mImmersionBar.init();
     }
 
 
@@ -192,9 +163,6 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
             // 横屏
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
             Log.e(TAG, "竖屏");
-            if (!mWebViewType.equals(WEBVIEW_TYPE_GAME_FULLSCREEN_ALWAYS)) {
-                setFullScreen(false);
-            }
         }
     }
 
@@ -345,8 +313,6 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
         public void onShowCustomView(View view, IX5WebChromeClient.CustomViewCallback customViewCallback) {
             fullScreen();
             mWebview.setVisibility(View.GONE);
-            mVideoContainer.setVisibility(View.VISIBLE);
-            mVideoContainer.addView(view);
             mCallBack = customViewCallback;
             super.onShowCustomView(view, customViewCallback);
         }
@@ -355,8 +321,6 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
         public void onShowCustomView(View view, int i, IX5WebChromeClient.CustomViewCallback customViewCallback) {
             fullScreen();
             mWebview.setVisibility(View.GONE);
-            mVideoContainer.setVisibility(View.VISIBLE);
-            mVideoContainer.addView(view);
             mCallBack = customViewCallback;
             super.onShowCustomView(view, i, customViewCallback);
         }
@@ -368,8 +332,6 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
                 mCallBack.onCustomViewHidden();
             }
             mWebview.setVisibility(View.VISIBLE);
-            mVideoContainer.removeAllViews();
-            mVideoContainer.setVisibility(View.GONE);
             super.onHideCustomView();
         }
     }
@@ -394,14 +356,13 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
-        //    Log.e("onPageStarted", url);
+            //    Log.e("onPageStarted", url);
         }
 
         @Override
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
-        //    Log.e("onPageFinished", url);
-            setRefreshPageClearHistory();
+            //    Log.e("onPageFinished", url);
         }
 
         @Override
@@ -418,7 +379,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
 
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
-          //  Log.e("onPageShoudOver", url);
+            //  Log.e("onPageShoudOver", url);
             mWebview.loadUrl(url);
             return true;
         }
@@ -428,7 +389,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
             super.onReceivedError(view, errorCode, description, failingUrl);
             switch (errorCode) {
                 case ERROR_CONNECT:
-                  //  mWebview.loadUrl("file:///android_asset/html/unNet.html");
+                    //  mWebview.loadUrl("file:///android_asset/html/unNet.html");
                     break;
             }
         }
@@ -447,17 +408,11 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
          * 通过解析WebResourceRequest对象获取网络请求相关信息
          */
         public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
-         //   Log.e("WebResourceRequest  ", "Cookie: " + " \n Method: " + request.getMethod() + "  \n Headers: " + request.getRequestHeaders().toString() + "\n");
+            //   Log.e("WebResourceRequest  ", "Cookie: " + " \n Method: " + request.getMethod() + "  \n Headers: " + request.getRequestHeaders().toString() + "\n");
             return super.shouldInterceptRequest(view, request);
         }
     }
 
-    private void setRefreshPageClearHistory() {
-        if (misRefreshPage) {
-            misRefreshPage = false;
-            mWebview.clearHistory();
-        }
-    }
 
     private class MyWebviewOnTouchListener implements View.OnTouchListener {
 
@@ -557,20 +512,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
             mWebview.goBack();
             return true;
         } else
-           // back(keyCode, event);
-        return super.onKeyDown(keyCode, event);
-    }
-
-
-    private boolean back(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.addCategory(Intent.CATEGORY_HOME);
-            startActivity(intent);
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
+            return super.onKeyDown(keyCode, event);
     }
 
 
@@ -592,7 +534,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
      */
     private void setProgressBar(int progress) {
 
-        if(mIS_h5)return;
+        if (mIS_h5) return;
 
         if (progress == 100) {
             mProgressBar.setVisibility(View.INVISIBLE);
@@ -607,11 +549,7 @@ public class IpcWebViewActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == mHomeIv.getId()) {
-            finish();
-        } else if (v.getId() == mBackIv.getId()) {
-            finish();
-        }
+
     }
 
 

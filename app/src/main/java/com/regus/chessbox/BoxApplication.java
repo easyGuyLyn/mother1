@@ -1,13 +1,10 @@
-package com.dawoo.chessbox;
+package com.regus.chessbox;
 
 import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 
-import com.avos.avoscloud.AVOSCloud;
-import com.avos.avoscloud.AVObject;
-import com.dawoo.ipc.HostManager;
-import com.dawoo.ipc.utl.ChanelStoreEnum;
+import com.regus.mj.HostManager;
 
 /**
  * Created by benson on 17-12-27.
@@ -31,11 +28,11 @@ public class BoxApplication extends Application {
                 getString(R.string.leanCloud_appKey),
                 getString(R.string.leanCloud_objectId),
                 getString(R.string.aim_url),
-                getString(R.string.app_name1),
+                getString(R.string.app_name),
                 getString(R.string.um_appkey),
-                getString(R.string.um_chanel),
+                getString(R.string.chanel),
                 getString(R.string.um_Message_Secret),
-                "com.dawoo.chessbox");
+                "com.regus.chessbox");
 
 //                AVOSCloud.initialize(this
 //                , getString(R.string.leanCloud_appId)

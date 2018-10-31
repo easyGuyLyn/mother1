@@ -157,9 +157,9 @@
 #-keep class com.google.gson.stream.** { *; }
 
 # Application classes that will be serialized/deserialized over Gson
--keep class com.dawoo.chessbox.bean.**{*;}   #------实体类不可混淆
--keep class com.dawoo.chessbox.net.HttpResult.**{*;}   #------模板实体类不可混淆
--keep class com.dawoo.chessbox.util.NetUtil{*;}   #------项目中的NetUtil x5 settings不混淆
+#-keep class com.dawoo.chessbox.bean.**{*;}   #------实体类不可混淆
+#-keep class com.dawoo.chessbox.net.HttpResult.**{*;}   #------模板实体类不可混淆
+#-keep class com.dawoo.chessbox.util.NetUtil{*;}   #------项目中的NetUtil x5 settings不混淆
 # Prevent proguard from stripping interface information from TypeAdapterFactory,
 # JsonSerializer, JsonDeserializer instances (so they can be used in @JsonAdapter)
 -keep class * implements com.google.gson.TypeAdapterFactory
@@ -179,15 +179,15 @@
 
 
 #---------------------------------webview------------------------------------
--keepclassmembers class com.dawoo.chessbox.view.activity.webview.WebViewActivity {
-   public *;
-}
--keepclassmembers class com.dawoo.chessbox.view.activity.webview.WebViewActivity.InJavaScriptGame {
-   public *;
-}
--keepclassmembers class com.dawoo.chessbox.view.activity.webview.WebViewActivity.InJavaScriptCommon {
-   public *;
-}
+#-keepclassmembers class com.dawoo.chessbox.view.activity.webview.WebViewActivity {
+#   public *;
+#}
+#-keepclassmembers class com.dawoo.chessbox.view.activity.webview.WebViewActivity.InJavaScriptGame {
+#   public *;
+#}
+#-keepclassmembers class com.dawoo.chessbox.view.activity.webview.WebViewActivity.InJavaScriptCommon {
+#   public *;
+#}
 -keepclassmembers class * extends android.webkit.WebViewClient {
     public void *(android.webkit.WebView, java.lang.String, android.graphics.Bitmap);
     public boolean *(android.webkit.WebView, java.lang.String);
@@ -317,8 +317,8 @@
 
 
 
--keep class com.dawoo.ipcsdk.** { *; }
--dontwarn com.dawoo.ipcsdk.**
+#-keep class com.dawoo.ipcsdk.** { *; }
+#-dontwarn com.dawoo.ipcsdk.**
 
 ##------------------------------------------------------------
 -keep class com.alibaba.fastjson.** { *; }

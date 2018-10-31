@@ -1,11 +1,11 @@
-package com.dawoo.ipc.utl;
+package com.regus.mj.utl;
 
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.util.Log;
 import android.view.View;
 
-import com.dawoo.ipc.HostManager;
+import com.regus.mj.HostManager;
 import com.tencent.smtt.export.external.interfaces.SslError;
 import com.tencent.smtt.export.external.interfaces.SslErrorHandler;
 import com.tencent.smtt.export.external.interfaces.WebResourceError;

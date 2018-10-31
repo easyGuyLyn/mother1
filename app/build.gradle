@@ -59,7 +59,6 @@ android {
 
         }
         release {
-
             minifyEnabled true
             // 开启ZipAlign优化
             zipAlignEnabled true
@@ -125,9 +124,9 @@ android {
 
         def pid_pex = ".fileprovider"
 
-        app_aOPPO应用市场 {
+        OPPO{
             applicationId "com.regus.package2"
-            resValue "string", "app_name1", "极速时时彩彩票"
+            resValue "string", "app_name", "极速时时彩彩票"
 
             resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
@@ -135,7 +134,7 @@ android {
 
             resValue "string", "um_appkey", "5bd00f19b465f5bcc800005c"
             resValue "string", "um_Message_Secret", "8b090f521c96e5bedd15f846a783f1bb"
-            resValue "string", "um_chanel", "app_OPPO应用市场"
+            resValue "string", "chanel", "app_OPPO应用市场"
 
             resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
@@ -143,9 +142,9 @@ android {
             ]
         }
 
-        app_a360手机助手 {
+        '360'{
             applicationId "com.regus.package2"
-            resValue "string", "app_name1", "极速时时彩彩票"
+            resValue "string", "app_name", "极速时时彩彩票"
 
             resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
@@ -153,7 +152,7 @@ android {
 
             resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
             resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
-            resValue "string", "um_chanel", "app_360手机助手"
+            resValue "string", "chanel", "app_360手机助手"
 
             resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
@@ -162,9 +161,9 @@ android {
         }
 
 
-        app_avivo应用商店 {
+        vivo{
             applicationId "com.regus.package2"
-            resValue "string", "app_name1", "极速时时彩彩票"
+            resValue "string", "app_name", "极速时时彩彩票"
 
             resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
@@ -172,7 +171,7 @@ android {
 
             resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
             resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
-            resValue "string", "um_chanel", "app_vivo应用商店"
+            resValue "string", "chanel", "app_vivo应用商店"
 
             resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
@@ -181,9 +180,9 @@ android {
         }
 
 
-        app_a百度手机助手{
+        百度{
             applicationId "com.regus.package2"
-            resValue "string", "app_name1", "极速时时彩彩票"
+            resValue "string", "app_name", "极速时时彩彩票"
 
             resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
@@ -191,7 +190,7 @@ android {
 
             resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
             resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
-            resValue "string", "um_chanel", "app_百度手机助手"
+            resValue "string", "chanel", "app_百度手机助手"
 
             resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
@@ -199,9 +198,9 @@ android {
             ]
         }
 
-        app_a华为应用市场{
+        华为{
             applicationId "com.regus.package2"
-            resValue "string", "app_name1", "极速时时彩彩票"
+            resValue "string", "app_name", "极速时时彩彩票"
 
             resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
@@ -209,7 +208,7 @@ android {
 
             resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
             resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
-            resValue "string", "um_chanel", "app_华为应用市场"
+            resValue "string", "chanel", "app_华为应用市场"
 
             resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
@@ -218,9 +217,9 @@ android {
         }
 
 
-        app_a三星应用商店{
+        三星{
             applicationId "com.regus.package2"
-            resValue "string", "app_name1", "极速时时彩彩票"
+            resValue "string", "app_name", "极速时时彩彩票"
 
             resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
@@ -228,7 +227,7 @@ android {
 
             resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
             resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
-            resValue "string", "um_chanel", "app_三星应用商店"
+            resValue "string", "chanel", "app_三星应用商店"
 
             resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
@@ -236,9 +235,9 @@ android {
             ]
         }
 
-        app_a腾讯应用宝{
+        应用宝{
             applicationId "com.regus.package2"
-            resValue "string", "app_name1", "极速时时彩彩票"
+            resValue "string", "app_name", "极速时时彩彩票"
 
             resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
@@ -246,16 +245,16 @@ android {
 
             resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
             resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
-            resValue "string", "um_chanel", "app_腾讯应用宝"
+            resValue "string", "chanel", "app_腾讯应用宝"
 
             resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
                                     r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
             ]
         }
-        app_a小米应用商店{
+        小米{
             applicationId "com.regus.package2"
-            resValue "string", "app_name1", "极速时时彩彩票"
+            resValue "string", "app_name", "极速时时彩彩票"
 
             resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
             resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
@@ -263,7 +262,7 @@ android {
 
             resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
             resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
-            resValue "string", "um_chanel", "app_小米应用商店"
+            resValue "string", "chanel", "app_小米应用商店"
 
             resValue "string", "aim_url", "http://m.ttc178.com"
             manifestPlaceholders = [pro_id   : applicationId + pid_pex,
@@ -272,237 +271,237 @@ android {
         }
 
 
-
-        app_PC6 {
-            applicationId "com.regus.package2"
-            resValue "string", "app_name1", "极速时时彩彩票"
-
-            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e6309f545400668d5515"
-
-            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
-            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
-            resValue "string", "um_chanel", "app_PC6"
-
-            resValue "string", "aim_url", "http://m.ttc178.com"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-            ]
-        }
-
-
-
-
-        app_安粉网{
-            applicationId "com.regus.package2"
-            resValue "string", "app_name1", "极速时时彩彩票"
-
-            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e81c0b61600066d58cf9"
-
-            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
-            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
-            resValue "string", "um_chanel", "app_安粉网"
-
-            resValue "string", "aim_url", "http://m.ttc178.com"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-            ]
-        }
-
-        app_豌豆荚 {
-            applicationId "com.regus.package2"
-            resValue "string", "app_name1", "极速时时彩彩票"
-
-            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e81c0b61600066d58cf8"
-
-            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
-            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
-            resValue "string", "um_chanel", "app_豌豆荚"
-
-            resValue "string", "aim_url", "http://m.ttc178.com"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-            ]
-        }
-
-
-
-        app_安智应用市场{
-            applicationId "com.regus.package2"
-            resValue "string", "app_name1", "极速时时彩彩票"
-
-            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e81cee920a0068e967cb"
-
-            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
-            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
-            resValue "string", "um_chanel", "app_安智应用市场"
-
-            resValue "string", "aim_url", "http://m.ttc178.com"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-            ]
-        }
-
-
-        app_锤子手机应用商店 {
-            applicationId "com.regus.package2"
-            resValue "string", "app_name1", "极速时时彩彩票"
-
-            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e81c0b61600066d58cfc"
-
-            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
-            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
-            resValue "string", "um_chanel", "app_锤子手机应用商店"
-
-            resValue "string", "aim_url", "http://m.ttc178.com"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-            ]
-        }
-
-
-        app_金立{
-            applicationId "com.regus.package2"
-            resValue "string", "app_name1", "极速时时彩彩票"
-
-            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e81c0b61600066d58cfd"
-
-            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
-            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
-            resValue "string", "um_chanel", "app_金立"
-
-            resValue "string", "aim_url", "http://m.ttc178.com"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-            ]
-        }
-
-
-        app_乐视助手{
-            applicationId "com.regus.package2"
-            resValue "string", "app_name1", "极速时时彩彩票"
-
-            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e81c9f5454006ef6f8d0"
-
-            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
-            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
-            resValue "string", "um_chanel", "app_乐视助手"
-
-            resValue "string", "aim_url", "http://m.ttc178.com"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-            ]
-        }
-
-
-        app_厉趣市场{
-            applicationId "com.regus.package2"
-            resValue "string", "app_name1", "极速时时彩彩票"
-
-            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e81c44d904005e9f6821"
-
-            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
-            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
-            resValue "string", "um_chanel", "app_厉趣市场"
-
-            resValue "string", "aim_url", "http://m.ttc178.com"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-            ]
-        }
-
-
-        app_魅族应用商店{
-            applicationId "com.regus.package2"
-            resValue "string", "app_name1", "极速时时彩彩票"
-
-            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e81cee920a0068e967d2"
-
-            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
-            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
-            resValue "string", "um_chanel", "app_魅族应用商店"
-
-            resValue "string", "aim_url", "http://m.ttc178.com"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-            ]
-        }
-
-
-        app_联想开发平台{
-            applicationId "com.regus.package2"
-            resValue "string", "app_name1", "极速时时彩彩票"
-
-            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e81c0b61600066d58cff"
-
-            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
-            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
-            resValue "string", "um_chanel", "app_联想开发平台"
-
-            resValue "string", "aim_url", "http://m.ttc178.com"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-            ]
-        }
-
-
-
-        app_搜狗手机助手{
-            applicationId "com.regus.package2"
-            resValue "string", "app_name1", "极速时时彩彩票"
-
-            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e81cee920a0068e19c73"
-
-            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
-            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
-            resValue "string", "um_chanel", "app_搜狗手机助手"
-
-            resValue "string", "aim_url", "http://m.ttc178.com"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-            ]
-        }
-
-
-
-        app_应用汇安卓市场{
-            applicationId "com.regus.package2"
-            resValue "string", "app_name1", "极速时时彩彩票"
-
-            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
-            resValue "string", "leanCloud_objectId", "5bd2e81c17d0090062ea74e9"
-
-            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
-            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
-            resValue "string", "um_chanel", "app_应用汇安卓市场"
-
-            resValue "string", "aim_url", "http://m.ttc178.com"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-            ]
-        }
+//
+//        app_PC6 {
+//            applicationId "com.regus.package2"
+//            resValue "string", "app_name", "极速时时彩彩票"
+//
+//            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
+//            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
+//            resValue "string", "leanCloud_objectId", "5bd2e6309f545400668d5515"
+//
+//            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+//            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
+//            resValue "string", "chanel", "app_PC6"
+//
+//            resValue "string", "aim_url", "http://m.ttc178.com"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+//            ]
+//        }
+//
+//
+//
+//
+//        app_安粉网{
+//            applicationId "com.regus.package2"
+//            resValue "string", "app_name", "极速时时彩彩票"
+//
+//            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
+//            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
+//            resValue "string", "leanCloud_objectId", "5bd2e81c0b61600066d58cf9"
+//
+//            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+//            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
+//            resValue "string", "chanel", "app_安粉网"
+//
+//            resValue "string", "aim_url", "http://m.ttc178.com"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+//            ]
+//        }
+//
+//        app_豌豆荚 {
+//            applicationId "com.regus.package2"
+//            resValue "string", "app_name", "极速时时彩彩票"
+//
+//            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
+//            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
+//            resValue "string", "leanCloud_objectId", "5bd2e81c0b61600066d58cf8"
+//
+//            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+//            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
+//            resValue "string", "chanel", "app_豌豆荚"
+//
+//            resValue "string", "aim_url", "http://m.ttc178.com"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+//            ]
+//        }
+//
+//
+//
+//        app_安智应用市场{
+//            applicationId "com.regus.package2"
+//            resValue "string", "app_name", "极速时时彩彩票"
+//
+//            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
+//            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
+//            resValue "string", "leanCloud_objectId", "5bd2e81cee920a0068e967cb"
+//
+//            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+//            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
+//            resValue "string", "chanel", "app_安智应用市场"
+//
+//            resValue "string", "aim_url", "http://m.ttc178.com"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+//            ]
+//        }
+//
+//
+//        app_锤子手机应用商店 {
+//            applicationId "com.regus.package2"
+//            resValue "string", "app_name", "极速时时彩彩票"
+//
+//            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
+//            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
+//            resValue "string", "leanCloud_objectId", "5bd2e81c0b61600066d58cfc"
+//
+//            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+//            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
+//            resValue "string", "chanel", "app_锤子手机应用商店"
+//
+//            resValue "string", "aim_url", "http://m.ttc178.com"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+//            ]
+//        }
+//
+//
+//        app_金立{
+//            applicationId "com.regus.package2"
+//            resValue "string", "app_name", "极速时时彩彩票"
+//
+//            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
+//            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
+//            resValue "string", "leanCloud_objectId", "5bd2e81c0b61600066d58cfd"
+//
+//            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+//            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
+//            resValue "string", "chanel", "app_金立"
+//
+//            resValue "string", "aim_url", "http://m.ttc178.com"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+//            ]
+//        }
+//
+//
+//        app_乐视助手{
+//            applicationId "com.regus.package2"
+//            resValue "string", "app_name", "极速时时彩彩票"
+//
+//            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
+//            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
+//            resValue "string", "leanCloud_objectId", "5bd2e81c9f5454006ef6f8d0"
+//
+//            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+//            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
+//            resValue "string", "chanel", "app_乐视助手"
+//
+//            resValue "string", "aim_url", "http://m.ttc178.com"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+//            ]
+//        }
+//
+//
+//        app_厉趣市场{
+//            applicationId "com.regus.package2"
+//            resValue "string", "app_name", "极速时时彩彩票"
+//
+//            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
+//            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
+//            resValue "string", "leanCloud_objectId", "5bd2e81c44d904005e9f6821"
+//
+//            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+//            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
+//            resValue "string", "chanel", "app_厉趣市场"
+//
+//            resValue "string", "aim_url", "http://m.ttc178.com"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+//            ]
+//        }
+//
+//
+//        app_魅族应用商店{
+//            applicationId "com.regus.package2"
+//            resValue "string", "app_name", "极速时时彩彩票"
+//
+//            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
+//            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
+//            resValue "string", "leanCloud_objectId", "5bd2e81cee920a0068e967d2"
+//
+//            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+//            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
+//            resValue "string", "chanel", "app_魅族应用商店"
+//
+//            resValue "string", "aim_url", "http://m.ttc178.com"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+//            ]
+//        }
+//
+//
+//        app_联想开发平台{
+//            applicationId "com.regus.package2"
+//            resValue "string", "app_name", "极速时时彩彩票"
+//
+//            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
+//            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
+//            resValue "string", "leanCloud_objectId", "5bd2e81c0b61600066d58cff"
+//
+//            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+//            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
+//            resValue "string", "chanel", "app_联想开发平台"
+//
+//            resValue "string", "aim_url", "http://m.ttc178.com"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+//            ]
+//        }
+//
+//
+//
+//        app_搜狗手机助手{
+//            applicationId "com.regus.package2"
+//            resValue "string", "app_name", "极速时时彩彩票"
+//
+//            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
+//            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
+//            resValue "string", "leanCloud_objectId", "5bd2e81cee920a0068e19c73"
+//
+//            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+//            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
+//            resValue "string", "chanel", "app_搜狗手机助手"
+//
+//            resValue "string", "aim_url", "http://m.ttc178.com"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+//            ]
+//        }
+//
+//
+//
+//        app_应用汇安卓市场{
+//            applicationId "com.regus.package2"
+//            resValue "string", "app_name", "极速时时彩彩票"
+//
+//            resValue "string", "leanCloud_appId", " w3KXr1iMgbpVX8SP3Utvud9H-gzGzoHsz"
+//            resValue "string", "leanCloud_appKey", " XN7btjpimsbDvkBCaHtqgl6v"
+//            resValue "string", "leanCloud_objectId", "5bd2e81c17d0090062ea74e9"
+//
+//            resValue "string", "um_appkey", " 5bd00f19b465f5bcc800005c"
+//            resValue "string", "um_Message_Secret", " 8b090f521c96e5bedd15f846a783f1bb"
+//            resValue "string", "chanel", "app_应用汇安卓市场"
+//
+//            resValue "string", "aim_url", "http://m.ttc178.com"
+//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
+//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
+//            ]
+//        }
     }
 }
 

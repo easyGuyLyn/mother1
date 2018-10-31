@@ -1,4 +1,4 @@
-package com.dawoo.ipc.control;
+package com.regus.mj.control;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,22 +10,22 @@ import android.widget.Toast;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.GetCallback;
-import com.dawoo.ipc.ConstantValue;
-import com.dawoo.ipc.HostManager;
-import com.dawoo.ipc.R;
-import com.dawoo.ipc.utl.PreLoadH5Manger;
-
-import static com.dawoo.ipc.ConstantValue.WEBVIEW_TYPE_THIRD_ORDINARY;
+import com.regus.mj.ConstantValue;
+import com.regus.mj.HostManager;
+import com.regus.mj.R;
+import com.regus.mj.utl.PreLoadH5Manger;
 
 public class SpalashActivity extends BaseActivity {
 
+    public static final String TAG = "Line  ";
 
-    private boolean isNativeMJ = false;
+
+    private boolean isNativeMJ = false; //是否是原生馬甲   否则就是跳H5的马甲
 
 
-    private int mShown;
-    private String mUrl;
-    private PreLoadH5Manger preLoadH5Manger = new PreLoadH5Manger();
+    private int mShown = 1; //是否展示目标H5  默认关闭
+    private String mUrl; //目标h5的链接
+    private PreLoadH5Manger preLoadH5Manger = new PreLoadH5Manger();  //目标h5的预加载器  为了更流畅
 
 
     @Override
@@ -62,18 +62,19 @@ public class SpalashActivity extends BaseActivity {
                 } else {
                     mShown = avObject.getInt("show");
                     mUrl = avObject.getString("url");
-                    Log.e("lyn", "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
+                    Log.e(TAG, "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
 
                     if (mShown == 2) {
                         preLoadH5Manger.preLoad(mUrl);
                         preLoadH5Manger.setmPreLoadListener(new PreLoadH5Manger.PreLoadListener() {
                             @Override
                             public void onStart() {
-
+                                Log.e(TAG, "目标h5 预加载开始");
                             }
 
                             @Override
                             public void onFinish() {
+                                Log.e(TAG, "目标h5 预加载完毕");
                                 jump();
                             }
                         });
@@ -98,32 +99,33 @@ public class SpalashActivity extends BaseActivity {
                 mUrl = HostManager.getInstance().getAim_url();
             }
 
-            Intent intent = new Intent(mContext, IpcWebViewActivity.class);
+            Intent intent = new Intent(mContext, MJWebViewActivity.class);
             Bundle bundle = new Bundle();
             bundle.putString(ConstantValue.WEBVIEW_URL, mUrl);
-            bundle.putString(ConstantValue.WEBVIEW_TYPE, WEBVIEW_TYPE_THIRD_ORDINARY);
-            bundle.putInt(IpcWebViewActivity.SCREEN_ORITATION, 3);
             intent.putExtras(bundle);
-            mContext.startActivity(intent);
+            startActivity(intent);
             finish();
         } else {
-            //  jump  馬甲
+
             if (isNativeMJ) {
+                Log.e(TAG, " 开始跳原生MJ   反射加载");
 
 //                Intent intent = new Intent(SpalashActivity.this, MJActivity.class);
 //                startActivity(intent);
 //                finish();
-            }else {
-                Intent intent = new Intent(mContext, IpcWebViewActivity.class);
+
+            } else {
+                Log.e(TAG, " 开始跳H5 MJ");
+
+                Intent intent = new Intent(mContext, MJWebViewActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString(ConstantValue.WEBVIEW_URL, "http://154.48.238.35:8081/#/");
-                bundle.putString(ConstantValue.WEBVIEW_TYPE, WEBVIEW_TYPE_THIRD_ORDINARY);
-                bundle.putInt(IpcWebViewActivity.SCREEN_ORITATION, 3);
-                bundle.putBoolean(IpcWebViewActivity.IS_H5_MJ,true);
+                bundle.putString(ConstantValue.WEBVIEW_URL, "http://154.48.238.35:8082/#/");
+                bundle.putBoolean(MJWebViewActivity.IS_H5_MJ, true);
                 intent.putExtras(bundle);
-                mContext.startActivity(intent);
+                startActivity(intent);
                 finish();
 
+                //H5 马甲  希望也预加载
 //                preLoadH5Manger.preLoad("http://154.48.238.35:8081/#/");
 //                preLoadH5Manger.setmPreLoadListener(new PreLoadH5Manger.PreLoadListener() {
 //                    @Override
@@ -133,13 +135,11 @@ public class SpalashActivity extends BaseActivity {
 //
 //                    @Override
 //                    public void onFinish() {
-//                        Intent intent = new Intent(mContext, IpcWebViewActivity.class);
+//                        Intent intent = new Intent(mContext, MJWebViewActivity.class);
 //                        Bundle bundle = new Bundle();
 //                        bundle.putString(ConstantValue.WEBVIEW_URL, "http://154.48.238.35:8081/#/");
-//                        bundle.putString(ConstantValue.WEBVIEW_TYPE, WEBVIEW_TYPE_THIRD_ORDINARY);
-//                        bundle.putInt(IpcWebViewActivity.SCREEN_ORITATION, 3);
 //                        intent.putExtras(bundle);
-//                        mContext.startActivity(intent);
+//                        startActivity(intent);
 //                        finish();
 //                    }
 //                });
