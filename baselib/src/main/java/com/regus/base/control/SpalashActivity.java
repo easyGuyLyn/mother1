@@ -101,10 +101,14 @@ public class SpalashActivity extends BaseActivity {
 
             if (HostManager.getInstance().isNativeMJ()) {
                 LogUtils.e(TAG, " 开始跳原生MJ   反射加载");
-
-//                Intent intent = new Intent(SpalashActivity.this, MJActivity.class);
-//                startActivity(intent);
-//                finish();
+                try {
+                    Class aimClass = Class.forName("com.regus.main.ui.MainActivity");
+                    Intent intent = new Intent(SpalashActivity.this, aimClass);
+                    startActivity(intent);
+                    finish();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
 
             } else {
                 LogUtils.e(TAG, " 开始跳H5 MJ");

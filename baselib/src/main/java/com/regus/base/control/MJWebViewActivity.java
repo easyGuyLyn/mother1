@@ -145,10 +145,10 @@ public class MJWebViewActivity extends AppCompatActivity implements View.OnClick
     //动态设置全屏与非全屏   只有横屏有全屏
     private void setFullScreen(boolean fullScreen) {
         if (fullScreen) {
-            setTheme(R.style.IPCFullScreenThem);
+            setTheme(R.style.FullScreenThem);
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         } else {
-            setTheme(R.style.IPCAppTheme);
+            setTheme(R.style.BaseAppTheme);
             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
     }

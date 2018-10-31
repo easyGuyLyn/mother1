@@ -157,7 +157,7 @@
 #-keep class com.google.gson.stream.** { *; }
 
 # Application classes that will be serialized/deserialized over Gson
-#-keep class com.dawoo.chessbox.bean.**{*;}   #------实体类不可混淆
+-keep class com.regus.base.bean.**{*;}   #------实体类不可混淆
 #-keep class com.dawoo.chessbox.net.HttpResult.**{*;}   #------模板实体类不可混淆
 #-keep class com.dawoo.chessbox.util.NetUtil{*;}   #------项目中的NetUtil x5 settings不混淆
 # Prevent proguard from stripping interface information from TypeAdapterFactory,
