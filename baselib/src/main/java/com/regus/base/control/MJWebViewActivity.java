@@ -14,7 +14,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -24,6 +23,7 @@ import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 
 import com.regus.base.R;
+import com.regus.base.util.LogUtils;
 import com.regus.base.view.WDragViewLayout;
 import com.gyf.barlibrary.ImmersionBar;
 import com.tencent.smtt.export.external.interfaces.IX5WebChromeClient;
@@ -119,7 +119,7 @@ public class MJWebViewActivity extends AppCompatActivity implements View.OnClick
         initScreenOrientation();
         initStatusBar();
         if (!TextUtils.isEmpty(mUrl) && mWebview != null) {
-            Log.e(TAG, mUrl);
+            LogUtils.e(TAG, mUrl);
             mWebview.loadUrl(mUrl);
         }
     }
@@ -158,11 +158,11 @@ public class MJWebViewActivity extends AppCompatActivity implements View.OnClick
         super.onConfigurationChanged(newConfig);
 
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            Log.e(TAG, "横屏");
+            LogUtils.e(TAG, "横屏");
             setFullScreen(true);
             // 横屏
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
-            Log.e(TAG, "竖屏");
+            LogUtils.e(TAG, "竖屏");
         }
     }
 
@@ -349,7 +349,7 @@ public class MJWebViewActivity extends AppCompatActivity implements View.OnClick
         @Override
         public void onLoadResource(WebView webView, String s) {
             super.onLoadResource(webView, s);
-            Log.e("onPageLoadResource", s);
+            LogUtils.e("onPageLoadResource", s);
         }
 
 

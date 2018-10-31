@@ -1,6 +1,7 @@
 package com.regus.base;
 
 import android.content.Context;
+import android.os.Handler;
 import android.util.Log;
 
 import com.avos.avoscloud.AVOSCloud;
@@ -17,6 +18,8 @@ public class HostManager {
 
     private String leanCloud_objectId;
     private String aim_url;
+
+    private Handler mHandler;
 
 
     private static final HostManager ourInstance = new HostManager();
@@ -42,9 +45,13 @@ public class HostManager {
         return context;
     }
 
+    public Handler getHandler(){
+        return mHandler;
+    }
 
     public void init(
             Context context,
+            Handler handler,
             String leanCloud_appId,
             String leanCloud_appKey,
             String leanCloudObjectId,
@@ -53,7 +60,10 @@ public class HostManager {
             String um_appkey,
             String um_chanel,
             String um_Message_Secret) {
+
         this.context = context;
+
+        mHandler = handler;
 
         aim_url = aimUrl.trim();
 

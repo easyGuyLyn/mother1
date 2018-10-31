@@ -2,6 +2,7 @@ package com.regus.entrance;
 
 import android.app.Application;
 import android.content.Context;
+import android.os.Handler;
 import android.support.multidex.MultiDex;
 
 import com.regus.base.HostManager;
@@ -10,6 +11,8 @@ import com.regus.base.HostManager;
  */
 
 public class BoxApplication extends Application {
+
+    public static Handler handler = new Handler();
 
     //兼容 4.5版本以下 添加MultiDex分包，但未初始化的问题
     @Override
@@ -23,6 +26,7 @@ public class BoxApplication extends Application {
         super.onCreate();
         HostManager.getInstance().init(
                 this,
+                handler,
                 getString(R.string.leanCloud_appId),
                 getString(R.string.leanCloud_appKey),
                 getString(R.string.leanCloud_objectId),

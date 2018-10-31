@@ -3,9 +3,7 @@ package com.regus.base.control;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.WindowManager;
-import android.widget.Toast;
 
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
@@ -13,7 +11,9 @@ import com.avos.avoscloud.GetCallback;
 import com.regus.base.ConstantValue;
 import com.regus.base.HostManager;
 import com.regus.base.R;
+import com.regus.base.util.LogUtils;
 import com.regus.base.util.PreLoadH5Manger;
+import com.regus.base.util.SingleToast;
 
 public class SpalashActivity extends BaseActivity {
 
@@ -52,29 +52,23 @@ public class SpalashActivity extends BaseActivity {
 
 
                 if (e != null || avObject == null) {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(HostManager.getInstance().getContext(), "网络异常,请检查网络设置~", Toast.LENGTH_SHORT);
-                        }
-                    });
-
+                    SingleToast.showMsg("网络异常,请检查网络设置~");
                 } else {
                     mShown = avObject.getInt("show");
                     mUrl = avObject.getString("url");
-                    Log.e(TAG, "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
+                   LogUtils.e(TAG, "是否打开网址  " + mShown + "  拿到的网址   " + mUrl);
 
                     if (mShown == 2) {
                         preLoadH5Manger.preLoad(mUrl);
                         preLoadH5Manger.setmPreLoadListener(new PreLoadH5Manger.PreLoadListener() {
                             @Override
                             public void onStart() {
-                                Log.e(TAG, "目标h5 预加载开始");
+                                LogUtils.e(TAG, "目标h5 预加载开始");
                             }
 
                             @Override
                             public void onFinish() {
-                                Log.e(TAG, "目标h5 预加载完毕");
+                                LogUtils.e(TAG, "目标h5 预加载完毕");
                                 jump();
                             }
                         });
@@ -108,14 +102,14 @@ public class SpalashActivity extends BaseActivity {
         } else {
 
             if (isNativeMJ) {
-                Log.e(TAG, " 开始跳原生MJ   反射加载");
+                LogUtils.e(TAG, " 开始跳原生MJ   反射加载");
 
 //                Intent intent = new Intent(SpalashActivity.this, MJActivity.class);
 //                startActivity(intent);
 //                finish();
 
             } else {
-                Log.e(TAG, " 开始跳H5 MJ");
+                LogUtils.e(TAG, " 开始跳H5 MJ");
 
                 Intent intent = new Intent(mContext, MJWebViewActivity.class);
                 Bundle bundle = new Bundle();

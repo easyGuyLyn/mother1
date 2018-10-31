@@ -12,4 +12,9 @@ public interface ConstantValue {
     String WEBVIEW_URL = "WEBVIEW_URL";
 
 
+    /**
+     * network  error
+     */
+    String EVENT_TYPE_NETWORK_EXCEPTION = "EVENT_TYPE_NETWORK_EXCEPTION";
+
 }
