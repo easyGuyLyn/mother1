@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.regus.package"
+        applicationId "com.regus.package4"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode rootProject.ext.versionCode
@@ -39,6 +39,16 @@ android {
     }
     buildTypes {
         debug {
+            buildConfigField("boolean", "isNativeMJ", "false") // 是否是原生mj
+            buildConfigField("String", "h5_mj_url", "\"http://154.48.238.35:8083/#/\"")//h5 的马甲壳
+            buildConfigField("String", "aim_url", "\"http://m.ttc178.com\"") //目标页面
+
+            buildConfigField("String", "leanCloud_appId", "\"woFDohWHn65CiKarIDN6DOLy-gzGzoHsz\"")//
+            buildConfigField("String", "leanCloud_appKey", "\"Qwg2uPtipC9YDzEhNgJE4DvN\"") //
+            buildConfigField("String", "um_appkey", "\"5bd93bb2f1f55689870001d5\"") //
+            buildConfigField("String", "um_Message_Secret", "\"f5eb4db48940fa94247c314903ce8901\"")
+            //
+
             // 不开启混淆
             minifyEnabled false
             // 不开启ZipAlign优化
@@ -54,6 +64,15 @@ android {
 
         }
         release {
+            buildConfigField("boolean", "isNativeMJ", "false") // 是否是原生mj
+            buildConfigField("String", "h5_mj_url", "\"http://154.48.238.35:8083/#/\"")//h5 的马甲壳
+            buildConfigField("String", "aim_url", "\"http://m.ttc178.com\"") //目标页面
+
+            buildConfigField("String", "leanCloud_appId", "\"woFDohWHn65CiKarIDN6DOLy-gzGzoHsz\"")//
+            buildConfigField("String", "leanCloud_appKey", "\"Qwg2uPtipC9YDzEhNgJE4DvN\"") //
+            buildConfigField("String", "um_appkey", "\"5bd93bb2f1f55689870001d5\"") //
+            buildConfigField("String", "um_Message_Secret", "\"f5eb4db48940fa94247c314903ce8901\"")
+            //
             minifyEnabled true
             // 开启ZipAlign优化
             zipAlignEnabled true
@@ -63,7 +82,6 @@ android {
             signingConfig signingConfigs.config
             // 混淆文件位置
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-
 
             // 批量打包
             applicationVariants.all { variant ->
@@ -84,7 +102,6 @@ android {
 
     // 多渠道 的不同配置
     productFlavors {
-
 
 //        360手机助手
 //        OPPO应用市场
@@ -109,387 +126,133 @@ android {
 
 
 
-
-
-        def pid_pex = ".fileprovider"
-
-//        OPPO{
-//            applicationId "com.regus.package4"
-//            resValue "string", "app_name", "大乐透走势规则助手"
-//
-//            resValue "string", "leanCloud_appId", " woFDohWHn65CiKarIDN6DOLy-gzGzoHsz"
-//            resValue "string", "leanCloud_appKey", " Qwg2uPtipC9YDzEhNgJE4DvN"
-//            resValue "string", "leanCloud_objectId", "5bd2e81c9f5454006ef6f8ca"
-//
-//            resValue "string", "um_appkey", "5bd93bb2f1f55689870001d5"
-//            resValue "string", "um_Message_Secret", "f5eb4db48940fa94247c314903ce8901"
-//            resValue "string", "chanel", "app_OPPO应用市场"
-//
-//            resValue "string", "aim_url", "http://m.ttc178.com"
-//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-//            ]
-//        }
-//
-//        '360'{
-//            applicationId "com.regus.package4"
-//            resValue "string", "app_name", "大乐透走势规则助手"
-//
-//            resValue "string", "leanCloud_appId", " woFDohWHn65CiKarIDN6DOLy-gzGzoHsz"
-//            resValue "string", "leanCloud_appKey", " Qwg2uPtipC9YDzEhNgJE4DvN"
-//            resValue "string", "leanCloud_objectId", "5bd2e81cee920a0068e967cc"
-//
-//            resValue "string", "um_appkey", " 5bd93bb2f1f55689870001d5"
-//            resValue "string", "um_Message_Secret", " f5eb4db48940fa94247c314903ce8901"
-//            resValue "string", "chanel", "app_360手机助手"
-//
-//            resValue "string", "aim_url", "http://m.ttc178.com"
-//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-//            ]
-//        }
-//
-//
-//        vivo{
-//            applicationId "com.regus.package4"
-//            resValue "string", "app_name", "大乐透走势规则助手"
-//
-//            resValue "string", "leanCloud_appId", " woFDohWHn65CiKarIDN6DOLy-gzGzoHsz"
-//            resValue "string", "leanCloud_appKey", " Qwg2uPtipC9YDzEhNgJE4DvN"
-//            resValue "string", "leanCloud_objectId", "5bd2e81c9f5454006ef6f8c8"
-//
-//            resValue "string", "um_appkey", " 5bd93bb2f1f55689870001d5"
-//            resValue "string", "um_Message_Secret", " f5eb4db48940fa94247c314903ce8901"
-//            resValue "string", "chanel", "app_vivo应用商店"
-//
-//            resValue "string", "aim_url", "http://m.ttc178.com"
-//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-//            ]
-//        }
-//
-//
-//        百度{
-//            applicationId "com.regus.package4"
-//            resValue "string", "app_name", "大乐透走势规则助手"
-//
-//            resValue "string", "leanCloud_appId", " woFDohWHn65CiKarIDN6DOLy-gzGzoHsz"
-//            resValue "string", "leanCloud_appKey", " Qwg2uPtipC9YDzEhNgJE4DvN"
-//            resValue "string", "leanCloud_objectId", "5bd2e81c9f5454006ef6f8ce"
-//
-//            resValue "string", "um_appkey", " 5bd93bb2f1f55689870001d5"
-//            resValue "string", "um_Message_Secret", " f5eb4db48940fa94247c314903ce8901"
-//            resValue "string", "chanel", "app_百度手机助手"
-//
-//            resValue "string", "aim_url", "http://m.ttc178.com"
-//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-//            ]
-//        }
-//
-//        华为{
-//            applicationId "com.regus.package4"
-//            resValue "string", "app_name", "大乐透走势规则助手"
-//
-//            resValue "string", "leanCloud_appId", " woFDohWHn65CiKarIDN6DOLy-gzGzoHsz"
-//            resValue "string", "leanCloud_appKey", " Qwg2uPtipC9YDzEhNgJE4DvN"
-//            resValue "string", "leanCloud_objectId", "5bd2e81cac502e0061c503e1"
-//
-//            resValue "string", "um_appkey", " 5bd93bb2f1f55689870001d5"
-//            resValue "string", "um_Message_Secret", " f5eb4db48940fa94247c314903ce8901"
-//            resValue "string", "chanel", "app_华为应用市场"
-//
-//            resValue "string", "aim_url", "http://m.ttc178.com"
-//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-//            ]
-//        }
-
-
-        三星{
-            applicationId "com.regus.package4"
-            resValue "string", "app_name", "大乐透走势规则助手"
-
-            resValue "string", "leanCloud_appId", "woFDohWHn65CiKarIDN6DOLy-gzGzoHsz"
-            resValue "string", "leanCloud_appKey", "Qwg2uPtipC9YDzEhNgJE4DvN"
-            resValue "string", "leanCloud_objectId", "5bd93f4944d904005eefe854"
-
-            resValue "string", "um_appkey", "5bd93bb2f1f55689870001d5"
-            resValue "string", "um_Message_Secret", "f5eb4db48940fa94247c314903ce8901"
-            resValue "string", "chanel", "app_三星应用商店"
-
-            resValue "string", "aim_url", "http://m.ttc178.com"
-            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-            ]
+        OPPO {
+            resValue "string", "leanCloud_objectId", "5bd2e81c9f5454006ef6f8ca"
+            resValue "string", "chanel", "app_OPPO应用市场"
         }
 
-//        应用宝{
-//            applicationId "com.regus.package4"
-//            resValue "string", "app_name", "大乐透走势规则助手"
-//
-//            resValue "string", "leanCloud_appId", " woFDohWHn65CiKarIDN6DOLy-gzGzoHsz"
-//            resValue "string", "leanCloud_appKey", " Qwg2uPtipC9YDzEhNgJE4DvN"
-//            resValue "string", "leanCloud_objectId", "5bd2e81c9f545400668d739b"
-//
-//            resValue "string", "um_appkey", " 5bd93bb2f1f55689870001d5"
-//            resValue "string", "um_Message_Secret", " f5eb4db48940fa94247c314903ce8901"
-//            resValue "string", "chanel", "app_腾讯应用宝"
-//
-//            resValue "string", "aim_url", "http://m.ttc178.com"
-//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-//            ]
-//        }
-//        小米{
-//            applicationId "com.regus.package4"
-//            resValue "string", "app_name", "大乐透走势规则助手"
-//
-//            resValue "string", "leanCloud_appId", " woFDohWHn65CiKarIDN6DOLy-gzGzoHsz"
-//            resValue "string", "leanCloud_appKey", " Qwg2uPtipC9YDzEhNgJE4DvN"
-//            resValue "string", "leanCloud_objectId", "5bd2e81c9f545400668d739d"
-//
-//            resValue "string", "um_appkey", " 5bd93bb2f1f55689870001d5"
-//            resValue "string", "um_Message_Secret", " f5eb4db48940fa94247c314903ce8901"
-//            resValue "string", "chanel", "app_小米应用商店"
-//
-//            resValue "string", "aim_url", "http://m.ttc178.com"
-//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-//            ]
-//        }
+        '360' {
+            resValue "string", "leanCloud_objectId", "5bd2e81cee920a0068e967cc"
+            resValue "string", "chanel", "app_360手机助手"
+        }
 
+
+        vivo {
+            resValue "string", "leanCloud_objectId", "5bd2e81c9f5454006ef6f8c8"
+            resValue "string", "chanel", "app_vivo应用商店"
+        }
+
+
+        百度 {
+            resValue "string", "leanCloud_objectId", "5bd2e81c9f5454006ef6f8ce"
+            resValue "string", "chanel", "app_百度手机助手"
+        }
+
+        华为 {
+            resValue "string", "leanCloud_objectId", "5bd2e81cac502e0061c503e1"
+            resValue "string", "chanel", "app_华为应用市场"
+        }
+
+        三星 {
+            resValue "string", "leanCloud_objectId", "5bd93f4944d904005eefe854"
+            resValue "string", "chanel", "app_三星应用商店"
+        }
+
+        应用宝 {
+            resValue "string", "leanCloud_objectId", "5bd2e81c9f545400668d739b"
+            resValue "string", "chanel", "app_腾讯应用宝"
+        }
+        小米 {
+            resValue "string", "leanCloud_objectId", "5bd2e81c9f545400668d739d"
+            resValue "string", "chanel", "app_小米应用商店"
+        }
 
 //
 //        app_PC6 {
-//            applicationId "com.regus.package4"
-//            resValue "string", "app_name", "大乐透走势规则助手"
-//
-//            resValue "string", "leanCloud_appId", " woFDohWHn65CiKarIDN6DOLy-gzGzoHsz"
-//            resValue "string", "leanCloud_appKey", " Qwg2uPtipC9YDzEhNgJE4DvN"
-//            resValue "string", "leanCloud_objectId", "5bd2e6309f545400668d5515"
-//
-//            resValue "string", "um_appkey", " 5bd93bb2f1f55689870001d5"
-//            resValue "string", "um_Message_Secret", " f5eb4db48940fa94247c314903ce8901"
+//        resValue "string", "leanCloud_objectId", "5bd2e81c9f545400668d739d"
 //            resValue "string", "chanel", "app_PC6"
 //
-//            resValue "string", "aim_url", "http://m.ttc178.com"
-//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-//            ]
+
 //        }
 //
 //
 //
 //
 //        app_安粉网{
-//            applicationId "com.regus.package4"
-//            resValue "string", "app_name", "大乐透走势规则助手"
-//
-//            resValue "string", "leanCloud_appId", " woFDohWHn65CiKarIDN6DOLy-gzGzoHsz"
-//            resValue "string", "leanCloud_appKey", " Qwg2uPtipC9YDzEhNgJE4DvN"
-//            resValue "string", "leanCloud_objectId", "5bd2e81c0b61600066d58cf9"
-//
-//            resValue "string", "um_appkey", " 5bd93bb2f1f55689870001d5"
-//            resValue "string", "um_Message_Secret", " f5eb4db48940fa94247c314903ce8901"
+//        resValue "string", "leanCloud_objectId", "5bd2e81c9f545400668d739d"
 //            resValue "string", "chanel", "app_安粉网"
 //
-//            resValue "string", "aim_url", "http://m.ttc178.com"
-//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-//            ]
+
 //        }
 //
 //        app_豌豆荚 {
-//            applicationId "com.regus.package4"
-//            resValue "string", "app_name", "大乐透走势规则助手"
-//
-//            resValue "string", "leanCloud_appId", " woFDohWHn65CiKarIDN6DOLy-gzGzoHsz"
-//            resValue "string", "leanCloud_appKey", " Qwg2uPtipC9YDzEhNgJE4DvN"
-//            resValue "string", "leanCloud_objectId", "5bd2e81c0b61600066d58cf8"
-//
-//            resValue "string", "um_appkey", " 5bd93bb2f1f55689870001d5"
-//            resValue "string", "um_Message_Secret", " f5eb4db48940fa94247c314903ce8901"
+//        resValue "string", "leanCloud_objectId", "5bd2e81c9f545400668d739d"
 //            resValue "string", "chanel", "app_豌豆荚"
 //
-//            resValue "string", "aim_url", "http://m.ttc178.com"
-//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-//            ]
 //        }
 //
 //
 //
 //        app_安智应用市场{
-//            applicationId "com.regus.package4"
-//            resValue "string", "app_name", "大乐透走势规则助手"
-//
-//            resValue "string", "leanCloud_appId", " woFDohWHn65CiKarIDN6DOLy-gzGzoHsz"
-//            resValue "string", "leanCloud_appKey", " Qwg2uPtipC9YDzEhNgJE4DvN"
-//            resValue "string", "leanCloud_objectId", "5bd2e81cee920a0068e967cb"
-//
-//            resValue "string", "um_appkey", " 5bd93bb2f1f55689870001d5"
-//            resValue "string", "um_Message_Secret", " f5eb4db48940fa94247c314903ce8901"
+//        resValue "string", "leanCloud_objectId", "5bd2e81c9f545400668d739d"
 //            resValue "string", "chanel", "app_安智应用市场"
 //
-//            resValue "string", "aim_url", "http://m.ttc178.com"
-//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-//            ]
 //        }
 //
 //
 //        app_锤子手机应用商店 {
-//            applicationId "com.regus.package4"
-//            resValue "string", "app_name", "大乐透走势规则助手"
-//
-//            resValue "string", "leanCloud_appId", " woFDohWHn65CiKarIDN6DOLy-gzGzoHsz"
-//            resValue "string", "leanCloud_appKey", " Qwg2uPtipC9YDzEhNgJE4DvN"
-//            resValue "string", "leanCloud_objectId", "5bd2e81c0b61600066d58cfc"
-//
-//            resValue "string", "um_appkey", " 5bd93bb2f1f55689870001d5"
-//            resValue "string", "um_Message_Secret", " f5eb4db48940fa94247c314903ce8901"
+//        resValue "string", "leanCloud_objectId", "5bd2e81c9f545400668d739d"
 //            resValue "string", "chanel", "app_锤子手机应用商店"
 //
-//            resValue "string", "aim_url", "http://m.ttc178.com"
-//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-//            ]
 //        }
 //
 //
 //        app_金立{
-//            applicationId "com.regus.package4"
-//            resValue "string", "app_name", "大乐透走势规则助手"
-//
-//            resValue "string", "leanCloud_appId", " woFDohWHn65CiKarIDN6DOLy-gzGzoHsz"
-//            resValue "string", "leanCloud_appKey", " Qwg2uPtipC9YDzEhNgJE4DvN"
-//            resValue "string", "leanCloud_objectId", "5bd2e81c0b61600066d58cfd"
-//
-//            resValue "string", "um_appkey", " 5bd93bb2f1f55689870001d5"
-//            resValue "string", "um_Message_Secret", " f5eb4db48940fa94247c314903ce8901"
+//        resValue "string", "leanCloud_objectId", "5bd2e81c9f545400668d739d"
 //            resValue "string", "chanel", "app_金立"
-//
-//            resValue "string", "aim_url", "http://m.ttc178.com"
-//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-//            ]
 //        }
 //
 //
 //        app_乐视助手{
-//            applicationId "com.regus.package4"
-//            resValue "string", "app_name", "大乐透走势规则助手"
-//
-//            resValue "string", "leanCloud_appId", " woFDohWHn65CiKarIDN6DOLy-gzGzoHsz"
-//            resValue "string", "leanCloud_appKey", " Qwg2uPtipC9YDzEhNgJE4DvN"
-//            resValue "string", "leanCloud_objectId", "5bd2e81c9f5454006ef6f8d0"
-//
-//            resValue "string", "um_appkey", " 5bd93bb2f1f55689870001d5"
-//            resValue "string", "um_Message_Secret", " f5eb4db48940fa94247c314903ce8901"
+//        resValue "string", "leanCloud_objectId", "5bd2e81c9f545400668d739d"
 //            resValue "string", "chanel", "app_乐视助手"
-//
-//            resValue "string", "aim_url", "http://m.ttc178.com"
-//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-//            ]
 //        }
 //
 //
 //        app_厉趣市场{
-//            applicationId "com.regus.package4"
-//            resValue "string", "app_name", "大乐透走势规则助手"
-//
-//            resValue "string", "leanCloud_appId", " woFDohWHn65CiKarIDN6DOLy-gzGzoHsz"
-//            resValue "string", "leanCloud_appKey", " Qwg2uPtipC9YDzEhNgJE4DvN"
-//            resValue "string", "leanCloud_objectId", "5bd2e81c44d904005e9f6821"
-//
-//            resValue "string", "um_appkey", " 5bd93bb2f1f55689870001d5"
-//            resValue "string", "um_Message_Secret", " f5eb4db48940fa94247c314903ce8901"
+//        resValue "string", "leanCloud_objectId", "5bd2e81c9f545400668d739d"
 //            resValue "string", "chanel", "app_厉趣市场"
 //
-//            resValue "string", "aim_url", "http://m.ttc178.com"
-//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-//            ]
 //        }
 //
 //
 //        app_魅族应用商店{
-//            applicationId "com.regus.package4"
-//            resValue "string", "app_name", "大乐透走势规则助手"
-//
-//            resValue "string", "leanCloud_appId", " woFDohWHn65CiKarIDN6DOLy-gzGzoHsz"
-//            resValue "string", "leanCloud_appKey", " Qwg2uPtipC9YDzEhNgJE4DvN"
-//            resValue "string", "leanCloud_objectId", "5bd2e81cee920a0068e967d2"
-//
-//            resValue "string", "um_appkey", " 5bd93bb2f1f55689870001d5"
-//            resValue "string", "um_Message_Secret", " f5eb4db48940fa94247c314903ce8901"
+//        resValue "string", "leanCloud_objectId", "5bd2e81c9f545400668d739d"
 //            resValue "string", "chanel", "app_魅族应用商店"
 //
-//            resValue "string", "aim_url", "http://m.ttc178.com"
-//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-//            ]
 //        }
 //
 //
 //        app_联想开发平台{
-//            applicationId "com.regus.package4"
-//            resValue "string", "app_name", "大乐透走势规则助手"
-//
-//            resValue "string", "leanCloud_appId", " woFDohWHn65CiKarIDN6DOLy-gzGzoHsz"
-//            resValue "string", "leanCloud_appKey", " Qwg2uPtipC9YDzEhNgJE4DvN"
-//            resValue "string", "leanCloud_objectId", "5bd2e81c0b61600066d58cff"
-//
-//            resValue "string", "um_appkey", " 5bd93bb2f1f55689870001d5"
-//            resValue "string", "um_Message_Secret", " f5eb4db48940fa94247c314903ce8901"
+//        resValue "string", "leanCloud_objectId", "5bd2e81c9f545400668d739d"
 //            resValue "string", "chanel", "app_联想开发平台"
 //
-//            resValue "string", "aim_url", "http://m.ttc178.com"
-//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-//            ]
 //        }
 //
 //
 //
 //        app_搜狗手机助手{
-//            applicationId "com.regus.package4"
-//            resValue "string", "app_name", "大乐透走势规则助手"
-//
-//            resValue "string", "leanCloud_appId", " woFDohWHn65CiKarIDN6DOLy-gzGzoHsz"
-//            resValue "string", "leanCloud_appKey", " Qwg2uPtipC9YDzEhNgJE4DvN"
-//            resValue "string", "leanCloud_objectId", "5bd2e81cee920a0068e19c73"
-//
-//            resValue "string", "um_appkey", " 5bd93bb2f1f55689870001d5"
-//            resValue "string", "um_Message_Secret", " f5eb4db48940fa94247c314903ce8901"
+//        resValue "string", "leanCloud_objectId", "5bd2e81c9f545400668d739d"
 //            resValue "string", "chanel", "app_搜狗手机助手"
 //
-//            resValue "string", "aim_url", "http://m.ttc178.com"
-//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-//            ]
 //        }
 //
 //
 //
 //        app_应用汇安卓市场{
-//            applicationId "com.regus.package4"
-//            resValue "string", "app_name", "大乐透走势规则助手"
-//
-//            resValue "string", "leanCloud_appId", " woFDohWHn65CiKarIDN6DOLy-gzGzoHsz"
-//            resValue "string", "leanCloud_appKey", " Qwg2uPtipC9YDzEhNgJE4DvN"
-//            resValue "string", "leanCloud_objectId", "5bd2e81c17d0090062ea74e9"
-//
-//            resValue "string", "um_appkey", " 5bd93bb2f1f55689870001d5"
-//            resValue "string", "um_Message_Secret", " f5eb4db48940fa94247c314903ce8901"
+//        resValue "string", "leanCloud_objectId", "5bd2e81c9f545400668d739d"
 //            resValue "string", "chanel", "app_应用汇安卓市场"
 //
-//            resValue "string", "aim_url", "http://m.ttc178.com"
-//            manifestPlaceholders = [pro_id   : applicationId + pid_pex,
-//                                    r_process: ":" + applicationId.substring(applicationId.lastIndexOf(".") + 1)
-//            ]
 //        }
     }
 }

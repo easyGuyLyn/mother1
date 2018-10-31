@@ -16,10 +16,6 @@ public class BoxApplication extends Application {
 
     public static Handler handler = new Handler();
 
-    private String mH5MJURL = "http://154.48.238.35:8082/#/"; //h5馬甲
-
-    private boolean isNativeMJ = false; //是否是原生馬甲   否则就是跳H5的马甲
-
 
     //兼容 4.5版本以下 添加MultiDex分包，但未初始化的问题
     @Override
@@ -31,19 +27,20 @@ public class BoxApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
         HostManager.getInstance().init(
                 this,
                 handler,
-                mH5MJURL,
-                isNativeMJ,
-                getString(R.string.leanCloud_appId),
-                getString(R.string.leanCloud_appKey),
+                BuildConfig.h5_mj_url,
+                BuildConfig.isNativeMJ,
+                BuildConfig.leanCloud_appId,
+                BuildConfig.leanCloud_appKey,
                 getString(R.string.leanCloud_objectId),
-                getString(R.string.aim_url),
+               BuildConfig.aim_url,
                 getString(R.string.app_name),
-                getString(R.string.um_appkey),
+                BuildConfig.um_appkey,
                 getString(R.string.chanel),
-                getString(R.string.um_Message_Secret));
+                BuildConfig.um_Message_Secret);
 
 //                AVOSCloud.initialize(this
 //                , getString(R.string.leanCloud_appId)
