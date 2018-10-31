@@ -32,11 +32,50 @@
             android:id="@+id/ly_mini_player"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_above="@+id/ll_bb"
             android:orientation="vertical">
 
             <include layout="@layout/include_common_playstatus_layout" />
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_bb"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/shape_bank_bg"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_gb"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="广播"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tv_news"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="边看新聞"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="更多"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+        </LinearLayout>
+
 
         <LinearLayout
             android:id="@+id/ly_data_load"
