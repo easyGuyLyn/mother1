@@ -36,13 +36,16 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    //noinspection GradleCompatible
-    implementation 'com.android.support:appcompat-v7:27.1.0'
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api "com.android.support:appcompat-v7:${rootProject.ext.supportVersion}"
+    api "com.android.support:design:${rootProject.ext.supportVersion}"
+    api "com.android.support:support-v4:${rootProject.ext.supportVersion}"
+    api "com.android.support:recyclerview-v7:${rootProject.ext.supportVersion}"
+
+
+
     // x5
     api files('libs/tbs_sdk_thirdapp_v3.5.0.1004_43500_sharewithdownload_withoutGame_obfs_20170801_113025.jar')
-    // 改 statusBar
-    api 'com.gyf.barlibrary:barlibrary:2.3.0'
     // LeanCloud 基础包
     api 'cn.leancloud.android:avoscloud-sdk:v4.7.3'
     //友盟统计
@@ -53,4 +56,12 @@ dependencies {
     api 'com.umeng.sdk:utdid:1.1.5.3'
     //PushSDK
     api 'com.umeng.sdk:push:4.2.0'
+
+
+
+
+    // 改 statusBar
+    api 'com.gyf.barlibrary:barlibrary:2.3.0'
+
+
 }

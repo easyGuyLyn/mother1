@@ -1,4 +1,4 @@
-package com.regus.mj.utl;
+package com.regus.base.util;
 
 import android.app.Activity;
 

@@ -1,4 +1,4 @@
-package com.regus.mj.control;
+package com.regus.base.control;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,10 +10,10 @@ import android.widget.Toast;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.GetCallback;
-import com.regus.mj.ConstantValue;
-import com.regus.mj.HostManager;
-import com.regus.mj.R;
-import com.regus.mj.utl.PreLoadH5Manger;
+import com.regus.base.ConstantValue;
+import com.regus.base.HostManager;
+import com.regus.base.R;
+import com.regus.base.util.PreLoadH5Manger;
 
 public class SpalashActivity extends BaseActivity {
 

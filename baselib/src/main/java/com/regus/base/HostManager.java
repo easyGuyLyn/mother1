@@ -1,4 +1,4 @@
-package com.regus.mj;
+package com.regus.base;
 
 import android.content.Context;
 import android.util.Log;
@@ -38,34 +38,30 @@ public class HostManager {
     }
 
 
-
     public Context getContext() {
         return context;
     }
 
-    public void setContext(Context context) {
+
+    public void init(
+            Context context,
+            String leanCloud_appId,
+            String leanCloud_appKey,
+            String leanCloudObjectId,
+            String aimUrl,
+            String app_name,
+            String um_appkey,
+            String um_chanel,
+            String um_Message_Secret) {
         this.context = context;
-    }
 
-
-    public void init(String leanCloud_appId,
-                     String leanCloud_appKey,
-                     String leanCloudObjectId,
-                     String aimUrl,
-                     String app_name,
-                     String um_appkey,
-                     String um_chanel,
-                     String um_Message_Secret,
-                     String resourcePackageName) {
-
-        if (context == null) return;
         aim_url = aimUrl.trim();
 
         leanCloud_objectId = leanCloudObjectId.trim();
 
         initLeanCloud(leanCloud_appId.trim(), leanCloud_appKey.trim(), aimUrl.trim(), app_name.trim());
 
-        initUM(um_appkey.trim(), um_chanel.trim(), um_Message_Secret.trim(), resourcePackageName.trim());
+        initUM(um_appkey.trim(), um_chanel.trim(), um_Message_Secret.trim());
 
         loadX5();
     }
@@ -86,8 +82,7 @@ public class HostManager {
     private void initUM(
             String um_appkey,
             String um_chanel,
-            String um_Message_Secret,
-            String ResourcePackageName) {
+            String um_Message_Secret) {
 
         if (BuildConfig.DEBUG) {
             UMConfigure.setLogEnabled(true);
@@ -106,7 +101,7 @@ public class HostManager {
         //推送
         PushAgent mPushAgent = PushAgent.getInstance(context);
 
-        mPushAgent.setResourcePackageName(ResourcePackageName);
+        //  mPushAgent.setResourcePackageName(ResourcePackageName);
 
         //注册推送服务，每次调用register方法都会回调该接口
         mPushAgent.register(new IUmengRegisterCallback() {

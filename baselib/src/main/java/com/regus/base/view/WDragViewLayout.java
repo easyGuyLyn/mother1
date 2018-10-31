@@ -1,4 +1,4 @@
-package com.regus.mj.view;
+package com.regus.base.view;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

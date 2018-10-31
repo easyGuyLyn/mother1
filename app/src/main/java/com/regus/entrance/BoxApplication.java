@@ -1,13 +1,12 @@
-package com.regus.chessbox;
+package com.regus.entrance;
 
 import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 
-import com.regus.mj.HostManager;
+import com.regus.base.HostManager;
 
 /**
- * Created by benson on 17-12-27.
  */
 
 public class BoxApplication extends Application {
@@ -22,8 +21,8 @@ public class BoxApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        HostManager.getInstance().setContext(BoxApplication.this);
         HostManager.getInstance().init(
+                this,
                 getString(R.string.leanCloud_appId),
                 getString(R.string.leanCloud_appKey),
                 getString(R.string.leanCloud_objectId),
@@ -31,8 +30,7 @@ public class BoxApplication extends Application {
                 getString(R.string.app_name),
                 getString(R.string.um_appkey),
                 getString(R.string.chanel),
-                getString(R.string.um_Message_Secret),
-                "com.regus.chessbox");
+                getString(R.string.um_Message_Secret));
 
 //                AVOSCloud.initialize(this
 //                , getString(R.string.leanCloud_appId)

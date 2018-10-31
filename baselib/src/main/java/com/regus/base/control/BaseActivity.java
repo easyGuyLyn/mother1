@@ -1,17 +1,16 @@
-package com.regus.mj.control;
+package com.regus.base.control;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.regus.mj.utl.ActivityStackManager;
+import com.regus.base.util.ActivityStackManager;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.message.PushAgent;
 
 /**
  * activity的基本类
- * Created by benson on 17-12-19.
  */
 
 public abstract class BaseActivity extends AppCompatActivity {

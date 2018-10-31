@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
 
-    <com.regus.mj.view.WDragViewLayout
+    <com.regus.base.view.WDragViewLayout
         android:id="@+id/webview_fl"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -25,6 +25,6 @@
             android:id="@+id/videoContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-    </com.regus.mj.view.WDragViewLayout>
+    </com.regus.base.view.WDragViewLayout>
 
 </RelativeLayout>

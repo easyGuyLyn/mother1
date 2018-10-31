@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.regus.chessbox">
+    package="com.regus.entrance">
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -21,7 +21,7 @@
         tools:ignore="ProtectedPermissions" />
 
     <application
-        android:name="com.regus.chessbox.BoxApplication"
+        android:name=".BoxApplication"
         android:allowBackup="false"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/app_icon"
@@ -32,8 +32,12 @@
             android:name="android.max_aspect"
             android:value="2.2" />
 
+
+
+
+        <!--base-->
         <activity
-            android:name="com.regus.mj.control.SpalashActivity"
+            android:name="com.regus.base.control.SpalashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/SplashTheme"
             android:windowFullscreen="true"
@@ -45,14 +49,21 @@
             </intent-filter>
         </activity>
 
-        <!--ipc-->
         <activity
-            android:name="com.regus.mj.control.MJWebViewActivity"
+            android:name="com.regus.base.control.MJWebViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:launchMode="singleTask"
             android:theme="@style/IPCAppTheme"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"></activity>
-        <!--ipc-->
+        <!--base-->
+
+
+
+
+
+
+
+
 
     </application>
 

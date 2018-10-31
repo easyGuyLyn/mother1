@@ -1,4 +1,4 @@
-package com.regus.mj;
+package com.regus.base;
 
 /**
  * 常量

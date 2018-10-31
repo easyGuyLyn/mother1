@@ -1,4 +1,4 @@
-package com.regus.mj.control;
+package com.regus.base.control;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -23,8 +23,8 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 
-import com.regus.mj.R;
-import com.regus.mj.view.WDragViewLayout;
+import com.regus.base.R;
+import com.regus.base.view.WDragViewLayout;
 import com.gyf.barlibrary.ImmersionBar;
 import com.tencent.smtt.export.external.interfaces.IX5WebChromeClient;
 import com.tencent.smtt.export.external.interfaces.SslError;

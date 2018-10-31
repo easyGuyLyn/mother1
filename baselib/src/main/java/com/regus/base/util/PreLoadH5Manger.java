@@ -1,11 +1,11 @@
-package com.regus.mj.utl;
+package com.regus.base.util;
 
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.util.Log;
 import android.view.View;
 
-import com.regus.mj.HostManager;
+import com.regus.base.HostManager;
 import com.tencent.smtt.export.external.interfaces.SslError;
 import com.tencent.smtt.export.external.interfaces.SslErrorHandler;
 import com.tencent.smtt.export.external.interfaces.WebResourceError;
