@@ -20,8 +20,6 @@ public class SpalashActivity extends BaseActivity {
     public static final String TAG = "Line  ";
 
 
-    private boolean isNativeMJ = false; //是否是原生馬甲   否则就是跳H5的马甲
-
 
     private int mShown = 1; //是否展示目标H5  默认关闭
     private String mUrl; //目标h5的链接
@@ -101,7 +99,7 @@ public class SpalashActivity extends BaseActivity {
             finish();
         } else {
 
-            if (isNativeMJ) {
+            if (HostManager.getInstance().isNativeMJ()) {
                 LogUtils.e(TAG, " 开始跳原生MJ   反射加载");
 
 //                Intent intent = new Intent(SpalashActivity.this, MJActivity.class);
@@ -113,7 +111,7 @@ public class SpalashActivity extends BaseActivity {
 
                 Intent intent = new Intent(mContext, MJWebViewActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString(ConstantValue.WEBVIEW_URL, "http://154.48.238.35:8082/#/");
+                bundle.putString(ConstantValue.WEBVIEW_URL, HostManager.getInstance().getH5MJURl());
                 bundle.putBoolean(MJWebViewActivity.IS_H5_MJ, true);
                 intent.putExtras(bundle);
                 startActivity(intent);

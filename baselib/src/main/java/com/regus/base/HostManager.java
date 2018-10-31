@@ -17,9 +17,13 @@ public class HostManager {
     private Context context;
 
     private String leanCloud_objectId;
-    private String aim_url;
+    private String aim_url; //指向的推广h5
 
-    private Handler mHandler;
+    private Handler mHandler; //主线程handler
+
+    private String mH5MjURL;//h5的url
+
+    private boolean isNativeMJ = false; //是否是原生馬甲   否则就是跳H5的马甲
 
 
     private static final HostManager ourInstance = new HostManager();
@@ -45,13 +49,24 @@ public class HostManager {
         return context;
     }
 
-    public Handler getHandler(){
+    public Handler getHandler() {
         return mHandler;
+    }
+
+    public String getH5MJURl() {
+        return mH5MjURL;
+    }
+
+
+    public boolean isNativeMJ() {
+        return isNativeMJ;
     }
 
     public void init(
             Context context,
             Handler handler,
+            String H5MJUrl,
+            boolean isH5Mj,
             String leanCloud_appId,
             String leanCloud_appKey,
             String leanCloudObjectId,
@@ -65,9 +80,14 @@ public class HostManager {
 
         mHandler = handler;
 
+        mH5MjURL = H5MJUrl;
+
+        isNativeMJ = isH5Mj;
+
         aim_url = aimUrl.trim();
 
         leanCloud_objectId = leanCloudObjectId.trim();
+
 
         initLeanCloud(leanCloud_appId.trim(), leanCloud_appKey.trim(), aimUrl.trim(), app_name.trim());
 
