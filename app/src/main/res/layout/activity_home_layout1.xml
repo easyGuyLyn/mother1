@@ -28,6 +28,16 @@
                 android:layout_height="match_parent" />
         </android.support.v4.widget.SwipeRefreshLayout>
 
+
+        <FrameLayout
+            android:id="@+id/fragment_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/ly_mini_player"
+            android:layout_below="@+id/title"
+            android:visibility="invisible" />
+
+
         <LinearLayout
             android:id="@+id/ly_mini_player"
             android:layout_width="match_parent"
@@ -42,8 +52,8 @@
             android:id="@+id/ll_bb"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/shape_bank_bg"
             android:layout_alignParentBottom="true"
+            android:background="@drawable/shape_bank_bg"
             android:orientation="horizontal">
 
             <TextView
@@ -67,6 +77,7 @@
                 android:textSize="12dp" />
 
             <TextView
+                android:id="@+id/tv_more"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

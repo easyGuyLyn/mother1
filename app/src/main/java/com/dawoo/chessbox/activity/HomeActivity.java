@@ -14,6 +14,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -40,6 +41,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by ywl on 2018/1/10.
@@ -59,6 +61,16 @@ public class HomeActivity extends BaseMusicActivity implements NavigationView.On
     DrawerLayout mNavigationDrawer;
     @BindView(R.id.iv_sldie)
     ImageView mIv_sldie;
+    @BindView(R.id.iv_me_dot_t)
+    ImageView ivMeDotT;
+    @BindView(R.id.fragment_content)
+    FrameLayout fragmentContent;
+    @BindView(R.id.tv_gb)
+    TextView tvGb;
+    @BindView(R.id.tv_news)
+    TextView tvNews;
+    @BindView(R.id.tv_more)
+    TextView tv_more;
 
 
     private List<PlaceBean> placeBeans;
@@ -97,6 +109,9 @@ public class HomeActivity extends BaseMusicActivity implements NavigationView.On
         getLiveList();
         getLocalData();
         MyLog.d("token is :" + MyApplication.getInstance().getToken());
+
+
+        tvGb.setTextColor(getResources().getColor(R.color.colorAccent));
     }
 
 
@@ -330,5 +345,29 @@ public class HomeActivity extends BaseMusicActivity implements NavigationView.On
         }
         mNavigationDrawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @OnClick({R.id.tv_gb, R.id.tv_news, R.id.tv_more})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.tv_gb:
+                 tvGb.setTextColor(getResources().getColor(R.color.colorAccent));
+                tvNews.setTextColor(getResources().getColor(R.color.black));
+                tv_more.setTextColor(getResources().getColor(R.color.black));
+                fragmentContent.setVisibility(View.INVISIBLE);
+                break;
+            case R.id.tv_news:
+                tvGb.setTextColor(getResources().getColor(R.color.black));
+                tvNews.setTextColor(getResources().getColor(R.color.colorAccent));
+                tv_more.setTextColor(getResources().getColor(R.color.black));
+                fragmentContent.setVisibility(View.VISIBLE);
+                break;
+            case R.id.tv_more:
+                tvGb.setTextColor(getResources().getColor(R.color.black));
+                tvNews.setTextColor(getResources().getColor(R.color.black));
+                tv_more.setTextColor(getResources().getColor(R.color.colorAccent));
+                fragmentContent.setVisibility(View.VISIBLE);
+                break;
+        }
     }
 }
