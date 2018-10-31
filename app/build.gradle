@@ -13,10 +13,6 @@ android {
 //        ndk {
 //            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
 //        }
-//        ndk {
-//            abiFilter("armeabi-v7a")
-//            abiFilter("x86")
-//        }
     }
 
 
@@ -85,12 +81,6 @@ android {
     packagingOptions {
         exclude 'META-INF/rxjava.properties'
     }
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['src/main/jniLibs']
-        }
-    }
-
 
     // 多渠道 的不同配置
     productFlavors {

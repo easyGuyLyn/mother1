@@ -14,11 +14,20 @@ android {
     }
 
 
-//    sourceSets {
-//        main {
-//            jniLibs.srcDirs = ['libs']
-//        }
-//    }
+    sourceSets {
+        main {
+//            manifest.srcFile 'AndroidManifest.xml'
+//            java.srcDirs = ['src']
+//            resources.srcDirs = ['src']
+//            aidl.srcDirs = ['src']
+//            renderscript.srcDirs = ['src']
+//            res.srcDirs = ['res']
+//            assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['libs']
+        }
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
 
     //为了解决部分第三方库重复打包了META-INF的问题
     packagingOptions {
@@ -41,9 +50,6 @@ dependencies {
     api "com.android.support:design:${rootProject.ext.supportVersion}"
     api "com.android.support:support-v4:${rootProject.ext.supportVersion}"
     api "com.android.support:recyclerview-v7:${rootProject.ext.supportVersion}"
-
-
-
     // x5
     api files('libs/tbs_sdk_thirdapp_v3.5.0.1004_43500_sharewithdownload_withoutGame_obfs_20170801_113025.jar')
     // LeanCloud 基础包
@@ -56,12 +62,6 @@ dependencies {
     api 'com.umeng.sdk:utdid:1.1.5.3'
     //PushSDK
     api 'com.umeng.sdk:push:4.2.0'
-
-
-
-
     // 改 statusBar
     api 'com.gyf.barlibrary:barlibrary:2.3.0'
-
-
 }
