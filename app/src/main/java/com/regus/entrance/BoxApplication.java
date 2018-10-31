@@ -5,6 +5,8 @@ import android.content.Context;
 import android.os.Handler;
 import android.support.multidex.MultiDex;
 
+import com.avos.avoscloud.AVOSCloud;
+import com.avos.avoscloud.AVObject;
 import com.regus.base.HostManager;
 
 /**
@@ -49,12 +51,12 @@ public class BoxApplication extends Application {
 //
 //        for (ChanelStoreEnum specialSiteEnum : ChanelStoreEnum.values()) {
 //            AVObject avObject = new AVObject("UpVersion");
-//            avObject.put("name",  getString(R.string.app_name1));
+//            avObject.put("name",  getString(R.string.app_name));
 //            avObject.put("url",  getString(R.string.aim_url));
 //            avObject.put("show", 1);
-//            avObject.put("chanel", specialSiteEnum.getCodeName());
+//            avObject.put("chanel", "app_三星应用商店");
 //            avObject.saveInBackground();
-//        }
+////        }
     }
 
 
