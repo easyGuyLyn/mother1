@@ -2,9 +2,9 @@ package com.regus.base;
 
 import android.content.Context;
 import android.os.Handler;
-import android.util.Log;
 
 import com.avos.avoscloud.AVOSCloud;
+import com.regus.base.util.LogUtils;
 import com.tencent.smtt.sdk.QbSdk;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
@@ -13,6 +13,9 @@ import com.umeng.message.PushAgent;
 
 
 public class HostManager {
+
+
+    private static final String TAG = "HostManager ";
 
     private Context context;
 
@@ -104,8 +107,6 @@ public class HostManager {
         AVOSCloud.initialize(context
                 , leanCloud_appId
                 , leanCloud_appKey);
-
-
     }
 
 
@@ -139,12 +140,12 @@ public class HostManager {
             @Override
             public void onSuccess(String deviceToken) {
                 //注册成功会返回device token
-                Log.e("u_push", "推送注册成功  deviceToken : " + deviceToken);
+                LogUtils.e(TAG, "推送注册成功  deviceToken : " + deviceToken);
             }
 
             @Override
             public void onFailure(String s, String s1) {
-                Log.e("u_push", "推送注册失败  error 1 : " + s + " error 2 " + s1);
+                LogUtils.e(TAG, "推送注册失败  error 1 : " + s + " error 2 " + s1);
             }
         });
 
@@ -164,7 +165,7 @@ public class HostManager {
             public void onViewInitFinished(boolean arg0) {
                 // TODO Auto-generated method stub
                 //x5內核初始化完成的回调，为true表示x5内核加载成功，否则表示x5内核加载失败，会自动切换到系统内核。
-                Log.d("loadX5", " onViewInitFinished is " + arg0);
+                LogUtils.e(TAG, " load x5   onViewInitFinished is " + arg0);
             }
 
             @Override
