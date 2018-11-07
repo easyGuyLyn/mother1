@@ -5,8 +5,6 @@ import android.content.Context;
 import android.os.Handler;
 import android.support.multidex.MultiDex;
 
-import com.avos.avoscloud.AVOSCloud;
-import com.avos.avoscloud.AVObject;
 import com.regus.base.HostManager;
 
 /**
@@ -33,10 +31,10 @@ public class BoxApplication extends Application {
                 handler,
                 BuildConfig.h5_mj_url,
                 BuildConfig.isNativeMJ,
-                BuildConfig.leanCloud_appId,
-                BuildConfig.leanCloud_appKey,
-                getString(R.string.leanCloud_objectId),
-               BuildConfig.aim_url,
+                BuildConfig.appId,
+                //BuildConfig.sid,
+                getString(R.string.chanel),
+                BuildConfig.aim_url,
                 getString(R.string.app_name),
                 BuildConfig.um_appkey,
                 getString(R.string.chanel),

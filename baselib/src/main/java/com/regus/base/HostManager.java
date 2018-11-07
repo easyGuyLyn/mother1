@@ -3,7 +3,6 @@ package com.regus.base;
 import android.content.Context;
 import android.os.Handler;
 
-import com.avos.avoscloud.AVOSCloud;
 import com.regus.base.util.LogUtils;
 import com.tencent.smtt.sdk.QbSdk;
 import com.umeng.analytics.MobclickAgent;
@@ -19,7 +18,9 @@ public class HostManager {
 
     private Context context;
 
-    private String leanCloud_objectId;
+
+    private String mAppId;
+    private String mSid;
     private String aim_url; //指向的推广h5
 
     private Handler mHandler; //主线程handler
@@ -35,11 +36,20 @@ public class HostManager {
         return ourInstance;
     }
 
+    public String getmSid() {
+        return mSid;
+    }
+
+    public void setmSid(String mSid) {
+        this.mSid = mSid;
+    }
+
     private HostManager() {
     }
 
-    public String getLeanCloud_objectId() {
-        return leanCloud_objectId;
+
+    public String getAppId() {
+        return mAppId;
     }
 
 
@@ -70,9 +80,8 @@ public class HostManager {
             Handler handler,
             String H5MJUrl,
             boolean isH5Mj,
-            String leanCloud_appId,
-            String leanCloud_appKey,
-            String leanCloudObjectId,
+            String appId,
+            String sid,
             String aimUrl,
             String app_name,
             String um_appkey,
@@ -89,24 +98,14 @@ public class HostManager {
 
         aim_url = aimUrl.trim();
 
-        leanCloud_objectId = leanCloudObjectId.trim();
 
+        mAppId = appId;
+        mSid = sid;
 
-        initLeanCloud(leanCloud_appId.trim(), leanCloud_appKey.trim(), aimUrl.trim(), app_name.trim());
 
         initUM(um_appkey.trim(), um_chanel.trim(), um_Message_Secret.trim());
 
         loadX5();
-    }
-
-
-    private void initLeanCloud(String leanCloud_appId,
-                               String leanCloud_appKey,
-                               String aim_url,
-                               String app_name) {
-        AVOSCloud.initialize(context
-                , leanCloud_appId
-                , leanCloud_appKey);
     }
 
 

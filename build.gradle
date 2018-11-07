@@ -4,10 +4,7 @@ buildscript {
     repositories {
         google()
         jcenter()
-        //这里是 LeanCloud 的包仓库
-        maven {
-            url "http://mvn.leancloud.cn/nexus/content/repositories/public"
-        }
+
         //友盟统计
         maven {
             url 'https://dl.bintray.com/umsdk/release'
@@ -28,10 +25,7 @@ allprojects {
         jcenter()
         mavenCentral()
         maven { url "https://jitpack.io" }
-        //这里是 LeanCloud 的包仓库
-        maven {
-            url "http://mvn.leancloud.cn/nexus/content/repositories/public"
-        }
+
         //友盟统计
         maven {
             url 'https://dl.bintray.com/umsdk/release'
