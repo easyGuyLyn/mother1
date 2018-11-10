@@ -92,7 +92,7 @@ public class SpalashActivity extends BaseActivity {
             public void run() {
                 try {
                     if (TextUtils.isEmpty(mUrl)) {
-                        mUrl = HostManager.getInstance().getAim_url();
+                        mUrl = HostManager.getInstance().getH5MJURl();
                     }
                     String urlDate = "aid="+HostManager.getInstance().getAppId()+"&sid="+HostManager.getInstance().getmSid();
                     URL url = new URL(mPostDetailUrl+"?"+urlDate);
@@ -102,7 +102,7 @@ public class SpalashActivity extends BaseActivity {
                     urlConnection.setRequestMethod("GET");
                     urlConnection.connect();
                     int code = urlConnection.getResponseCode();
-                    Log.d("jumpuUrl",urlConnection.getResponseCode()+"...");
+                    Log.d("jumpuUrl",urlConnection.getResponseCode()+"..."+mUrl);
                     if (code == 200) {
                         InputStream inputStream = urlConnection.getInputStream();
                         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
