@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.regus.package5"
+        applicationId "com.regus.package6"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode rootProject.ext.versionCode
@@ -40,10 +40,10 @@ android {
     buildTypes {
         debug {
             buildConfigField("boolean", "isNativeMJ", "false") // 是否是原生mj
-            buildConfigField("String", "h5_mj_url", "\"http://154.48.238.35:8087\"")//h5 的马甲壳
+            buildConfigField("String", "h5_mj_url", "\"http://154.48.238.35:8086\"")//h5 的马甲壳
             buildConfigField("String", "aim_url", "\"http://m.ttc178.com\"") //目标页面
 
-            buildConfigField("String", "appId", "\"8\"")//
+            buildConfigField("String", "appId", "\"13\"")//
 
             buildConfigField("String", "um_appkey", "\"5be4e9c6b465f5213800015b\"") //
             buildConfigField("String", "um_Message_Secret", "\"07e6fbc43bed6b48b6cfcdee28533bb8\"")
@@ -65,10 +65,10 @@ android {
         }
         release {
             buildConfigField("boolean", "isNativeMJ", "false") // 是否是原生mj
-            buildConfigField("String", "h5_mj_url", "\"http://154.48.238.35:8087\"")//h5 的马甲壳
+            buildConfigField("String", "h5_mj_url", "\"http://154.48.238.35:8086\"")//h5 的马甲壳
             buildConfigField("String", "aim_url", "\"http://m.ttc178.com\"") //目标页面
 
-            buildConfigField("String", "appId", "\"8\"")//
+            buildConfigField("String", "appId", "\"13\"")//
 
             buildConfigField("String", "um_appkey", "\"5be4e9c6b465f5213800015b\"") //
             buildConfigField("String", "um_Message_Secret", "\"07e6fbc43bed6b48b6cfcdee28533bb8\"")
@@ -127,49 +127,49 @@ android {
 
 
         OPPO {
-                    resValue "string", "app_name", "双色球走势图预判专家"
+                    resValue "string", "app_name", "红单大师"
             resValue "string", "chanel", "9"
         }
 
         '360' {
-        resValue "string", "app_name", "双色球走势图预判专家"
+        resValue "string", "app_name", "红单大师"
             resValue "string", "chanel", "4"
         }
 
 
         vivo {
-        resValue "string", "app_name", "双色球走势图预判专家"
+        resValue "string", "app_name", "红单大师"
             resValue "string", "chanel", "3"
         }
 
 
         百度 {
-        resValue "string", "app_name", "双色球走势图预判专家"
+        resValue "string", "app_name", "红单大师"
             resValue "string", "chanel", "5"
         }
 
         华为 {
-        resValue "string", "app_name", "双色球走势图预判专家"
+        resValue "string", "app_name", "红单大师"
             resValue "string", "chanel", "6"
         }
 
         三星 {
-            resValue "string", "app_name", "双色球走势图预判专家"
+            resValue "string", "app_name", "红单大师"
             resValue "string", "chanel", "2"
         }
 
         应用宝 {
-        resValue "string", "app_name", "双色球走势图预判专家"
+        resValue "string", "app_name", "红单大师"
             resValue "string", "chanel", "7"
         }
         小米 {
-        resValue "string", "app_name", "双色球走势图预判专家"
+        resValue "string", "app_name", "红单大师"
             resValue "string", "chanel", "8"
         }
 
 
         app_PC6 {
-        resValue "string", "app_name", "双色球走势图预判专家"
+        resValue "string", "app_name", "红单大师"
             resValue "string", "chanel", "10"
 
         }
@@ -191,14 +191,14 @@ android {
 //
 //
 //        app_安粉网{
-//        resValue "string", "app_name", "双色球走势图预判专家"
+//        resValue "string", "app_name", "红单大师"
 //            resValue "string", "chanel", "app_安粉网"
 //
 
 //        }
 //
 //        app_豌豆荚 {
-//        resValue "string", "app_name", "双色球走势图预判专家"
+//        resValue "string", "app_name", "红单大师"
 //            resValue "string", "chanel", "app_豌豆荚"
 //
 //        }
@@ -206,7 +206,7 @@ android {
 //
 //
 //        app_安智应用市场{
-//        resValue "string", "app_name", "双色球走势图预判专家"
+//        resValue "string", "app_name", "红单大师"
 //        resValue "string", "leanCloud_objectId", "5bd2e81c9f545400668d739d"
 //            resValue "string", "chanel", "app_安智应用市场"
 //
@@ -214,40 +214,40 @@ android {
 //
 //
 //        app_锤子手机应用商店 {
-//        resValue "string", "app_name", "双色球走势图预判专家"
+//        resValue "string", "app_name", "红单大师"
 //            resValue "string", "chanel", "app_锤子手机应用商店"
 //
 //        }
 //
 //
 //        app_金立{
-//        resValue "string", "app_name", "双色球走势图预判专家"
+//        resValue "string", "app_name", "红单大师"
 //            resValue "string", "chanel", "app_金立"
 //        }
 //
 //
 //        app_乐视助手{
-//        resValue "string", "app_name", "双色球走势图预判专家"
+//        resValue "string", "app_name", "红单大师"
 //            resValue "string", "chanel", "app_乐视助手"
 //        }
 //
 //
 //        app_厉趣市场{
-//        resValue "string", "app_name", "双色球走势图预判专家"
+//        resValue "string", "app_name", "红单大师"
 //            resValue "string", "chanel", "app_厉趣市场"
 //
 //        }
 //
 //
 //        app_魅族应用商店{
-//        resValue "string", "app_name", "双色球走势图预判专家"
+//        resValue "string", "app_name", "红单大师"
 //            resValue "string", "chanel", "app_魅族应用商店"
 //
 //        }
 //
 //
 //        app_联想开发平台{
-//        resValue "string", "app_name", "双色球走势图预判专家"
+//        resValue "string", "app_name", "红单大师"
 //            resValue "string", "chanel", "app_联想开发平台"
 //
 //        }
@@ -255,7 +255,7 @@ android {
 //
 //
 //        app_搜狗手机助手{
-        //resValue "string", "app_name", "双色球走势图预判专家"
+        //resValue "string", "app_name", "红单大师"
 //            resValue "string", "chanel", "app_搜狗手机助手"
 //
 //        }
@@ -263,7 +263,7 @@ android {
 //
 //
 //        app_应用汇安卓市场{
-//        resValue "string", "app_name", "双色球走势图预判专家"
+//        resValue "string", "app_name", "红单大师"
 //            resValue "string", "chanel", "app_应用汇安卓市场"
 //
 //        }
