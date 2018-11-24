@@ -10,7 +10,6 @@ import com.regus.base.ConstantValue;
 import com.regus.base.HostManager;
 import com.regus.base.R;
 import com.regus.base.util.LogUtils;
-import com.regus.base.util.PreLoadH5Manger;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,7 +29,6 @@ public class SpalashActivity extends BaseActivity {
     private int mShown = 1; //是否展示目标H5  默认关闭
     private String mUrl; //目标h5的链接
     private String mPostDetailUrl = "http://154.48.238.35:8085/AppShellService.svc/GetAppInfo";//请求链接详情
-    private PreLoadH5Manger preLoadH5Manger = new PreLoadH5Manger();  //目标h5的预加载器  为了更流畅
 
 
     @Override

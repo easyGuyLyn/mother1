@@ -41,6 +41,8 @@ import com.tencent.smtt.sdk.WebViewClient;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.message.PushAgent;
 
+import javax.xml.parsers.DocumentBuilderFactory;
+
 /**
  * archar  天纵神武
  **/
@@ -199,6 +201,7 @@ public class MJWebViewActivity extends AppCompatActivity implements View.OnClick
         //支持内容重新布局
         webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
 
+        DocumentBuilderFactory.newInstance().setExpandEntityReferences(false);
 
         webSettings.setDomStorageEnabled(true);        //设置支持DomStorage
         //图片先不加载最后再加载
@@ -373,7 +376,7 @@ public class MJWebViewActivity extends AppCompatActivity implements View.OnClick
 
         @Override
         public void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {
-            sslErrorHandler.proceed();
+            sslErrorHandler.cancel();
             super.onReceivedSslError(webView, sslErrorHandler, sslError);
         }
 
