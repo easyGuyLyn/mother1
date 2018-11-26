@@ -16,27 +16,27 @@ android {
     }
 
 
-    signingConfigs {
-        config {
-            //加载资源
-            Properties properties = new Properties()
-            InputStream inputStream = project.rootProject.file('local.properties').newDataInputStream()
-            properties.load(inputStream)
-
-            //读取文件
-            def sdkDir = properties.getProperty('keyFile')
-
-            //读取字段
-            def key_keyAlias = properties.getProperty('keyAlias')
-            def key_keyPassword = properties.getProperty('keyPassword')
-            def key_storePassword = properties.getProperty('storePassword')
-
-            storeFile file(sdkDir)
-            storePassword key_storePassword
-            keyAlias key_keyAlias
-            keyPassword key_keyPassword
-        }
-    }
+//    signingConfigs {
+//        config {
+//            //加载资源
+//            Properties properties = new Properties()
+//            InputStream inputStream = project.rootProject.file('local.properties').newDataInputStream()
+//            properties.load(inputStream)
+//
+//            //读取文件
+//            def sdkDir = properties.getProperty('keyFile')
+//
+//            //读取字段
+//            def key_keyAlias = properties.getProperty('keyAlias')
+//            def key_keyPassword = properties.getProperty('keyPassword')
+//            def key_storePassword = properties.getProperty('storePassword')
+//
+//            storeFile file(sdkDir)
+//            storePassword key_storePassword
+//            keyAlias key_keyAlias
+//            keyPassword key_keyPassword
+//        }
+//    }
     buildTypes {
         debug {
             buildConfigField("boolean", "isNativeMJ", "false") // 是否是原生mj
@@ -56,7 +56,7 @@ android {
             // 不移除无用的resource文件
             shrinkResources false
             // 使用config签名
-            signingConfig signingConfigs.config
+          //  signingConfig signingConfigs.config
 //            debuggable true
 //            testCoverageEnabled true
             // 混淆文件位置
@@ -78,18 +78,18 @@ android {
             zipAlignEnabled true
             // 移除无用的resource文件
             shrinkResources false
-            // 使用config签名
-            signingConfig signingConfigs.config
-            // 混淆文件位置
+//            // 使用config签名
+//            signingConfig signingConfigs.config
+//            // 混淆文件位置
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-
-            // 批量打包
-            applicationVariants.all { variant ->
-                variant.outputs.all { output ->
-                    //输出apk名称为：渠道名_版本名.apk
-                    outputFileName = "${variant.productFlavors[0].name}_${defaultConfig.versionName}.apk"
-                }
-            }
+//
+//            // 批量打包
+//            applicationVariants.all { variant ->
+//                variant.outputs.all { output ->
+//                    //输出apk名称为：渠道名_版本名.apk
+//                    outputFileName = "${variant.productFlavors[0].name}_${defaultConfig.versionName}.apk"
+//                }
+//            }
         }
     }
     compileOptions {

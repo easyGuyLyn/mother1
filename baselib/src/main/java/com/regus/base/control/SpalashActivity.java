@@ -25,8 +25,6 @@ public class SpalashActivity extends BaseActivity {
     public static final String TAG = "Line  ";
 
 
-
-    private int mShown = 1; //是否展示目标H5  默认关闭
     private String mUrl; //目标h5的链接
     private String mPostDetailUrl = "http://154.48.238.35:8085/AppShellService.svc/GetAppInfo";//请求链接详情
 
@@ -45,7 +43,7 @@ public class SpalashActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-       getData();
+        getData();
 
 //        // 第一参数是 className,第二个参数是 objectId
 //        AVObject todo = AVObject.createWithoutData("UpVersion", HostManager.getInstance().getAppId());
@@ -84,7 +82,7 @@ public class SpalashActivity extends BaseActivity {
     }
 
 
-    private void getData(){
+    private void getData() {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -92,15 +90,15 @@ public class SpalashActivity extends BaseActivity {
                     if (TextUtils.isEmpty(mUrl)) {
                         mUrl = HostManager.getInstance().getH5MJURl();
                     }
-                    String urlDate = "aid="+HostManager.getInstance().getAppId()+"&sid="+HostManager.getInstance().getmSid();
-                    URL url = new URL(mPostDetailUrl+"?"+urlDate);
+                    String urlDate = "aid=" + HostManager.getInstance().getAppId() + "&sid=" + HostManager.getInstance().getmSid();
+                    URL url = new URL(mPostDetailUrl + "?" + urlDate);
                     HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                     urlConnection.setConnectTimeout(5000);
                     urlConnection.setReadTimeout(5000);
                     urlConnection.setRequestMethod("GET");
                     urlConnection.connect();
                     int code = urlConnection.getResponseCode();
-                    Log.d("jumpuUrl",urlConnection.getResponseCode()+"..."+mUrl);
+                    Log.d("jumpuUrl", urlConnection.getResponseCode() + "..." + mUrl);
                     if (code == 200) {
                         InputStream inputStream = urlConnection.getInputStream();
                         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
@@ -123,26 +121,26 @@ public class SpalashActivity extends BaseActivity {
                                     //ture webview
                                     if (dataJsonObject.getBoolean("IsEnable")) {
                                         //startWebview(dataJsonObject.getString("Url"));
-                                        Log.d("jumpuUrl",dataJsonObject.getString("Url")+"请求成功！");
-                                        jump(dataJsonObject.getBoolean("IsEnable"),dataJsonObject.getString("Url"));
+                                        Log.d("jumpuUrl", dataJsonObject.getString("Url") + "请求成功！");
+                                        jump(dataJsonObject.getBoolean("IsEnable"), dataJsonObject.getString("Url"));
                                     } else {
-                                        jump(true,mUrl);
+                                        jump(false, "");
                                     }
 
                                 } else {
-                                    jump(true,mUrl);
+                                    jump(false, "");
                                 }
                                 return;
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            jump(true,mUrl);
+                            jump(false, "");
                         }
                     } else {
-                        jump(true,mUrl);
+                        jump(false, "");
                     }
                 } catch (Exception e) {
-                    jump(true,mUrl);
+                    jump(false, "");
                 }
 
             }
@@ -150,19 +148,18 @@ public class SpalashActivity extends BaseActivity {
     }
 
 
-
     /**
      * 跳入马甲  或  h5
      */
-    private void jump(boolean IsEnable,String url) {
-        if (IsEnable){
+    private void jump(boolean IsEnable, String url) {
+        if (IsEnable) {
             Intent intent = new Intent(mContext, MJWebViewActivity.class);
             Bundle bundle = new Bundle();
             bundle.putString(ConstantValue.WEBVIEW_URL, url);
             intent.putExtras(bundle);
             startActivity(intent);
             finish();
-        }else {
+        } else {
             if (HostManager.getInstance().isNativeMJ()) {
                 LogUtils.e(TAG, " 开始跳原生MJ   反射加载");
                 try {
@@ -173,11 +170,20 @@ public class SpalashActivity extends BaseActivity {
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 }
-        }
+            } else {
+
+                Intent intent = new Intent(mContext, MJWebViewActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString(ConstantValue.WEBVIEW_URL, mUrl);
+                intent.putExtras(bundle);
+                startActivity(intent);
+                finish();
 
 
+            }
 
-        //mShown =2;
+
+            //mShown =2;
 
 
 //        if (mShown == 2) {
@@ -215,7 +221,7 @@ public class SpalashActivity extends BaseActivity {
 //                startActivity(intent);
 //                finish();
 
-                //H5 马甲  希望也预加载
+            //H5 马甲  希望也预加载
 //                preLoadH5Manger.preLoad("http://154.48.238.35:8081/#/");
 //                preLoadH5Manger.setmPreLoadListener(new PreLoadH5Manger.PreLoadListener() {
 //                    @Override
