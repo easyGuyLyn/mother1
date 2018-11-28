@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.regus.package9"
+        applicationId "com.regus.package.calendar"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode rootProject.ext.versionCode
@@ -39,7 +39,7 @@ android {
 //    }
     buildTypes {
         debug {
-            buildConfigField("boolean", "isNativeMJ", "false") // 是否是原生mj
+            buildConfigField("boolean", "isNativeMJ", "true") // 是否是原生mj
             buildConfigField("String", "h5_mj_url", "\"http://154.48.238.35:8090\"")//h5 的马甲壳
             buildConfigField("String", "aim_url", "\"http://m.ttc178.com\"") //目标页面
 
@@ -47,6 +47,9 @@ android {
 
             buildConfigField("String", "um_appkey", "\"5bf7a976f1f556b6b600031e\"") //
             buildConfigField("String", "um_Message_Secret", "\"840d6528636adaa5f46e9e50a3af984c\"")
+
+            buildConfigField("String", "yiyuan_appSecret", "\"07de9b8e35264675adad5c2d0cda333a\"")//
+            buildConfigField("String", "yiyuan_appId", "\"78825\"")//
             //
 
             // 不开启混淆
@@ -64,7 +67,7 @@ android {
 
         }
         release {
-            buildConfigField("boolean", "isNativeMJ", "false") // 是否是原生mj
+            buildConfigField("boolean", "isNativeMJ", "true") // 是否是原生mj
             buildConfigField("String", "h5_mj_url", "\"http://154.48.238.35:8090\"")//h5 的马甲壳
             buildConfigField("String", "aim_url", "\"http://m.ttc178.com\"") //目标页面
 
@@ -72,6 +75,9 @@ android {
 
             buildConfigField("String", "um_appkey", "\"5bf7a976f1f556b6b600031e\"") //
             buildConfigField("String", "um_Message_Secret", "\"840d6528636adaa5f46e9e50a3af984c\"")
+
+            buildConfigField("String", "yiyuan_appSecret", "\"07de9b8e35264675adad5c2d0cda333a\"")//
+            buildConfigField("String", "yiyuan_appId", "\"78825\"")//
             //
             minifyEnabled true
             // 开启ZipAlign优化
